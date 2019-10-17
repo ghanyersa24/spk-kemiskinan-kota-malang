@@ -5,6 +5,7 @@
 </head>
 <body id="page-top">
 
+
 <?php $this->load->view("admin/_partials/navbar.php") ?>
 
 <div id="wrapper">
