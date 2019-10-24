@@ -48,10 +48,10 @@
                     <label>Kecamatan</label>
                     <select class="form-control select2" style="width: 100%;" id="input-nama-kecamatan" name="Kecamatan" required="required">
                       <option selected="selected" disabled> Masukan kecamatan</option>
-                      <option value="0">Kedungkandang</option>
-                      <option value="1">Klojen</option>
-                      <option value="2">Lowokwaru</option>
-                      <option value="3">Sukun</option>
+                      <option value="1">Kedungkandang</option>
+                      <option value="2">Klojen</option>
+                      <option value="3">Lowokwaru</option>
+                      <option value="4">Sukun</option>
                     </select>
                   </div>
 
@@ -59,63 +59,63 @@
                     <label>Kelurahan</label>
                     <select class="form-control select2" style="width: 100%;" id="input-nama-kelurahan" name="Kelurahan" required="required">
                       <option selected="selected" disabled>Masukan Kelurahan</option>
-                      <option value="0">Arjosari</option>
-                      <option value="1">Arjowinangun</option>
-                      <option value="2">Bakalankrajan</option>
-                      <option value="3">Balearjosari</option>
-                      <option value="4">Bandulan</option>
-                      <option value="5">Bandungrejosari</option>
-                      <option value="6">Bareng</option>
-                      <option value="7">Blimbing</option>
-                      <option value="8">Bumiayu</option>
-                      <option value="9">Bunulrejo</option>
-                      <option value="10">Buring</option>
-                      <option value="11">Cemorokandang</option>
-                      <option value="12">Ciptomulyo</option>
-                      <option value="13">Dinoyo</option>
-                      <option value="14">Gadang</option>
-                      <option value="15">Gadingasri</option>
-                      <option value="16">Jatimulyo</option>
-                      <option value="17">Jodipan</option>
-                      <option value="18">Karangbesuki</option>
-                      <option value="19">Kasin</option>
-                      <option value="20">Kauman</option>
-                      <option value="21">Kebonsari</option>
-                      <option value="22">Kedungkandang</option>
-                      <option value="23">Kesatrian</option>
-                      <option value="24">Ketawanggede</option>
-                      <option value="25">Kiduldalem</option>
-                      <option value="26">Klojen</option>
-                      <option value="27">Kotalama</option>
-                      <option value="28">Lesanpuro</option>
-                      <option value="29">Lowokwaru</option>
-                      <option value="30">Madyopuro</option>
-                      <option value="31">Mergosono</option>
-                      <option value="32">Merjosari</option>
-                      <option value="33">Mojolangu</option>
-                      <option value="34">Mulyorejo</option>
-                      <option value="35">Oro-Oro Dowo</option>
-                      <option value="36">Pandanwangi</option>
-                      <option value="37">Penanggungan</option>
-                      <option value="38">Pisangcandi</option>
-                      <option value="39">Polehan</option>
-                      <option value="40">Polowijen</option>
-                      <option value="41">Purwantoro</option>
-                      <option value="42">Purwodadi</option>
-                      <option value="43">Rampal Celaket</option>
-                      <option value="44">Samaan</option>
-                      <option value="45">Sawojajar</option>
-                      <option value="46">Sukoharjo</option>
-                      <option value="47">Sukun</option>
-                      <option value="48">Sumbersari</option>
-                      <option value="49">Tanjungrejo</option>
-                      <option value="50">Tasikmadu</option>
-                      <option value="51">Tlogomas</option>
-                      <option value="55">Tlogowaru</option>
-                      <option value="56">Tulusrejo</option>
-                      <option value="57">Tunggulwulung</option>
-                      <option value="58">Tunjungsekar</option>
-                      <option value="59">Wonokoyo</option>
+                      <option value="1">Arjosari</option>
+                      <option value="2">Arjowinangun</option>
+                      <option value="3">Bakalankrajan</option>
+                      <option value="4">Balearjosari</option>
+                      <option value="5">Bandulan</option>
+                      <option value="6">Bandungrejosari</option>
+                      <option value="7">Bareng</option>
+                      <option value="8">Blimbing</option>
+                      <option value="9">Bumiayu</option>
+                      <option value="10">Bunulrejo</option>
+                      <option value="11">Buring</option>
+                      <option value="12">Cemorokandang</option>
+                      <option value="13">Ciptomulyo</option>
+                      <option value="14">Dinoyo</option>
+                      <option value="15">Gadang</option>
+                      <option value="16">Gadingasri</option>
+                      <option value="17">Jatimulyo</option>
+                      <option value="18">Jodipan</option>
+                      <option value="19">Karangbesuki</option>
+                      <option value="20">Kasin</option>
+                      <option value="21">Kauman</option>
+                      <option value="22">Kebonsari</option>
+                      <option value="23">Kedungkandang</option>
+                      <option value="24">Kesatrian</option>
+                      <option value="25">Ketawanggede</option>
+                      <option value="26">Kiduldalem</option>
+                      <option value="27">Klojen</option>
+                      <option value="28">Kotalama</option>
+                      <option value="29">Lesanpuro</option>
+                      <option value="30">Lowokwaru</option>
+                      <option value="31">Madyopuro</option>
+                      <option value="32">Mergosono</option>
+                      <option value="33">Merjosari</option>
+                      <option value="34">Mojolangu</option>
+                      <option value="35">Mulyorejo</option>
+                      <option value="36">Oro-Oro Dowo</option>
+                      <option value="37">Pandanwangi</option>
+                      <option value="38">Penanggungan</option>
+                      <option value="39">Pisangcandi</option>
+                      <option value="40">Polehan</option>
+                      <option value="41">Polowijen</option>
+                      <option value="42">Purwantoro</option>
+                      <option value="43">Purwodadi</option>
+                      <option value="44">Rampal Celaket</option>
+                      <option value="45">Samaan</option>
+                      <option value="46">Sawojajar</option>
+                      <option value="47">Sukoharjo</option>
+                      <option value="48">Sukun</option>
+                      <option value="49">Sumbersari</option>
+                      <option value="50">Tanjungrejo</option>
+                      <option value="51">Tasikmadu</option>
+                      <option value="52">Tlogomas</option>
+                      <option value="53">Tlogowaru</option>
+                      <option value="54">Tulusrejo</option>
+                      <option value="55">Tunggulwulung</option>
+                      <option value="56">Tunjungsekar</option>
+                      <option value="57">Wonokoyo</option>
                     </select>
                   </div>
 
@@ -465,7 +465,7 @@
 
                   <div class="form-group">
                     <label>Kepemilikan kartu identitas</label>
-                    <select id="input-ada-kartu-identitas" class="select2" multiple="multiple" data-placeholder="Pilih kartu program" style="width: 100%;" name="KartuIdentitas" required="required">
+                    <select id="input-ada-kartu-identitas" class="select2" multiple="multiple" data-placeholder="Pilih kartu program" style="width: 100%;" name="KartuIdentitas[]" required="required">
                       <option value="0">0. Tidak memiliki akta</option>
                       <option value="1">1. Akta kelahiran</option>
                       <option value="2">2. Kartu pelajar</option>
@@ -476,7 +476,7 @@
 
                   <div class="form-group">
                     <label>Status Kehamilan</label>
-                    <select class="form-control" style="width: 100%;" id="input-kehamilan" name="TercantumDalamKertuKeluarga" required="required">
+                    <select class="form-control" style="width: 100%;" id="input-kehamilan" name="StaHamil" required="required">
                       <option selected="selected"></option>
                       <option value="0">1. Ya</option>
                       <option value="1">2. Tidak</option>
@@ -696,7 +696,7 @@
                           <input type="checkbox">
                         </span>
                       </div>
-                      <input type="text" class="form-control" id="input-sapi" name="Sapi" placeholder="Masukan jumlah sapi yang dimiliki (ekor)" required="required">
+                      <input type="text" class="form-control" id="input-sapi" name="JumlahSapi" placeholder="Masukan jumlah sapi yang dimiliki (ekor)" required="required">
                     </div>
                     <label>Kerbau</label>
                     <div class="input-group">
@@ -705,7 +705,7 @@
                           <input type="checkbox">
                         </span>
                       </div>
-                      <input type="text" class="form-control" id="input-kerbau" name="Kerbau" placeholder="Masukkan jumlah kerbau yang dimiliki (ekor)" required="required">
+                      <input type="text" class="form-control" id="input-kerbau" name="JumlahKerbau" placeholder="Masukkan jumlah kerbau yang dimiliki (ekor)" required="required">
                     </div><label>Kuda</label>
                     <div class="input-group">
                       <div class="input-group-prepend">
@@ -713,7 +713,7 @@
                           <input type="checkbox">
                         </span>
                       </div>
-                      <input type="text" class="form-control" id="input-kuda" name="Kuda" placeholder="Masukkan jumlah kuda yang dimiliki (ekor)" required="required">
+                      <input type="text" class="form-control" id="input-kuda" name="JumlahKuda" placeholder="Masukkan jumlah kuda yang dimiliki (ekor)" required="required">
                     </div><label>Babi</label>
                     <div class="input-group">
                       <div class="input-group-prepend">
@@ -721,7 +721,7 @@
                           <input type="checkbox">
                         </span>
                       </div>
-                      <input type="text" class="form-control" id="input-babi" name="Babi" placeholder="Masukkan jumlah babi yang dimiliki (ekor)" required="required">
+                      <input type="text" class="form-control" id="input-babi" name="JumlahBabi" placeholder="Masukkan jumlah babi yang dimiliki (ekor)" required="required">
                     </div>
                     <label>Kambing/Domba</label>
                     <div class="input-group">
@@ -730,13 +730,13 @@
                           <input type="checkbox">
                         </span>
                       </div>
-                      <input type="text" class="form-control" id="input-kambing" name="KambingDomba" placeholder="Masukkan jumlah kambing/domba yang dimiliki (ekor)" required="required">
+                      <input type="text" class="form-control" id="input-kambing" name="JumlahKambing" placeholder="Masukkan jumlah kambing/domba yang dimiliki (ekor)" required="required">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label>Memiliki/terdaftar dalam kartu pemerintah</label>
-                    <select id="input-kartu-pemerintah" class="select2" multiple="multiple" data-placeholder="Pilih kartu program" style="width: 100%;" name="KertuPemerintah" required="required">
+                    <select id="input-kartu-pemerintah" class="select2" multiple="multiple" data-placeholder="Pilih kartu program" style="width: 100%;" name="KartuPemerintah[]" required="required">
                       <option value="0">Kartu Keluarga Sejahtera (KKS)/Kartu Perlindungan Sejahtera(KPS)</option>
                       <option value="1">Kartu Indonesia Pintar (KIP)/Bantuan Siswa Miskin (BSM)</option>
                       <option value="2">Kartu Indonesia Sehat (KIS)/BPJS Kesehatan/JAMKESMAS</option>
