@@ -2,279 +2,197 @@
 
 class M_form extends CI_Model{
 	function inputData($data){
-		$pengenalantempat = array(
-            'IdKecamatan' => $data['Kecamatan'],
-            'NamaSLS' => $data['RT'].'/'.$data['RW'],
-            'Alamat' => $data['Alamat'],
-            'NamaKRT' => $data['Nama'],
-			'JumlahART' => 2,	
-			'JumlahKeluarga' => 2		
-		);
-		$this->db->insert("pengenalantempat", $pengenalantempat);
-		$Id_PengenalanTempat = $this->db->insert_id();
+		$jenisPenerima = $data['JenisPenerima'];
 
-		// $kecamatan = array(
-        //     'NamaKecamatan' => $data['NamaKecamatan']
-		// );
+		$Id_PengenalanTempat = 0;
+		$Id_Perumahan = 0;
+		$Id_Aset = 0;
+		if($jenisPenerima == "2"){
+			$pengenalantempat = array(
+				'IdKecamatan' => $data['Kecamatan'],
+				'IdKelurahan' => $data['Kelurahan'],
+				'NamaSLS' => $data['RT'].'/'.$data['RW'],
+				'Alamat' => $data['Alamat'],
+				'NamaKRT' => $data['Nama']		
+			);
+			$this->db->insert("pengenalantempat", $pengenalantempat);
+			$Id_PengenalanTempat = $this->db->insert_id();
+	 
+			$perumahan = array(
+				'StaBangunan' => $data['Bangunan'],
+				'StaLahan' => $data['Lahan'],
+				'LuasLantai' => $data['LuasLantai'],
+				'Lantai' => $data['JenisLantai'],
+				'Dinding' => $data['JenisDinding'],	
+				'KondisiDinding' => $data['KondisiDinding'],		
+				'Atap' => $data['JenisAtap'],	
+				'KondisiAtap' => $data['KondisiAtap'],		
+				'JumlahKamar' => $data['JmlKamarTidur'],	
+				'SumberAirminum' => $data['SumberAirMinum'],		
+				'MemperolehAirminum' => $data['MemperolehAirMinum'],	
+				'SumberPenerangan' => $data['PeneranganUtama'],		
+				'Daya' => $data['DayaPenerangan'],		
+				'BahanMasak' => $data['BahanBakarMasak'],	
+				'FasilitasBAB' => $data['FasilitasBAB'],		
+				'Kloset' => $data['JenisKloset'],	
+				'BuangTinja' => $data['TempatPembuanganTinja']		
+			);
+			$this->db->insert("perumahan", $perumahan);
+			$Id_Perumahan = $this->db->insert_id();
 
-		// $this->db->insert("kecamatan", $kecamatan);
-		// $Id_Kecamatan = $this->db->insert_id();
-
-		// $kelurahan = array(
-		// 	'NamaKelurahan' => $data['NamaKelurahan'],
-		// 	'IdKecamatan' => $data['IdKecamatan']			
-		// );
-
-		// $this->db->insert("kelurahan", $kelurahan);
-		// $Id_Kelurahan = $this->db->insert_id();
-
-		$perumahan = array(
-            'StaBangunan' => $data['Bangunan'],
-            'StaLahan' => $data['Lahan'],
-            'LuasLantai' => $data['LuasLantai'],
-            'Lantai' => $data['JenisLantai'],
-			'Dinding' => $data['JenisDinding'],	
-			'KondisiDinding' => $data['KondisiDinding'],		
-			'Atap' => $data['JenisAtap'],	
-			'KondisiAtap' => $data['KondisiAtap'],		
-			'JumlahKamar' => $data['JmlKamarTidur'],	
-			'SumberAirminum' => $data['SumberAirMinum'],		
-			'MemperolehAirminum' => $data['MemperolehAirMinum'],	
-			'SumberPenerangan' => $data['PeneranganUtama'],		
-			'Daya' => $data['DayaPenerangan'],		
-			'BahanMasak' => $data['BahanBakarMasak'],	
-			'FasilitasBAB' => $data['FasilitasBAB'],		
-			'Kloset' => $data['JenisKloset'],	
-			'BuangTinja' => $data['TempatPembuanganTinja']		
-		);
-		$this->db->insert("perumahan", $perumahan);
-		$Id_Perumahan = $this->db->insert_id();
-
-		// $optionperumahan = array(
-		// 	'Label' => $data['Label'],
-		// 	'IdKolom' => $data['IdKolom']
-		// );
-
-		// $this->db->insert("optionperumahan", $optionperumahan);
-		// $Id_OptionPerumahan = $this->db->insert_id();
-	
-		// $ekonomi = array(
-        //     'IdKeluarga' => $data['IdKeluarga']
-		// );
-
-		// $this->db->insert("ekonomi", $ekonomi);
-		// $Id_Ekonomi = $this->db->insert_id();
-
-		// $optionekonomi = array(
-		// 	'Label' => $data['Label'],
-		// 	'IdKolom' => $data['IdKolom']
-		// );
-
-		// $this->db->insert("optionekonomi", $optionekonomi);
-		// $Id_OptionEkonomi = $this->db->insert_id();
-
-		// $tanggunganpendidikan = array(
-		// 	'IdEkonomi' => $data['IdEkonomi'],
-		// 	'IdPengenalanTempat' => $data['IdPengenalanTempat'],
-		// 	'NamaSekolah' => $data['NamaSekolah'],
-		// 	'NISNNoKTM' => $data['NISNNoKTM']
-		// );
-
-		// $this->db->insert("tanggunganpendidikan", $tanggunganpendidikan);
-		// $Id_TanggunganPendidikan = $this->db->insert_id();
-
-		$keluarga = array(
-            'NIK' => $data['NIK'],
-            'IdTanggunganPendidikan' => 1,
-            'IdPengenalanTempat' => $Id_PengenalanTempat,
-            'Nama' => $data['Nama'],
-            'HubKRT' => $data['HubKRT'],
-            'NoKK' => $data['NoKeluarga'],
-            'JnsKel' => $data['JenisKlamin'],
-            'Umur' => $data['Umur'],
-            'StaKawin' => $data['StatusPerkawinan'],
-            'AktaNikah' => $data['KepemilikanBukuNikah'],
-            'AdaDiKK' => $data['TercantumDalamKertuKeluarga'],
-			'AdaKartuIdentitas' => "1,2",
-            'StaHamil' => $data['StaHamil'],
-            'JenisCacat' => $data['JenisCacat'],
-            'PenyakitKronis' => $data['PenyakitKronis'],
-            'PartisipasiSekolah' => $data['PartisipasiSekolah'],
-            'PendidikanTertinggi' => $data['JenjangPendidikanTertinggi'],
-            'KelasTertinggi' => $data['KelasTertinggi'],
-			'IjazahTertinggi' => $data['IjazahTertinggi'],
-            'StaBekerja' => $data['StatusBekerja'],
-			// 'JumlahJamkerja' => $data['JumlahJamkerja'],
-            'LapanganUsaha' => $data['LapanganPekerjaan'],
-            'StatusPekerjaan' => $data['StatusKedudukanPekerjaan']	
-		);
-
-		$this->db->insert("keluarga", $keluarga);
-		$Id_Keluarga = $this->db->insert_id();
-
-		// $aset = array(
-		// 	'IdTernak' => $data['IdTernak'],
-        //     'IdAsetTidakBergerak' => $data['IdAsetTidakBergerak'],
-        //     'IdProgram' => $data['IdProgram'],
-        //     'IdAsetBergerak' => $data['IdAsetBergerak']
-		// );
-
-		// $this->db->insert("aset", $aset);
-		// $Id_Aset = $this->db->insert_id();
-
-		// $optionaset = array(
-		// 	'IdAset' => $data['IdAset'],
-		// 	'Label' => $data['Label'],
-		// 	'IdKolom' => $data['IdKolom']
-		// );
-
-		// $this->db->insert("optionaset", $optionaset);
-		// $Id_OptionAset = $this->db->insert_id();
-
-		$paramAssetBergerak = $data['AssetBergerak'];
-		$splitAssetBergerak = explode(",", $paramAssetBergerak);
-
-		$arrayAssetBergerak = array();
-		for ($i=0; $i < 15 ; $i++) { 
-			if( $i < count($splitAssetBergerak) ){
-				if( $i."" == $splitAssetBergerak[$i] ){
-					$arrayAssetBergerak[$i] = 1;
-				}else{
-					$arrayAssetBergerak[$i] = 0;
-				}
-			}else{
-				$arrayAssetBergerak[$i] = 0;
+			
+			$paramAssetBergerak = $data['AssetBergerak'];
+			$arrayAssetBergerak = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 );
+			for ($i=0; $i < count($paramAssetBergerak) ; $i++) { 
+				$valueAssetBergerak = (int) $paramAssetBergerak[$i];
+				$arrayAssetBergerak[$valueAssetBergerak - 1] = 1;
 			}
+			$asetbergerak = array(
+				'AdaTabungGas' => $arrayAssetBergerak[0],
+				'AdaLemariEs' => $arrayAssetBergerak[1],
+				'AdaAC' => $arrayAssetBergerak[2],
+				'AdaPemanas' => $arrayAssetBergerak[3],
+				'AdaTelepon' => $arrayAssetBergerak[4],
+				'AdaTv' => $arrayAssetBergerak[5],
+				'AdaEmas' => $arrayAssetBergerak[6],
+				'AdaLaptop' => $arrayAssetBergerak[7],
+				'AdaSepeda' => $arrayAssetBergerak[8],
+				'AdaMotor' => $arrayAssetBergerak[9],
+				'AdaMobil' => $arrayAssetBergerak[10],
+				'AdaPerahu' => $arrayAssetBergerak[11],
+				'AdaMotorTempel' => $arrayAssetBergerak[12],
+				'AdaPerahuMotor' => $arrayAssetBergerak[13],
+				'AdaKapal' => $arrayAssetBergerak[14]
+			);
+			$this->db->insert("asetbergerak", $asetbergerak);
+			$Id_AsetBergerak = $this->db->insert_id();
+
+
+			$asettidakbergerak = array(
+				'LuasAtb' => $data['Lahan'],
+				'RumahLain' => $data['Rumah']
+			);
+			$this->db->insert("asettidakbergerak", $asettidakbergerak);
+			$Id_AsetTidakBergerak = $this->db->insert_id();
+
+			
+			$ternak = array(
+				'JumlahSapi' => $data['JumlahSapi'],
+				'JumlahKerbau' => $data['JumlahKerbau'],
+				'JumlahKuda' => $data['JumlahKuda'],
+				'JumlahBabi' => $data['JumlahBabi'],
+				'JumlahKambing' => $data['JumlahKambing']
+			);
+			$this->db->insert("ternak", $ternak);
+			$Id_Ternak = $this->db->insert_id();
+
+			
+			$paramKartuPemerintah = $data['KartuPemerintah'];
+			$arrayKartuPemerintah = array( 0, 0, 0, 0, 0, 0, 0, 0, 0 );
+			for ($i=0; $i < count($paramKartuPemerintah) ; $i++) { 
+				$valueKartuPemerintah = (int) $paramKartuPemerintah[$i];
+				$arrayKartuPemerintah[$valueKartuPemerintah - 1] = 1;
+			}
+			$program = array(
+				'StaKKS' => $arrayKartuPemerintah[0],
+				'StaKIP' => $arrayKartuPemerintah[1],
+				'StaKIS' => $arrayKartuPemerintah[2],
+				'StaBPJSMandiri' => $arrayKartuPemerintah[3],
+				'StaJamsostek' => $arrayKartuPemerintah[4],
+				'StaAsuransi' => $arrayKartuPemerintah[5],
+				'StaPkh' => $arrayKartuPemerintah[6],
+				'Raskin' => $arrayKartuPemerintah[7],
+				'StaKur' => $arrayKartuPemerintah[8]
+			);
+			$this->db->insert("program", $program);
+			$Id_Progam = $this->db->insert_id();
+
+
+			$aset = array(
+				'IdAsetTidakBergerak' => $Id_AsetTidakBergerak,
+				'IdAsetBergerak' => $Id_AsetBergerak,
+				'IdProgram' => $Id_Progam,
+				'IdTernak' => $Id_Ternak
+			);
+			$this->db->insert("aset", $aset);
+			$Id_Aset = $this->db->insert_id();
 		}
 
-		$asetbergerak = array(
-            'AdaTabungGas' => $arrayAssetBergerak[0],
-            'AdaLemariEs' => $arrayAssetBergerak[1],
-            'AdaAC' => $arrayAssetBergerak[2],
-            'AdaPemanas' => $arrayAssetBergerak[3],
-            'AdaTelepon' => $arrayAssetBergerak[4],
-            'AdaTv' => $arrayAssetBergerak[5],
-            'AdaEmas' => $arrayAssetBergerak[6],
-            'AdaLaptop' => $arrayAssetBergerak[7],
-            'AdaSepeda' => $arrayAssetBergerak[8],
-            'AdaMotor' => $arrayAssetBergerak[9],
-            'AdaMobil' => $arrayAssetBergerak[10],
-			'AdaPerahu' => $arrayAssetBergerak[11],
-            'AdaMotorTempel' => $arrayAssetBergerak[12],
-            'AdaPerahuMotor' => $arrayAssetBergerak[13],
-            'AdaKapal' => $arrayAssetBergerak[14]
-		);
-
-		$this->db->insert("asetbergerak", $asetbergerak);
-		$Id_AsetBergerak = $this->db->insert_id();
-
-		$asettidakbergerak = array(
-            // 'AsetTakBergerak' => $data['AsetTakBergerak'],
-            'LuasAtb' => $data['Lahan'],
-            'RumahLain' => $data['Rumah']
-		);
-
-		$this->db->insert("asettidakbergerak", $asettidakbergerak);
-		$Id_AsetTidakBergerak = $this->db->insert_id();
-
-		$ternak = array(
-			'JumlahSapi' => $data['JumlahSapi'],
-			'JumlahKerbau' => $data['JumlahKerbau'],
-			'JumlahKuda' => $data['JumlahKuda'],
-			'JumlahBabi' => $data['JumlahBabi'],
-			'JumlahKambing' => $data['JumlahKambing']
-		);
-
-		$this->db->insert("ternak", $ternak);
-		$Id_Ternak = $this->db->insert_id();
-
-		// $usaha = array(
-		// 	'IdAset' => $data['IdAset'],
-		// 	'IdJenisUsaha' => $data['IdJenisUsaha'],
-		// 	'StaAtUsaha' => $data['StaAtUsaha']
-		// );
-
-		// $this->db->insert("usaha", $usaha);
-		// $Id_Usaha = $this->db->insert_id();
-
-		// $jenisusaha = array(
-        //     'IdUsah' => $data['IdUsah'],
-        //     'IdEkonomi' => $data['IdEkonomi'],
-        //     'JumlahPekerja' => $data['JumlahPekerja'],
-        //     'TempatUsaha' => $data['TempatUsaha'],
-        //     'OmsetUsaha' => $data['OmsetUsaha']
-		// );
-
-		// $this->db->insert("jenisusaha", $jenisusaha);
-		// $Id_JenisUsaha = $this->db->insert_id();
-
+		$Id_Perorangan = 0;
+		if($jenisPenerima == "1"){
+			$paramKartuIdentitas = $data['KartuIdentitas'];
+			$arrayKartuIdentitas = array(0, 0, 0, 0);
+			for ($i=0; $i < count($paramKartuIdentitas) ; $i++) { 
+				$valueKartuIdentitas = (int) $paramKartuIdentitas[$i];
+				$arrayKartuIdentitas[$valueKartuIdentitas - 1] = 1;
+			}
+			$KartuIdentitas = array(
+				'adaAktaKelahiran' => $arrayKartuIdentitas[0],
+				'adaKartuPelajar' => $arrayKartuIdentitas[1],
+				'adaKTP' => $arrayKartuIdentitas[2],
+				'adaSIM' => $arrayKartuIdentitas[3]
+			);
+			$this->db->insert("kartuidentitas", $KartuIdentitas);
+			$Id_KartuIdentitas = $this->db->insert_id();
+	
+	
+			$perorangan = array(
+				'NIK' => $data['NIK'],
+				'IdPengenalanTempat' => $Id_PengenalanTempat,
+				'Nama' => $data['Nama'],
+				'HubKRT' => $data['HubKRT'],
+				'NoKK' => $data['NoKeluarga'],
+				'JnsKel' => $data['JenisKlamin'],
+				'Umur' => $data['Umur'],
+				'StaKawin' => $data['StatusPerkawinan'],
+				'AktaNikah' => $data['KepemilikanBukuNikah'],
+				'AdaDiKK' => $data['TercantumDalamKertuKeluarga'],
+				'AdaKartuIdentitas' => $Id_KartuIdentitas,
+				'StaHamil' => $data['StaHamil'],
+				'JenisCacat' => $data['JenisCacat'],
+				'PenyakitKronis' => $data['PenyakitKronis'],
+				'PartisipasiSekolah' => $data['PartisipasiSekolah'],
+				'PendidikanTertinggi' => $data['JenjangPendidikanTertinggi'],
+				'KelasTertinggi' => $data['KelasTertinggi'],
+				'IjazahTertinggi' => $data['IjazahTertinggi'],
+				'StaBekerja' => $data['StatusBekerja'],
+				'LapanganUsaha' => $data['LapanganPekerjaan'],
+				'StatusPekerjaan' => $data['StatusKedudukanPekerjaan']	
+			);
+			$this->db->insert("perorangan", $perorangan);
+			$Id_Perorangan = $this->db->insert_id();
+		}
 		
 
-		// $paramKartuPemerintah = $data['KartuPemerintah[]'];
-		// $splitKartuPemerintah = explode(",", $paramKartuPemerintah);
 
-		// $arrayKartuPemerintah = array();
-		// for ($i=0; $i < 9 ; $i++) { 
-		// 	if( $i < count($splitKartuPemerintah) ){
-		// 		if( $i."" == $splitKartuPemerintah[$i] ){
-		// 			$arrayKartuPemerintah[$i] = 1;
-		// 		}else{
-		// 			$arrayKartuPemerintah[$i] = 0;
-		// 		}
-		// 	}else{
-		// 		$arrayKartuPemerintah[$i] = 0;
-		// 	}
-		// }
+		$petugas = array(
+			'TglPemeriksa' => $data['Tanggal'],
+			'IdPemeriksa' => 1,
+		);
+		$this->db->insert("petugas", $petugas);
+		$Id_Petugas = $this->db->insert_id();
 
-
-		// $program = array(
-		// 	'StaKKS' => $arrayKartuPemerintah[0],
-		// 	'StaKIP' => $arrayKartuPemerintah[1],
-		// 	'StaKIS' => $arrayKartuPemerintah[2],
-		// 	'StaBPJSMandiri' => $arrayKartuPemerintah[3],
-		// 	'StaJamsostek' => $arrayKartuPemerintah[4],
-		// 	'StaAsuransi' => $arrayKartuPemerintah[5],
-		// 	'StaPkh' => $arrayKartuPemerintah[6],
-		// 	'Raskin' => $arrayKartuPemerintah[7],
-		// 	'StaKur' => $arrayKartuPemerintah[8]
-		// );
-
-		// $this->db->insert("program", $program);
-		// $Id_Progam = $this->db->insert_id();
 
 		$survey = array(
-			'IdAset' => 1,
+			'IdAset' => $Id_Aset,
 			'IdPengenalanTempat' => $Id_PengenalanTempat,
 			'IdPerumahan' => $Id_Perumahan,
-			'IdPetugas' => 1,
-			'IdPengguna' => 1,
-			'IdEkonomi' => 1
+			'IdPetugas' => $Id_Petugas,
+			'IdEkonomi' => $Id_Perorangan
 		);
-
 		$this->db->insert("survey", $survey);
 		$Id_Survey = $this->db->insert_id();
 
-		// $pengguna = array(
-		// 	'KataSandi' => $data['KataSandi'],
-		// 	'NamaPengguna' => $data['NamaPengguna'],
-		// 	'Email' => $data['Email']
-		// );
-
-		// $this->db->insert("pengguna", $pengguna);
-		// $Id_Pengguna = $this->db->insert_id();
-		
-		// $petugas = array(
-		// 	'TglPencacahan' => $data['TglPencacahan'],
-		// 	'NamaPencacahan' => $data['NamaPencacahan'],
-		// 	'TglPemeriksa' => $data['TglPemeriksa'],
-		// 	'NamaPemeriksa' => $data['NamaPemeriksa'],
-		// 	'HasilPencacahan' => $data['HasilPencacahan'],
-		// );
-
-		// $this->db->insert("petugas", $petugas);
-		// $Id_Petugas = $this->db->insert_id();
-
+		$return = array(
+			'Success' => true,
+			'Info' => 'Data Berhasil Disimpan'
+		);
+		return $return;
 	}
+
+
+
+
 	function readData($search, $limit, $start, $order_field, $order_ascdesc){
 		$this->db->group_start();
 		$this->db->like('nama_almarhum', $search); // Untuk menambahkan query where LIKE

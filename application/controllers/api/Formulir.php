@@ -12,7 +12,7 @@ class Formulir extends REST_Controller {
         public function index_post(){
                 $input = $this->input->post();
                 $this->load->model("m_form");
-                $this->m_form->inputData($input);
-                $this->response($input, REST_Controller::HTTP_OK);
+                $return = $this->m_form->inputData($input);
+                $this->response($return, REST_Controller::HTTP_OK);
         }
 }

@@ -31,3 +31,7 @@
         </li>
     </ul>
 </nav>
+
+
+<!-- The actual snackbar -->
+<div id="snackbar">Some text some message..</div>

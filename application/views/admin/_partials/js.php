@@ -20,6 +20,19 @@
     $('#select_asset').select2();
     $('#select_kartu').select2();
     $('#select_kk').select2();
+
+    function snackbar(text) {
+      // Get the snackbar DIV
+      var x = document.getElementById("snackbar");
+
+      // Add the "show" class to DIV
+      x.className = "show";
+      x.innerHTML = text;
+
+      // After 3 seconds, remove the show class from DIV
+      setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    }
+
 </script>
 
 <!-- hide scripts for this page-->
@@ -55,12 +68,27 @@
       }else{
         $("#submit").css("display", "none");
         $("#next").css("display", "");
+
         $("#"+section[position]).css("display", "none");
-        position--;
-        $("#"+section[position]).css("display", "");
-        if(position == 0){
-          $("#prev").css("display", "none");
+
+        var jenis = $("#input-jenis-penerima").val();
+        if(jenis == 1){
+          if(position == 3){
+            position = 0;
+          }
+        }else{
+          position--;
+          if(position == 3 ){
+            position--;
+          }
         }
+
+        $("#"+section[position]).css("display", "");          
+        if(position == 0){
+            $("#prev").css("display", "none");
+          }
+        
+
       }
     }
 
@@ -68,7 +96,7 @@
       if(position == 4){
         return true;
       }else{
-       if(position == 0){
+         if(position == 0){
           isi = true;
           isi = $("#input-jenis-penerima").val() != null && $("#input-jenis-penerima").val() != "" ? true : false; 
           if(isi == false){
@@ -347,14 +375,30 @@
 
         } 
 
+       
        $("#prev").css("display", "");
        $("#"+section[position]).css("display", "none");
-       position++;
-       $("#"+section[position]).css("display", "");
-       if(position == 4){
-        $("#submit").css("display", "");
-        $("#next").css("display", "none");
+
+       var jenis = $("#input-jenis-penerima").val();
+       if(jenis == 1 ){
+         if(position == 0){
+          position = 3;
+          $("#"+section[position]).css("display", "");
+          $("#submit").css("display", "");
+          $("#next").css("display", "none");
+         }
+       }else{
+        position++;
+        if(position == 3 ){
+          position++;
+        }
+        $("#"+section[position]).css("display", "");
+        if(position == 4){
+          $("#submit").css("display", "");
+          $("#next").css("display", "none");
+        }
        }
+      
      }
    }
 
@@ -364,6 +408,8 @@
             return true;
           }
    }
+
+
 $("#real-form").submit(function(e){
   e.preventDefault();
   $.ajax({
@@ -371,7 +417,12 @@ $("#real-form").submit(function(e){
     "url" : "<?php echo base_url('api/formulir/submit'); ?>",
     "data" : $(this).serialize(),
     "success" : function(data){
-
+        if(data.Success){
+          snackbar(data.Info);
+          setTimeout(function(){ 
+            document.location.replace("<?php  echo base_url('admin/alternatif'); ?>");           
+          }, 3000);
+        }
     } 
   });
 
