@@ -13,7 +13,7 @@ class M_form extends CI_Model{
 				'IdKelurahan' => $data['Kelurahan'],
 				'NamaSLS' => $data['RT'].'/'.$data['RW'],
 				'Alamat' => $data['Alamat'],
-				'NamaKRT' => $data['Nama']		
+				'NamaKRT' => $data['Nama1']		
 			);
 			$this->db->insert("pengenalantempat", $pengenalantempat);
 			$Id_PengenalanTempat = $this->db->insert_id();
@@ -140,6 +140,8 @@ class M_form extends CI_Model{
 				'NIK' => $data['NIK'],
 				'IdPengenalanTempat' => $Id_PengenalanTempat,
 				'Nama' => $data['Nama'],
+				'NamaSLS' => $data['RT1'].'/'.$data['RW1'],
+				'Alamat' => $data['Alamat1'],
 				'HubKRT' => $data['HubKRT'],
 				'NoKK' => $data['NoKeluarga'],
 				'JnsKel' => $data['JenisKlamin'],
@@ -175,6 +177,7 @@ class M_form extends CI_Model{
 
 		$survey = array(
 			'IdAset' => $Id_Aset,
+			'IdJenisPenerima' => $jenisPenerima,
 			'IdPengenalanTempat' => $Id_PengenalanTempat,
 			'IdPerumahan' => $Id_Perumahan,
 			'IdPetugas' => $Id_Petugas,
@@ -190,6 +193,33 @@ class M_form extends CI_Model{
 		return $return;
 	}
 
+
+	public function filter_alternatif($search, $limit, $start, $order_field, $order_ascdesc){
+		$this->db->like('pr.Nama', $search); // Untuk menambahkan query where OR LIKE
+		$this->db->or_like('pt.NamaKRT', $search); // Untuk menambahkan query where OR LIKE
+		$this->db->or_like('pr.Alamat', $search); // Untuk menambahkan query where OR LIKE
+		$this->db->or_like('pt.Alamat', $search); // Untuk menambahkan query where OR LIKE
+		$this->db->order_by($order_field, $order_ascdesc); // Untuk menambahkan query ORDER BY
+		$this->db->limit($limit, $start); // Untuk menambahkan query LIMIT
+		$this->db->join('perorangan pr', 'pr.IdEkonomi = sr.IdEkonomi', 'left');
+		$this->db->join('pengenalantempat pt', 'pt.IdPengenalanTempat = sr.IdPengenalanTempat', 'left');
+		$this->db->join('petugas ptgs', 'ptgs.IdPetugas = sr.IdPetugas', 'left');
+		$this->db->select('sr.id_survey, sr.IdJenisPenerima, pr.Nama NamaPerorangan, pt.NamaKRT NamaKeluarga, pr.Alamat AlamatPerorangan, pt.Alamat AlamatKeluarga, ptgs.TglPemeriksa ' );
+		return $this->db->get('survey sr')->result_array(); // Eksekusi query sql sesuai kondisi diatas
+	}
+
+	public function count_all_alternatif(){
+			return $this->db->count_all('survey'); // Untuk menghitung semua data siswa
+	}
+	public function count_filter_alternatif($search){
+		$this->db->like('pr.Nama', $search); // Untuk menambahkan query where OR LIKE
+		$this->db->or_like('pt.NamaKRT', $search); // Untuk menambahkan query where OR LIKE
+		$this->db->or_like('pr.Alamat', $search); // Untuk menambahkan query where OR LIKE
+		$this->db->or_like('pt.Alamat', $search); // Untuk menambahkan query where OR LIKE
+		$this->db->join('perorangan pr', 'pr.IdEkonomi = sr.IdEkonomi', 'left');
+		$this->db->join('pengenalantempat pt', 'pt.IdPengenalanTempat = sr.IdPengenalanTempat', 'left');
+		return $this->db->get('survey sr')->num_rows(); // Untuk menghitung jumlah data sesuai dengan filter pada textbox pencarian
+	}
 
 
 

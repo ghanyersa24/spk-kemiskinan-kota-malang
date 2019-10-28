@@ -31,6 +31,15 @@
                   <option value="2">Keluarga</option>
                 </select>
               </div>
+              <div class="form-group col-sm-4" style="padding-left: 0px !important;" >
+                <label>Tanggal pengambilan data:</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                  </div>
+                  <input type="date" class="form-control" id="input-pengambilan-data" name="Tanggal" required="required" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -44,6 +53,11 @@
                 </div>
 
                 <div class="box-body">
+                  <div class="form-group">
+                    <label>Nama</label><br>
+                    <input type="text" class="form-control" id="input-nama1" name="Nama1" placeholder="Masukan nama anggota rumah tangga" required="required">
+                  </div>
+                  
                   <div class="form-group">
                     <label>Kecamatan</label>
                     <select class="form-control select2" style="width: 100%;" id="input-nama-kecamatan" name="Kecamatan" required="required">
@@ -135,15 +149,7 @@
                       <input type="text" class="form-control" id="input-rw" name="RW" required="required">
                     </div>
 
-                    <div class="form-group">
-                      <label>Tanggal pengambilan data:</label>
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text"><i class="fa fa-calendar"></i></span>
-                        </div>
-                        <input type="date" class="form-control" id="input-pengambilan-data" name="Tanggal" required="required" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
-                      </div>
-                    </div>
+                 
                   </div>
                 </div>
               </div>
@@ -404,19 +410,21 @@
                     <input type="text" class="form-control" id="input-no-keluarga" name="NoKeluarga" placeholder="Masukan nomor urut keluarga" required="required">
                   </div>
 
-                  <div class="form-group">
-                    <label>Hubungan dengan kepala keluarga</label>
-                    <select class="form-control" style="width: 100%;" id="input-hubungan-kk" name="HubKepalaKeluarga" required="required">
-                      <option selected="selected" disabled>Masukan hubungan kepala keluarga</option>
-                      <option value="1">1. Kepala keluarga</option>
-                      <option value="2">2. Istri/suami</option>
-                      <option value="3">3. Anak</option>
-                      <option value="4">4. Menantu</option>
-                      <option value="5">5. Cucu</option>
-                      <option value="6">6. Orang tua/mertua</option>
-                      <option value="7">7. Pumbantu Ruta</option>
-                      <option value="8">8. Lainnya</option>
-                    </select>
+                  <div class="form-row">
+                    <div class="form-group col-md-8">
+                      <label for="inputCity">Alamat</label>
+                      <input type="text" class="form-control" id="input-alamat1" name="Alamat1" required="required">
+                    </div>
+
+                    <div class="form-group col-md-2">
+                      <label for="inputZip">RT</label>
+                      <input type="text" class="form-control" id="input-rt1" name="RT1" required="required">
+                    </div>
+
+                    <div class="form-group col-md-2">
+                      <label for="inputZip">RW</label>
+                      <input type="text" class="form-control" id="input-rw1" name="RW1" required="required">
+                    </div>
                   </div>
 
                   <div class="form-group">
@@ -486,15 +494,15 @@
                     <label>Jenis cacat</label>
                     <select class="form-control" style="width: 100%;" id="input-jenis-cacat" name="JenisCacat" required="required">
                       <option selected="selected" disabled>Jenis cacat</option>
-                      <option value="1">01. Tidak cacat</option>
-                      <option value="2">02. Tuna daksa/cacat tubuh</option>
-                      <option value="3">03. Tuna netra/buta</option>
-                      <option value="4">04. Tuna rungu</option>
-                      <option value="5">05. Tuna wicara</option>
-                      <option value="6">06. Tuna rungu & wicara</option>
-                      <option value="7">07. Tuna netra & cacat tubuh</option>
-                      <option value="8">08. Tuna netra, rungu & wicara</option>
-                      <option value="9">09. Tuna rungu, wicara & cacat tubuh</option>
+                      <option value="1">1. Tidak cacat</option>
+                      <option value="2">2. Tuna daksa/cacat tubuh</option>
+                      <option value="3">3. Tuna netra/buta</option>
+                      <option value="4">4. Tuna rungu</option>
+                      <option value="5">5. Tuna wicara</option>
+                      <option value="6">6. Tuna rungu & wicara</option>
+                      <option value="7">7. Tuna netra & cacat tubuh</option>
+                      <option value="8">8. Tuna netra, rungu & wicara</option>
+                      <option value="9">9. Tuna rungu, wicara & cacat tubuh</option>
                       <option value="10">10. Tuna rungu, wicara, netra & cacat tubuh</option>
                       <option value="11">11. Cacat mental retardasi</option>
                       <option value="12">12. Mantan penderita gangguan jiwa</option>
@@ -533,15 +541,15 @@
                     <label>Jenjang dan jenis pendidikan tertinggi yang pernah atau sedang diduduki</label>
                     <select class="form-control" style="width: 100%;" id="input-jenjang-pendidikan" name="JenjangPendidikanTertinggi" required="required">
                       <option selected="selected" disabled>Jenjang pendidikan tertinggi</option>
-                      <option value="1">01. SD/SDLB</option>
-                      <option value="2">02. Paket A</option>
-                      <option value="3">03. M. Ibtidaiyah</option>
-                      <option value="4">04. SMP/SMPLB</option>
-                      <option value="5">05. Paket B</option>
-                      <option value="6">06. M. Tsanawiyah</option>
-                      <option value="7">07. SMA/SMK/SMALB</option>
-                      <option value="8">08. Paket C</option>
-                      <option value="9">09. M. Aliyah</option>
+                      <option value="1">1. SD/SDLB</option>
+                      <option value="2">2. Paket A</option>
+                      <option value="3">3. M. Ibtidaiyah</option>
+                      <option value="4">4. SMP/SMPLB</option>
+                      <option value="5">5. Paket B</option>
+                      <option value="6">6. M. Tsanawiyah</option>
+                      <option value="7">7. SMA/SMK/SMALB</option>
+                      <option value="8">8. Paket C</option>
+                      <option value="9">9. M. Aliyah</option>
                       <option value="10">10. Perguruan tinggi</option>
                     </select>
                   </div>

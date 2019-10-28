@@ -103,7 +103,17 @@
             alert("Mohon untuk memilih terlebih dahulu sebelum masuk ke form selanjutnya ");
             return true;
           }
+          isi = $("#input-pengambilan-data").val() != null && $("#input-pengambilan-data").val() != "" ? true : false; 
+          if(isi == false){
+            alert("Mohon melengkapi data yang belum diisi");
+            return true;
+          }
          }else if(position == 1){
+          isi = $("#input-nama1").val() != null && $("#input-nama1").val() != "" ? true : false; 
+          if(isi == false){
+            alert("Mohon melengkapi data yang belum diisi");
+            return true;
+          }
           isi = $("#input-nama-kecamatan").val() != null && $("#input-nama-kecamatan").val() != "" ? true : false; 
           if(isi == false){
             alert("Mohon melengkapi data yang belum diisi");
@@ -129,11 +139,7 @@
             alert("Mohon melengkapi data yang belum diisi");
             return true;
           }
-          isi = $("#input-pengambilan-data").val() != null && $("#input-pengambilan-data").val() != "" ? true : false; 
-          if(isi == false){
-            alert("Mohon melengkapi data yang belum diisi");
-            return true;
-          }
+         
         }else if(position == 2){
           isi = $("#input-penguasaan-bangunan").val() != null && $("#input-penguasaan-bangunan").val() != "" ? true : false; 
           if(isi == false){
@@ -222,6 +228,21 @@
           }
         }else if(position == 3){
           isi = $("#input-nama").val() != null && $("#input-nama").val() != "" ? true : false; 
+          if(isi == false){
+            alert("Mohon melengkapi data yang belum diisi");
+            return true;
+          }
+          isi = $("#input-alamat1").val() != null && $("#input-alamat1").val() != "" ? true : false; 
+          if(isi == false){
+            alert("Mohon melengkapi data yang belum diisi");
+            return true;
+          }
+          isi = $("#input-rt1").val() != null && $("#input-rt1").val() != "" ? true : false; 
+          if(isi == false){
+            alert("Mohon melengkapi data yang belum diisi");
+            return true;
+          }
+          isi = $("#input-rw1").val() != null && $("#input-rw1").val() != "" ? true : false; 
           if(isi == false){
             alert("Mohon melengkapi data yang belum diisi");
             return true;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 27, 2019 at 03:01 PM
+-- Generation Time: Oct 28, 2019 at 12:58 AM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -36,6 +36,14 @@ CREATE TABLE `aset` (
   `IdAsetBergerak` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `aset`
+--
+
+INSERT INTO `aset` (`IdAset`, `IdTernak`, `IdAsetTidakBergerak`, `IdProgram`, `IdAsetBergerak`) VALUES
+(21, 30, 30, 17, 30),
+(22, 31, 31, 18, 31);
+
 -- --------------------------------------------------------
 
 --
@@ -61,6 +69,14 @@ CREATE TABLE `asetbergerak` (
   `AdaKapal` int(10) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `asetbergerak`
+--
+
+INSERT INTO `asetbergerak` (`IdAsetBergerak`, `AdaTabungGas`, `AdaLemariEs`, `AdaAC`, `AdaPemanas`, `AdaTelepon`, `AdaTv`, `AdaEmas`, `AdaLaptop`, `AdaSepeda`, `AdaMotor`, `AdaMobil`, `AdaPerahu`, `AdaMotorTempel`, `AdaPerahuMotor`, `AdaKapal`) VALUES
+(30, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(31, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -72,6 +88,14 @@ CREATE TABLE `asettidakbergerak` (
   `LuasAtb` varchar(255) DEFAULT NULL,
   `RumahLain` int(10) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `asettidakbergerak`
+--
+
+INSERT INTO `asettidakbergerak` (`IdAsetTidakBergerak`, `LuasAtb`, `RumahLain`) VALUES
+(30, '22', 22),
+(31, '22', 22);
 
 -- --------------------------------------------------------
 
@@ -112,6 +136,14 @@ CREATE TABLE `kartuidentitas` (
   `adaKTP` int(11) NOT NULL,
   `adaSIM` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `kartuidentitas`
+--
+
+INSERT INTO `kartuidentitas` (`idKartuIdentitas`, `adaAktaKelahiran`, `adaKartuPelajar`, `adaKTP`, `adaSIM`) VALUES
+(16, 0, 1, 1, 0),
+(17, 0, 1, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -263,6 +295,14 @@ CREATE TABLE `pengenalantempat` (
   `JumlahKeluarga` int(10) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `pengenalantempat`
+--
+
+INSERT INTO `pengenalantempat` (`IdPengenalanTempat`, `IdKecamatan`, `IdKelurahan`, `NamaSLS`, `Alamat`, `NamaKRT`, `JumlahART`, `JumlahKeluarga`) VALUES
+(33, 2, 3, '/', 'Jln jalan', 'Sandy Keluarga', NULL, NULL),
+(34, 3, 18, '3/3', 'Jln. papa biru 12 tulusrejo Malang, -', 'Joyograndy', NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -288,6 +328,8 @@ CREATE TABLE `perorangan` (
   `IdTanggunganPendidikan` int(10) UNSIGNED DEFAULT NULL,
   `IdPengenalanTempat` int(10) UNSIGNED NOT NULL,
   `Nama` varchar(200) NOT NULL,
+  `NamaSLS` varchar(200) DEFAULT NULL,
+  `Alamat` varchar(500) DEFAULT NULL,
   `HubKRT` int(10) UNSIGNED DEFAULT NULL,
   `NoKK` int(10) UNSIGNED DEFAULT NULL,
   `JnsKel` int(10) UNSIGNED DEFAULT NULL,
@@ -307,6 +349,14 @@ CREATE TABLE `perorangan` (
   `LapanganUsaha` int(10) UNSIGNED DEFAULT NULL,
   `StatusPekerjaan` int(10) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `perorangan`
+--
+
+INSERT INTO `perorangan` (`IdEkonomi`, `NIK`, `IdTanggunganPendidikan`, `IdPengenalanTempat`, `Nama`, `NamaSLS`, `Alamat`, `HubKRT`, `NoKK`, `JnsKel`, `Umur`, `StaKawin`, `AktaNikah`, `AdaDiKK`, `AdaKartuIdentitas`, `StaHamil`, `JenisCacat`, `PenyakitKronis`, `PartisipasiSekolah`, `PendidikanTertinggi`, `KelasTertinggi`, `IjazahTertinggi`, `StaBekerja`, `LapanganUsaha`, `StatusPekerjaan`) VALUES
+(32, 4294967295, NULL, 0, 'Tejo Perorangan', '1/2', 'Jln. papa biru 12 tulusrejo Malang, -', 4, 2, 2, 22, 2, 2, 2, 16, 2, 3, 4, 2, 2, 2, 2, 2, 2, 2),
+(33, 0002312312, NULL, 0, 'Perorangan Baru nih', '2/3', 'Jln. papa biru 12 tulusrejo Malang', 3, 31123, 2, 21, 2, 2, 2, 17, 1, 3, 2, 3, 7, 2, 2, 2, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -335,6 +385,14 @@ CREATE TABLE `perumahan` (
   `BuangTinja` int(10) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `perumahan`
+--
+
+INSERT INTO `perumahan` (`IdPerumahan`, `StaBangunan`, `StaLahan`, `LuasLantai`, `Lantai`, `Dinding`, `KondisiDinding`, `Atap`, `KondisiAtap`, `JumlahKamar`, `SumberAirminum`, `MemperolehAirminum`, `SumberPenerangan`, `Daya`, `BahanMasak`, `FasilitasBAB`, `Kloset`, `BuangTinja`) VALUES
+(30, 4, 22, 2, 3, 4, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2),
+(31, 3, 22, 22, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -346,6 +404,16 @@ CREATE TABLE `petugas` (
   `TglPemeriksa` date DEFAULT NULL,
   `IdPemeriksa` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `petugas`
+--
+
+INSERT INTO `petugas` (`IdPetugas`, `TglPemeriksa`, `IdPemeriksa`) VALUES
+(14, '2019-10-11', 1),
+(15, '2019-10-01', 1),
+(16, '2019-10-11', 1),
+(17, '2019-10-10', 1);
 
 -- --------------------------------------------------------
 
@@ -366,6 +434,14 @@ CREATE TABLE `program` (
   `StaKur` int(10) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `program`
+--
+
+INSERT INTO `program` (`IdProgram`, `StaKKS`, `StaKIP`, `StaKIS`, `StaBPJSMandiri`, `StaJamsostek`, `StaAsuransi`, `StaPkh`, `Raskin`, `StaKur`) VALUES
+(17, 0, 1, 0, 1, 1, 0, 0, 0, 0),
+(18, 1, 0, 1, 1, 0, 0, 0, 0, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -374,12 +450,23 @@ CREATE TABLE `program` (
 
 CREATE TABLE `survey` (
   `id_Survey` int(10) UNSIGNED NOT NULL,
+  `IdJenisPenerima` int(11) NOT NULL,
   `IdAset` int(10) UNSIGNED NOT NULL,
   `IdPengenalanTempat` int(10) UNSIGNED NOT NULL,
   `IdPerumahan` int(10) UNSIGNED NOT NULL,
   `IdPetugas` int(10) UNSIGNED NOT NULL,
   `IdEkonomi` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `survey`
+--
+
+INSERT INTO `survey` (`id_Survey`, `IdJenisPenerima`, `IdAset`, `IdPengenalanTempat`, `IdPerumahan`, `IdPetugas`, `IdEkonomi`) VALUES
+(29, 1, 0, 0, 0, 14, 32),
+(30, 2, 21, 33, 30, 15, 0),
+(31, 2, 22, 34, 31, 16, 0),
+(32, 1, 0, 0, 0, 17, 33);
 
 -- --------------------------------------------------------
 
@@ -409,6 +496,14 @@ CREATE TABLE `ternak` (
   `JumlahBabi` int(10) UNSIGNED DEFAULT NULL,
   `JumlahKambing` int(10) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `ternak`
+--
+
+INSERT INTO `ternak` (`IdTernak`, `JumlahSapi`, `JumlahKerbau`, `JumlahKuda`, `JumlahBabi`, `JumlahKambing`) VALUES
+(30, 22, 22, 22, 22, 22),
+(31, 22, 22, 22, 22, 22);
 
 -- --------------------------------------------------------
 
@@ -568,19 +663,19 @@ ALTER TABLE `usaha`
 -- AUTO_INCREMENT for table `aset`
 --
 ALTER TABLE `aset`
-  MODIFY `IdAset` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `IdAset` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `asetbergerak`
 --
 ALTER TABLE `asetbergerak`
-  MODIFY `IdAsetBergerak` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `IdAsetBergerak` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `asettidakbergerak`
 --
 ALTER TABLE `asettidakbergerak`
-  MODIFY `IdAsetTidakBergerak` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `IdAsetTidakBergerak` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `ekonomi`
@@ -598,7 +693,7 @@ ALTER TABLE `jenisusaha`
 -- AUTO_INCREMENT for table `kartuidentitas`
 --
 ALTER TABLE `kartuidentitas`
-  MODIFY `idKartuIdentitas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `idKartuIdentitas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `kecamatan`
@@ -634,7 +729,7 @@ ALTER TABLE `optionperumahan`
 -- AUTO_INCREMENT for table `pengenalantempat`
 --
 ALTER TABLE `pengenalantempat`
-  MODIFY `IdPengenalanTempat` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `IdPengenalanTempat` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `pengguna`
@@ -646,31 +741,31 @@ ALTER TABLE `pengguna`
 -- AUTO_INCREMENT for table `perorangan`
 --
 ALTER TABLE `perorangan`
-  MODIFY `IdEkonomi` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `IdEkonomi` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `perumahan`
 --
 ALTER TABLE `perumahan`
-  MODIFY `IdPerumahan` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `IdPerumahan` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `petugas`
 --
 ALTER TABLE `petugas`
-  MODIFY `IdPetugas` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `IdPetugas` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `program`
 --
 ALTER TABLE `program`
-  MODIFY `IdProgram` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `IdProgram` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `survey`
 --
 ALTER TABLE `survey`
-  MODIFY `id_Survey` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_Survey` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `tanggunganpendidikan`
@@ -682,7 +777,7 @@ ALTER TABLE `tanggunganpendidikan`
 -- AUTO_INCREMENT for table `ternak`
 --
 ALTER TABLE `ternak`
-  MODIFY `IdTernak` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `IdTernak` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `usaha`

@@ -55,7 +55,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                  <!-- <tr>
                     <td>01</td>
                     <td>Perorangan</td>
                     <td>Reza Syahputra</td>
@@ -72,169 +72,8 @@
                         <i class="fa fa-trash"></i>
                       </a>
                     </td>
-                  </tr>
-                  <tr>
-                    <td>02</td>
-                    <td>Perorangan</td>
-                    <td>Reza Syahputra</td>
-                    <td>Jl. Bunga Ikan Mas</td>
-                    <td>07/09/2019</td>
-                    <td>
-                      <a href="#">
-                        <i class="fa fa-file-o"></i>
-                      </a>
-                      <a href="#">
-                        <i class="fa fa-pencil"></i>
-                      </a>
-                      <a href="#">
-                        <i class="fa fa-trash"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>03</td>
-                    <td>Perorangan</td>
-                    <td>Reza Syahputra</td>
-                    <td>Jl. Bunga Ikan Mas</td>
-                    <td>07/09/2019</td>
-                    <td>
-                      <a href="#">
-                        <i class="fa fa-file-o"></i>
-                      </a>
-                      <a href="#">
-                        <i class="fa fa-pencil"></i>
-                      </a>
-                      <a href="#">
-                        <i class="fa fa-trash"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>04</td>
-                    <td>Perorangan</td>
-                    <td>Reza Syahputra</td>
-                    <td>Jl. Bunga Ikan Mas</td>
-                    <td>07/09/2019</td>
-                    <td>
-                      <a href="#">
-                        <i class="fa fa-file-o"></i>
-                      </a>
-                      <a href="#">
-                        <i class="fa fa-pencil"></i>
-                      </a>
-                      <a href="#">
-                        <i class="fa fa-trash"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>05</td>
-                    <td>Perorangan</td>
-                    <td>Reza Syahputra</td>
-                    <td>Jl. Bunga Ikan Mas</td>
-                    <td>07/09/2019</td>
-                    <td>
-                      <a href="#">
-                        <i class="fa fa-file-o"></i>
-                      </a>
-                      <a href="#">
-                        <i class="fa fa-pencil"></i>
-                      </a>
-                      <a href="#">
-                        <i class="fa fa-trash"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>06</td>
-                    <td>Perorangan</td>
-                    <td>Reza Syahputra</td>
-                    <td>Jl. Bunga Ikan Mas</td>
-                    <td>07/09/2019</td>
-                    <td>
-                      <a href="#">
-                        <i class="fa fa-file-o"></i>
-                      </a>
-                      <a href="#">
-                        <i class="fa fa-pencil"></i>
-                      </a>
-                      <a href="#">
-                        <i class="fa fa-trash"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>07</td>
-                    <td>Perorangan</td>
-                    <td>Reza Syahputra</td>
-                    <td>Jl. Bunga Ikan Mas</td>
-                    <td>07/09/2019</td>
-                    <td>
-                      <a href="#">
-                        <i class="fa fa-file-o"></i>
-                      </a>
-                      <a href="#">
-                        <i class="fa fa-pencil"></i>
-                      </a>
-                      <a href="#">
-                        <i class="fa fa-trash"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>08</td>
-                    <td>Perorangan</td>
-                    <td>Reza Syahputra</td>
-                    <td>Jl. Bunga Ikan Mas</td>
-                    <td>07/09/2019</td>
-                    <td>
-                      <a href="#">
-                        <i class="fa fa-file-o"></i>
-                      </a>
-                      <a href="#">
-                        <i class="fa fa-pencil"></i>
-                      </a>
-                      <a href="#">
-                        <i class="fa fa-trash"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>09</td>
-                    <td>Perorangan</td>
-                    <td>Reza Syahputra</td>
-                    <td>Jl. Bunga Ikan Mas</td>
-                    <td>07/09/2019</td>
-                    <td>
-                      <a href="#">
-                        <i class="fa fa-file-o"></i>
-                      </a>
-                      <a href="#">
-                        <i class="fa fa-pencil"></i>
-                      </a>
-                      <a href="#">
-                        <i class="fa fa-trash"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>10</td>
-                    <td>Perorangan</td>
-                    <td>Reza Syahputra</td>
-                    <td>Jl. Bunga Ikan Mas</td>
-                    <td>07/09/2019</td>
-                    <td>
-                      <a href="#">
-                        <i class="fa fa-file-o"></i>
-                      </a>
-                      <a href="#">
-                        <i class="fa fa-pencil"></i>
-                      </a>
-                      <a href="#">
-                        <i class="fa fa-trash"></i>
-                      </a>
-                    </td>
-                  </tr>
+                  </tr> -->
+                  
                 </tbody>
               </table>
             </div>
@@ -259,17 +98,47 @@
   <?php $this->load->view("admin/_partials/modal.php") ?>
   <?php $this->load->view("admin/_partials/js.php") ?>
   <script>
+    var tabel = null;
     $(document).ready(function() {
-      var table = $('#dataTable');
-      table.DataTable({
-        "lengthChange": false,
-        "dom": 't'
-      });
-    });
-    $('#input-search').keyup(function() {
-      console.log('tes');
-      var table = $('#dataTable').DataTable();
-      table.columns(2).search($('#input-search').val()).draw();
+        tabel = $('#dataTable').DataTable({
+            "processing": true,
+            "serverSide": true,
+            "ordering": true, // Set true agar bisa di sorting
+            "order": [[ 0, 'asc' ]], // Default sortingnya berdasarkan kolom / field ke 0 (paling pertama)
+            "ajax":
+            {
+                "url": "<?php echo base_url('api/Formulir/listdata') ?>", 
+                "type": "POST"
+            },
+            "deferRender": true,
+            "aLengthMenu": [[5, 10, 50],[ 5, 10, 50]], 
+            "columns": [
+                { "data": "id_survey" }, 
+                { "render" : function (data, type, row){
+                    return row.IdJenisPenerima == "1" ? "Perorangan" : "Keluarga";
+                }},  
+                { "render" : function (data, type, row){
+                   return row.IdJenisPenerima == "1" ? row.NamaPerorangan : row.NamaKeluarga;
+                }},  
+                { "render" : function (data, type, row){
+                   return row.IdJenisPenerima == "1" ? row.AlamatPerorangan : row.AlamatKeluarga;
+                }},  
+                { "data": "TglPemeriksa" },  
+                { "render": function ( data, type, row ) { // Tampilkan kolom aksi
+                        var html  = '<a href="#">'+ 
+                                    '<i class="fa fa-file-o"></i>'+
+                                  '</a>'+
+                                  '<a href="#">'+
+                                    '<i class="fa fa-pencil"></i>'+
+                                  '</a>'+
+                                  '<a href="#">'+
+                                    '<i class="fa fa-trash"></i>'+
+                                  '</a>';
+                        return html
+                    }
+                },
+            ],
+        });
     });
   </script>
 </body>
