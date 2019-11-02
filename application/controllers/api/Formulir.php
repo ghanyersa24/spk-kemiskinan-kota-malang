@@ -38,6 +38,20 @@ class Formulir extends REST_Controller {
                 echo json_encode($callback); // Convert array $callback ke json
         }
 
+
+        public function getdetailpenerima_post(){
+                $this->load->model("m_form");
+                $id_jenis = $_POST['id_jenis'];
+                $id_survey = $_POST['id_survey'];
+
+                $result = array(
+                        'id_jenis' => $id_jenis,
+                        'id_survey' => $id_survey
+                );
+                header('Content-Type: application/json');
+                echo json_encode($result); // Convert array $callback ke json
+        }
+
        
 
               
