@@ -37,8 +37,5 @@ class Formulir extends REST_Controller {
                 header('Content-Type: application/json');
                 echo json_encode($callback); // Convert array $callback ke json
         }
-
-       
-
               
 }

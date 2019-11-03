@@ -54,27 +54,6 @@
                     <th>Aksi</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <!-- <tr>
-                    <td>01</td>
-                    <td>Perorangan</td>
-                    <td>Reza Syahputra</td>
-                    <td>Jl. Bunga Ikan Mas</td>
-                    <td>07/09/2019</td>
-                    <td>
-                      <a href="#">
-                        <i class="fa fa-file-o"></i>
-                      </a>
-                      <a href="#">
-                        <i class="fa fa-pencil"></i>
-                      </a>
-                      <a href="#">
-                        <i class="fa fa-trash"></i>
-                      </a>
-                    </td>
-                  </tr> -->
-                  
-                </tbody>
               </table>
             </div>
           </div>
@@ -97,50 +76,6 @@
   <?php $this->load->view("admin/_partials/scrolltop.php") ?>
   <?php $this->load->view("admin/_partials/modal.php") ?>
   <?php $this->load->view("admin/_partials/js.php") ?>
-  <script>
-    var tabel = null;
-    $(document).ready(function() {
-        tabel = $('#dataTable').DataTable({
-            "processing": true,
-            "serverSide": true,
-            "ordering": true, // Set true agar bisa di sorting
-            "order": [[ 0, 'asc' ]], // Default sortingnya berdasarkan kolom / field ke 0 (paling pertama)
-            "ajax":
-            {
-                "url": "<?php echo base_url('api/Formulir/listdata') ?>", 
-                "type": "POST"
-            },
-            "deferRender": true,
-            "aLengthMenu": [[5, 10, 50],[ 5, 10, 50]], 
-            "columns": [
-                { "data": "id_survey" }, 
-                { "render" : function (data, type, row){
-                    return row.IdJenisPenerima == "1" ? "Perorangan" : "Keluarga";
-                }},  
-                { "render" : function (data, type, row){
-                   return row.IdJenisPenerima == "1" ? row.NamaPerorangan : row.NamaKeluarga;
-                }},  
-                { "render" : function (data, type, row){
-                   return row.IdJenisPenerima == "1" ? row.AlamatPerorangan : row.AlamatKeluarga;
-                }},  
-                { "data": "TglPemeriksa" },  
-                { "render": function ( data, type, row ) { // Tampilkan kolom aksi
-                        var html  = '<a href="#">'+ 
-                                    '<i class="fa fa-file-o"></i>'+
-                                  '</a>'+
-                                  '<a href="#">'+
-                                    '<i class="fa fa-pencil"></i>'+
-                                  '</a>'+
-                                  '<a href="#">'+
-                                    '<i class="fa fa-trash"></i>'+
-                                  '</a>';
-                        return html
-                    }
-                },
-            ],
-        });
-    });
-  </script>
 </body>
 
 </html>
