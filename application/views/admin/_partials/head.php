@@ -21,4 +21,10 @@
  
  <link rel="stylesheet" href="<?php echo base_url('css/AdminLTE.min.css') ?>">  
  <link rel="stylesheet" href="<?php echo base_url('assets/Ionicons/css/ionicons.min.css') ?>">  
- <link rel="stylesheet" href="<?php echo base_url('assets/font-awesome/css/font-awesome.min.css') ?>">  
+ <link rel="stylesheet" href="<?php echo base_url('assets/font-awesome/css/font-awesome.min.css') ?>">
+  <style>
+    .hovercursor:hover{
+      cursor : pointer;
+    }
+  </style>
+  
