@@ -165,15 +165,12 @@ class M_form extends CI_Model{
 			$Id_Perorangan = $this->db->insert_id();
 		}
 		
-
-
 		$petugas = array(
 			'TglPemeriksa' => $data['Tanggal'],
 			'IdPemeriksa' => 1,
 		);
 		$this->db->insert("petugas", $petugas);
 		$Id_Petugas = $this->db->insert_id();
-
 
 		$survey = array(
 			'IdAset' => $Id_Aset,

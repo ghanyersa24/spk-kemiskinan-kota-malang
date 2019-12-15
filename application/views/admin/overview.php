@@ -31,8 +31,8 @@
             <!-- small box -->
             <div class="small-box bg-aqua">
               <div class="inner">
-                <h3>150</h3>
-                <p>Jumlah kemiskinan <br> di kota Malang</p>
+                <h3>30</h3>
+                <p>Jumlah Alternatif <br> yang digunakan</p>
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
@@ -44,9 +44,9 @@
             <!-- small box -->
             <div class="small-box bg-green">
               <div class="inner">
-                <h3>53<sup style="font-size: 20px">%</sup></h3>
+                <h3>5<sup style="font-size: 20px"></sup></h3>
 
-                <p>Jumlah penerima <br> bantuan kemiskinan</p>
+                <p>Jumlah Indikator <br> yang digunakan</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
@@ -58,9 +58,9 @@
             <!-- small box -->
             <div class="small-box bg-yellow">
               <div class="inner">
-                <h3>44</h3>
+                <h3>32</h3>
 
-                <p>Jumlah anggaran <br> yang dikeluarkan</p>
+                <p>Jumlah Kriteria <br> yang digunakan</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
@@ -96,7 +96,7 @@
                   <div class="row">
                     <div class="col-md-12">
                       <p class="text-center">
-                        <strong>Laporan bantuan kemiskinan Tahun 2016 s/d 2018</strong>
+                        <strong>Laporan penerima bantuan kemiskinan Tahun 2018</strong>
                       </p>
                       <div class="chart">
                         <canvas id="salesChart" style="height: 180px;"></canvas>

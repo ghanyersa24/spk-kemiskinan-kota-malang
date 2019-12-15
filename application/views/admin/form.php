@@ -27,8 +27,8 @@
                 <label>Jenis Penerima</label>
                 <select class="form-control select2" style="width: 100%;" id="input-jenis-penerima" name="JenisPenerima" required="required">
                   <option selected="selected" disabled> Pilih jenis penerima</option>
-                  <option value="1">Perorangan</option>
-                  <option value="2">Keluarga</option>
+                  <option value="1">Individu</option>
+                  <option value="2">Rumah Tangga</option>
                 </select>
               </div>
               <div class="form-group col-sm-4" style="padding-left: 0px !important;" >
@@ -43,7 +43,8 @@
             </div>
           </div>
 
-          <!-- Form pengenalan tempat -->
+          <!-- Form pengenalan tempat --> 
+          
           <div id="form-pengenalan-tempat">
             <div class="box-body">
 
@@ -56,6 +57,7 @@
                   <div class="form-group">
                     <label>Nama</label><br>
                     <input type="text" class="form-control" id="input-nama1" name="Nama1" placeholder="Masukan nama anggota rumah tangga" required="required">
+                    <div id="warning-input-nama1" style="display:none"><p style="color:red">Nama tidak dapat menggunakan angka</p></div>
                   </div>
                   
                   <div class="form-group">
@@ -137,19 +139,20 @@
                     <div class="form-group col-md-8">
                       <label for="inputCity">Alamat</label>
                       <input type="text" class="form-control" id="input-alamat" name="Alamat" required="required">
+                      <div id="warning-input-alamat" style="display:none"><p style="color:red">Inputan tidak boleh mengandung simbol</p></div>
                     </div>
 
                     <div class="form-group col-md-2">
                       <label for="inputZip">RT</label>
                       <input type="text" class="form-control" id="input-rt" name="RT" required="required">
+                      <div id="warning-input-rt" style="display:none"><p style="color:red">Tidak kurang dari 1 atau tidak lebih dari 9</p></div>
                     </div>
 
                     <div class="form-group col-md-2">
                       <label for="inputZip">RW</label>
                       <input type="text" class="form-control" id="input-rw" name="RW" required="required">
-                    </div>
-
-                 
+                      <div id="warning-input-rw" style="display:none"><p style="color:red">Tidak kurang dari 1 atau tidak lebih dari 9</p></div>
+                    </div>               
                   </div>
                 </div>
               </div>
@@ -190,7 +193,8 @@
 
                   <div class="form-group">
                     <label>Luas lantai</label>
-                    <input type="number" class="form-control" id="input-luas-lantai" name="LuasLantai" placeholder="Masukkan luas lantai" required="required">
+                    <input type="number"  min="1" max="9" maxlength="1" class="form-control" id="input-luas-lantai" name="LuasLantai" placeholder="Masukkan luas lantai" required="required">
+                    <div id="warning-input-luas-lantai" style="display:none"><p style="color:red">Masukan hanya bisa berupa angka saja</p></div>
                   </div>
 
                   <div class="form-group">
@@ -261,8 +265,9 @@
 
                   <div class="form-group">
                     <label>Jumlah kamar tidur</label>
-                    <input type="number" class="form-control" id="input-kamar-tidur" name="JmlKamarTidur" placeholder="Masukkan jumlah kamar tidur" required="required">
-                  </div>
+                    <input type="number" min="1" max="5" maxlength="1" class="form-control" id="input-kamar-tidur" name="JmlKamarTidur" placeholder="Masukkan jumlah kamar tidur" required="required">
+                    <div id="warning-input-kamar-tidur" style="display:none"><p style="color:red">Jumlah kamar tidak boleh lebih dari 5</p></div>
+                 </div>
 
                   <div class="form-group">
                     <label>Sumber air minum</label>
@@ -383,11 +388,13 @@
                   <div class="form-group">
                     <label>Nama</label><br>
                     <input type="text" class="form-control" id="input-nama" name="Nama" placeholder="Masukan nama anggota rumah tangga" required="required">
+                    <div id="warning-input-nama" style="display:none"><p style="color:red">Nama tidak dapat menggunakan angka</p></div>
                   </div>
-
+                  
                   <div class="form-group">
                     <label>NIK</label>
-                    <input type="text" class="form-control" id="input-nik" name="NIK" placeholder="Masukan NIK anggota rumah tangga" required="required">
+                    <input type="text" maxlength="16" class="form-control" id="input-nik" name="NIK" placeholder="Masukan NIK anggota rumah tangga" required="required">
+                    <div id="warning-input-nik" style="display:none"><p style="color:red">NIK tidak dapat menggunakan huruf</p></div>
                   </div>
 
                   <div class="form-group">
@@ -407,23 +414,27 @@
 
                   <div class="form-group">
                     <label>Nomor urut keluarga</label>
-                    <input type="text" class="form-control" id="input-no-keluarga" name="NoKeluarga" placeholder="Masukan nomor urut keluarga" required="required">
+                    <input type="text" maxlength="1" class="form-control" id="input-no-keluarga" name="NoKeluarga" placeholder="Masukan nomor urut keluarga" required="required">
+                    <div id="warning-input-no-keluarga" style="display:none"><p style="color:red">Tidak lebih dari 8</p></div>
                   </div>
 
                   <div class="form-row">
                     <div class="form-group col-md-8">
                       <label for="inputCity">Alamat</label>
                       <input type="text" class="form-control" id="input-alamat1" name="Alamat1" required="required">
+                      <div id="warning-input-alamat1" style="display:none"><p style="color:red">Inputan tidak boleh mengandung simbol</p></div>
                     </div>
 
                     <div class="form-group col-md-2">
                       <label for="inputZip">RT</label>
-                      <input type="text" class="form-control" id="input-rt1" name="RT1" required="required">
+                      <input type="number" min="1" max="9" maxlength="1" class="form-control" id="input-rt1" name="RT1" required="required">
+                      <div id="warning-input-rt1" style="display:none"><p style="color:red">Tidak kurang dari 1 atau tidak lebih dari 9</p></div>
                     </div>
 
                     <div class="form-group col-md-2">
                       <label for="inputZip">RW</label>
-                      <input type="text" class="form-control" id="input-rw1" name="RW1" required="required">
+                      <input type="number" min="1" max="9" maxlength="1" class="form-control" id="input-rw1" name="RW1" required="required">
+                      <div id="warning-input-rw1" style="display:none"><p style="color:red">Tidak kurang dari 1 atau tidak lebih dari 9</p></div>
                     </div>
                   </div>
 
@@ -438,7 +449,8 @@
 
                   <div class="form-group">
                     <label>Umur</label>
-                    <input type="text" class="form-control" id="input-umur" name="Umur" placeholder="Masukan umur anda" required="required">
+                    <input type="number" min="1" max="50" maxlength="2" class="form-control" id="input-umur" name="Umur" placeholder="Masukan umur anda" required="required">
+                    <div id="warning-input-umur" style="display:none"><p style="color:red">Tidak kurang dari 14 tahun dan tidak lebih dari 50 tahun</p></div>
                   </div>
 
                   <div class="form-group">
@@ -678,19 +690,22 @@
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <span class="input-group-text">
-                          <input type="checkbox">
+                          <input type="checkbox" id="enable-input-lahan">
                         </span>
                       </div>
-                      <input type="text" class="form-control" id="input-lahan" name="Lahan" placeholder="Masukkan luas lahan yang dimiliki (Ha)" required="required">
+                      <input type="text" maxlength="3" class="form-control" id="input-lahan" name="Lahan" placeholder="Masukkan luas lahan yang dimiliki (Ha)" required="required">
+                      <div id="warning-input-lahan" style="display:none"><p style="color:red">Masukan tidak dapat menggunakan huruf</p></div>
                     </div>
+
                     <label>rumah</label>
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <span class="input-group-text">
-                          <input type="checkbox">
+                          <input type="checkbox" id="enable-input-rumah">
                         </span>
                       </div>
-                      <input type="text" class="form-control" id="input-rumah" name="Rumah" placeholder="Masukkan jumlah rumah yang dimiliki (unit)" required="required">
+                      <input type="text" maxlength="3" class="form-control" id="input-rumah" name="Rumah" placeholder="Masukkan jumlah rumah yang dimiliki (unit)" required="required">
+                      <div id="warning-input-rumah" style="display:none"><p style="color:red">Masukkan tidak dapat menggunakan huruf</p></div>
                     </div>
                   </div>
 
@@ -700,44 +715,55 @@
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <span class="input-group-text">
-                          <input type="checkbox">
+                          <input type="checkbox" id="enable-input-sapi">
                         </span>
                       </div>
-                      <input type="text" class="form-control" id="input-sapi" name="JumlahSapi" placeholder="Masukan jumlah sapi yang dimiliki (ekor)" required="required">
+                      <input type="text" maxlength="3" class="form-control" id="input-sapi" name="JumlahSapi" placeholder="Masukan jumlah sapi yang dimiliki (ekor)" required="required">
+                      <div id="warning-input-sapi" style="display:none"><p style="color:red">Masukkan tidak dapat menggunakan huruf</p></div>
                     </div>
+
                     <label>Kerbau</label>
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <span class="input-group-text">
-                          <input type="checkbox">
+                          <input type="checkbox" id="enable-input-kerbau">
                         </span>
                       </div>
-                      <input type="text" class="form-control" id="input-kerbau" name="JumlahKerbau" placeholder="Masukkan jumlah kerbau yang dimiliki (ekor)" required="required">
-                    </div><label>Kuda</label>
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text">
-                          <input type="checkbox">
-                        </span>
-                      </div>
-                      <input type="text" class="form-control" id="input-kuda" name="JumlahKuda" placeholder="Masukkan jumlah kuda yang dimiliki (ekor)" required="required">
-                    </div><label>Babi</label>
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text">
-                          <input type="checkbox">
-                        </span>
-                      </div>
-                      <input type="text" class="form-control" id="input-babi" name="JumlahBabi" placeholder="Masukkan jumlah babi yang dimiliki (ekor)" required="required">
+                      <input type="text" maxlength="3" class="form-control" id="input-kerbau" name="JumlahKerbau" placeholder="Masukkan jumlah kerbau yang dimiliki (ekor)" required="required">
+                      <div id="warning-input-kerbau" style="display:none"><p style="color:red">Masukkan tidak dapat menggunakan huruf</p></div>
                     </div>
+                    
+                    <label>Kuda</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                          <input type="checkbox" id="enable-input-kuda">
+                        </span>
+                      </div>
+                      <input type="text" maxlength="3" class="form-control" id="input-kuda" name="JumlahKuda" placeholder="Masukkan jumlah kuda yang dimiliki (ekor)" required="required">
+                      <div id="warning-input-kuda" style="display:none"><p style="color:red">Masukkan tidak dapat menggunakan huruf</p></div>
+                    </div>
+                    
+                    <label>Babi</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                          <input type="checkbox" id="enable-input-babi">
+                        </span>
+                      </div>
+                      <input type="text" maxlength="3" class="form-control" id="input-babi" name="JumlahBabi" placeholder="Masukkan jumlah babi yang dimiliki (ekor)" required="required">
+                      <div id="warning-input-babi" style="display:none"><p style="color:red">Masukkan tidak dapat menggunakan huruf</p></div>
+                    </div>
+
                     <label>Kambing/Domba</label>
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <span class="input-group-text">
-                          <input type="checkbox">
+                          <input type="checkbox" id="enable-input-kambing">
                         </span>
                       </div>
-                      <input type="text" class="form-control" id="input-kambing" name="JumlahKambing" placeholder="Masukkan jumlah kambing/domba yang dimiliki (ekor)" required="required">
+                      <input type="text" maxlength="3" class="form-control" id="input-kambing" name="JumlahKambing" placeholder="Masukkan jumlah kambing/domba yang dimiliki (ekor)" required="required">
+                      <div id="warning-input-kambing" style="display:none"><p style="color:red">Masukkan tidak dapat menggunakan huruf</p></div>
                     </div>
                   </div>
 

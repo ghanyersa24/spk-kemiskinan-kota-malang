@@ -60,6 +60,252 @@
     next();
   });
 
+  $("#input-nama").keypress(function (evt){
+    var keycode = evt.charCode || evt.keyCode;
+    if(keycode >= 48 && keycode <= 57){
+      $("#warning-input-nama").show();
+      return false;
+    } else{
+      $("#warning-input-nama").hide();
+      return true;
+    }
+  })
+
+  $("#input-nik").keypress(function (evt){
+    var keycode = evt.charCode || evt.keyCode;
+    if(!(keycode >= 48 && keycode <= 57)){
+      $("#warning-input-nik").show();
+      return false;
+    } else{
+      $("#warning-input-nik").hide();
+      return true;
+    }
+  })
+
+  $("#input-no-keluarga").keypress(function (evt){
+    var keycode =  evt.keyCode;
+    now = isNaN(parseInt($("#input-no-keluarga").val()))? 0 : parseInt($("#input-no-keluarga").val());  
+    var value = now + parseInt(String.fromCharCode(keycode))
+    console.log('velue',value);
+    if( value <=8 && value>=1){
+      $("#warning-input-no-keluarga").hide();
+      return true;
+    } else{
+      $("#warning-input-no-keluarga").show();
+      return false;
+    }
+  })
+
+  $("#input-alamat").keypress(function (evt){
+    var keycode = evt.charCode || evt.keyCode;
+    if(!((keycode >= 48 && keycode <= 57) || (keycode >= 65 && keycode <= 90) || (keycode >= 97 && keycode <= 122))) {
+      $("#warning-input-alamat").show();
+      return false;
+    } else{
+      $("#warning-input-alamat").hide();
+      return true;
+    }
+  })
+
+  $("#input-alamat1").keypress(function (evt){
+    var keycode = evt.charCode || evt.keyCode;
+    if(!((keycode >= 48 && keycode <= 57) || (keycode >= 65 && keycode <= 90) || (keycode >= 97 && keycode <= 122))) {
+      $("#warning-input-alamat1").show();
+      return false;
+    } else{
+      $("#warning-input-alamat1").hide();
+      return true;
+    }
+  })
+
+  $("#input-rt").keypress(function (evt){
+    var keycode =  evt.keyCode;
+    now = isNaN(parseInt($("#input-rt").val()))? 0 : parseInt($("#input-rt").val());  
+    var value = now + parseInt(String.fromCharCode(keycode))
+    console.log('velue',value);
+    if( value <=9 && value>=1){
+      $("#warning-input-rt").hide();
+      return true;
+    } else{
+      $("#warning-input-rt").show();
+      return false;
+    }
+  })
+
+  $("#input-rt1").keypress(function (evt){
+    var keycode =  evt.keyCode;
+    now = isNaN(parseInt($("#input-rt1").val()))? 0 : parseInt($("#input-rt1").val());  
+    var value = now + parseInt(String.fromCharCode(keycode))
+    console.log('velue',value);
+    if( value <=9 && value>=1){
+      $("#warning-input-rt1").hide();
+      return true;
+    } else{
+      $("#warning-input-rt1").show();
+      return false;
+    }
+  })
+
+  $("#input-rw").keypress(function (evt){
+    var keycode =  evt.keyCode;
+    now = isNaN(parseInt($("#input-rw").val()))? 0 : parseInt($("#input-rw").val());  
+    var value = now + parseInt(String.fromCharCode(keycode))
+    console.log('velue',value);
+    if( value <=9 && value>=1){
+      $("#warning-input-rw").hide();
+      return true;
+    } else{
+      $("#warning-input-rw").show();
+      return false;
+    }
+  })
+
+  $("#input-rw1").keypress(function (evt){
+    var keycode =  evt.keyCode;
+    now = isNaN(parseInt($("#input-rw1").val()))? 0 : parseInt($("#input-rw1").val());  
+    var value = now + parseInt(String.fromCharCode(keycode))
+    console.log('velue',value);
+    if( value <=9 && value>=1){
+      $("#warning-input-rw1").hide();
+      return true;
+    } else{
+      $("#warning-input-rw1").show();
+      return false;
+    }
+  })
+
+  $("#input-umur").keypress(function (evt){
+    var keycode =  evt.keyCode;
+    now = isNaN(parseInt($("#input-umur").val()))? 0 : parseInt($("#input-umur").val());  
+    var value = now + parseInt(String.fromCharCode(keycode))
+    console.log('velue',value);
+    if( value <=50 && value>=1){
+      $("#warning-input-umur").hide();
+      return true;
+    } else{
+      $("#warning-input-umur").show();
+      return false;
+    }
+
+  })
+
+  $("#input-nama1").keypress(function (evt){
+    var keycode = evt.charCode || evt.keyCode;
+    if(keycode >= 48 && keycode <= 57){
+      $("#warning-input-nama1").show();
+      return false;
+    } else{
+      $("#warning-input-nama1").hide();
+      return true;
+    }
+  })
+
+  $("#input-luas-lantai").keypress(function (evt){
+    var keycode =  evt.keyCode;
+    now = isNaN(parseInt($("#input-luas-lantai").val()))? 0 : parseInt($("#input-luas-lantai").val());  
+    var value = now + parseInt(String.fromCharCode(keycode))
+    console.log('velue',value);
+    if( value <=9 && value>=1){
+      $("#warning-input-luas-lantai").hide();
+      return true;
+    } else{
+      $("#warning-input-luas-lantai").show();
+      return false;
+    }
+  })
+
+  $("#input-kamar-tidur").keypress(function (evt){
+    var keycode =  evt.keyCode;
+    now = isNaN(parseInt($("#input-kamar-tidur").val()))? 0 : parseInt($("#input-kamar-tidur").val());  
+    var value = now + parseInt(String.fromCharCode(keycode))
+    console.log('velue',value);
+    if( value <=5 && value>=1){
+      $("#warning-input-kamar-tidur").hide();
+      return true;
+    } else{
+      $("#warning-input-kamar-tidur").show();
+      return false;
+    }
+  })
+
+  $("#input-lahan").keypress(function (evt){
+    var keycode = evt.charCode || evt.keyCode;
+    if(!(keycode >= 48 && keycode <= 57)){
+      $("#warning-input-lahan").show();
+      return false;
+    } else{
+      $("#warning-input-lahan").hide();
+      return true;
+    }
+  })
+
+  $("#input-rumah").keypress(function (evt){
+    var keycode = evt.charCode || evt.keyCode;
+    if(!(keycode >= 48 && keycode <= 57)){
+      $("#warning-input-rumah").show();
+      return false;
+    } else{
+      $("#warning-input-rumah").hide();
+      return true;
+    }
+  })
+
+  $("#input-sapi").keypress(function (evt){
+    var keycode = evt.charCode || evt.keyCode;
+    if(!(keycode >= 48 && keycode <= 57)){
+      $("#warning-input-sapi").show();
+      return false;
+    } else{
+      $("#warning-input-sapi").hide();
+      return true;
+    }
+  })
+
+  $("#input-kerbau").keypress(function (evt){
+    var keycode = evt.charCode || evt.keyCode;
+    if(!(keycode >= 48 && keycode <= 57)){
+      $("#warning-input-kerbau").show();
+      return false;
+    } else{
+      $("#warning-input-kerbau").hide();
+      return true;
+    }
+  })
+
+  $("#input-kuda").keypress(function (evt){
+    var keycode = evt.charCode || evt.keyCode;
+    if(!(keycode >= 48 && keycode <= 57)){
+      $("#warning-input-kuda").show();
+      return false;
+    } else{
+      $("#warning-input-kuda").hide();
+      return true;
+    }
+  })
+
+  $("#input-babi").keypress(function (evt){
+    var keycode = evt.charCode || evt.keyCode;
+    if(!(keycode >= 48 && keycode <= 57)){
+      $("#warning-input-babi").show();
+      return false;
+    } else{
+      $("#warning-input-babi").hide();
+      return true;
+    }
+  })
+
+  $("#input-kambing").keypress(function (evt){
+    var keycode = evt.charCode || evt.keyCode;
+    if(!(keycode >= 48 && keycode <= 57)){
+      $("#warning-input-kambing").show();
+      return false;
+    } else{
+      $("#warning-input-kambing").hide();
+      return true;
+    }
+  })
+
+
   var section = ["jenis-penerima", "form-pengenalan-tempat", "form-perumahan", "form-sosial", "form-asset"];
   var position = 0;
 
@@ -88,8 +334,6 @@
       if (position == 0) {
         $("#prev").css("display", "none");
       }
-
-
     }
   }
 
@@ -125,6 +369,7 @@
           alert("Mohon melengkapi data yang belum diisi");
           return true;
         }
+
         isi = $("#input-alamat").val() != null && $("#input-alamat").val() != "" ? true : false;
         if (isi == false) {
           alert("Mohon melengkapi data yang belum diisi");
@@ -397,7 +642,6 @@
 
       }
 
-
       $("#prev").css("display", "");
       $("#" + section[position]).css("display", "none");
 
@@ -449,61 +693,195 @@
     });
 
   });
+    var tabel = null;
+    $(document).ready(function() {
+        tabel = $('#dataTable').DataTable({
+            "processing": true,
+            "serverSide": true,
+            "ordering": true, // Set true agar bisa di sorting
+            "order": [[ 0, 'asc' ]], // Default sortingnya berdasarkan kolom / field ke 0 (paling pertama)
+            "ajax":
+            {
+                "url": "<?php echo base_url('api/Formulir/listdata') ?>", 
+                "type": "POST"
+            },
+            "deferRender": true,
+            "aLengthMenu": [[5, 10, 50],[ 5, 10, 50]], 
+            "columns": [
+                { "data": "id_survey" }, 
+                { "render" : function (data, type, row){
+                    return row.IdJenisPenerima == "1" ? "Perorangan" : "Keluarga";
+                }},  
+                { "render" : function (data, type, row){
+                   return row.IdJenisPenerima == "1" ? row.NamaPerorangan : row.NamaKeluarga;
+                }},  
+                { "render" : function (data, type, row){
+                   return row.IdJenisPenerima == "1" ? row.AlamatPerorangan : row.AlamatKeluarga;
+                }},  
+                { "data": "TglPemeriksa" },  
+                { "render": function ( data, type, row ) { // Tampilkan kolom aksi
+                        var html  = '<a class="hovercursor" onclick="bukamodaldetail('+row.IdJenisPenerima+', '+row.id_survey+');">'+ 
+                                    '<i class="fa fa-file-o"></i>'+
+                                  '</a>'+
+                                  '<a class="hovercursor" onclick="bukamodaledit('+row.IdJenisPenerima+', '+row.id_survey+');">'+
+                                    '<i class="fa fa-pencil"></i>'+
+                                  '</a>'+
+                                  '<a class="hovercursor" onclick="bukamodalhapus('+row.IdJenisPenerima+', '+row.id_survey+');">'+
+                                    '<i class="fa fa-trash"></i>'+
+                                  '</a>';
+                        return html
+                    }
+                },
+            ],
+        });
 
-  var tabel = null;
-  $(document).ready(function() {
-    tabel = $('#dataTable').DataTable({
-      "processing": true,
-      "serverSide": true,
-      "ordering": true, // Set true agar bisa di sorting
-      "order": [
-        [0, 'asc']
-      ], // Default sortingnya berdasarkan kolom / field ke 0 (paling pertama)
-      "ajax": {
-        "url": "<?php echo base_url('api/Formulir/listdata') ?>",
-        "type": "POST"
-      },
-      "deferRender": true,
-      "aLengthMenu": [
-        [5, 10, 50],
-        [5, 10, 50]
-      ],
-      "columns": [{
-          "data": "id_survey"
-        },
-        {
-          "render": function(data, type, row) {
-            return row.IdJenisPenerima == "1" ? "Perorangan" : "Keluarga";
+        $('#input-lahan').prop('disabled', true);
+        $('#input-lahan').val(0);
+        
+        $('#input-rumah').prop('disabled', true);
+        $('#input-rumah').val(0);
+        
+        $('#input-sapi').prop('disabled', true);
+        $('#input-sapi').val(0);
+        
+        $('#input-kerbau').prop('disabled', true);
+        $('#input-kerbau').val(0);
+        
+        $('#input-kuda').prop('disabled', true);
+        $('#input-kuda').val(0);
+        
+        $('#input-babi').prop('disabled', true);
+        $('#input-babi').val(0);
+        
+        $('#input-kambing').prop('disabled', true);
+        $('#input-kambing').val(0);
+
+        $('#enable-input-lahan').click(function(){
+          if($('#input-lahan').is(':disabled')){
+            $('#input-lahan').prop('disabled', false);
+            $('#input-lahan').val('');
+          } else {
+            $('#input-lahan').prop('disabled', true);
+            $('#input-lahan').val(0);
           }
-        },
-        {
-          "render": function(data, type, row) {
-            return row.IdJenisPenerima == "1" ? row.NamaPerorangan : row.NamaKeluarga;
+        })
+
+        $('#enable-input-rumah').click(function(){
+          if($('#input-rumah').is(':disabled')){
+            $('#input-rumah').prop('disabled', false);
+            $('#input-rumah').val('');
+          } else {
+            $('#input-rumah').prop('disabled', true);
+            $('#input-rumah').val(0);
           }
-        },
-        {
-          "render": function(data, type, row) {
-            return row.IdJenisPenerima == "1" ? row.AlamatPerorangan : row.AlamatKeluarga;
+        })
+        
+        $('#enable-input-sapi').click(function(){
+          if($('#input-sapi').is(':disabled')){
+            $('#input-sapi').prop('disabled', false);
+            $('#input-sapi').val('');
+          } else {
+            $('#input-sapi').prop('disabled', true);
+            $('#input-sapi').val(0);
           }
-        },
-        {
-          "data": "TglPemeriksa"
-        },
-        {
-          "render": function(data, type, row) { // Tampilkan kolom aksi
-            var html = '<a href="#">' +
-              '<i class="fa fa-file-o"></i>' +
-              '</a>' +
-              '<a href="#">' +
-              '<i class="fa fa-pencil"></i>' +
-              '</a>' +
-              '<a href="#">' +
-              '<i class="fa fa-trash"></i>' +
-              '</a>';
-            return html
+        })
+        
+        $('#enable-input-kerbau').click(function(){
+          if($('#input-kerbau').is(':disabled')){
+            $('#input-kerbau').prop('disabled', false);
+            $('#input-kerbau').val('');
+          } else {
+            $('#input-kerbau').prop('disabled', true);
+            $('#input-kerbau').val(0);
           }
-        },
-      ],
+        })
+        
+        $('#enable-input-kuda').click(function(){
+          if($('#input-kuda').is(':disabled')){
+            $('#input-kuda').prop('disabled', false);
+            $('#input-kuda').val('');
+          } else {
+            $('#input-kuda').prop('disabled', true);
+            $('#input-kuda').val(0);
+          }
+        })
+        
+        $('#enable-input-babi').click(function(){
+          if($('#input-babi').is(':disabled')){
+            $('#input-babi').prop('disabled', false);
+            $('#input-babi').val('');
+          } else {
+            $('#input-babi').prop('disabled', true);
+            $('#input-babi').val(0);
+          }
+        })
+        
+        $('#enable-input-kambing').click(function(){
+          if($('#input-kambing').is(':disabled')){
+            $('#input-kambing').prop('disabled', false);
+            $('#input-kambing').val('');
+          } else {
+            $('#input-kambing').prop('disabled', true);
+            $('#input-kambing').val(0);
+          }
+        })
+                
     });
-  });
+
+    function bukamodaldetail(id_jenis, id_survey){
+      $.ajax({
+        "type" : "post",
+        "url" : "<?php echo base_url('api/formulir/getdetailpenerima'); ?>",
+        "data" : {
+          "id_jenis" : id_jenis,
+          "id_survey" : id_survey
+        },
+        "success" : function(data){
+            console.log(data);
+        } 
+      });
+
+
+      $("#title-modal-penerima").text("Detail Data Penerima - "+(id_jenis == 1 ? "Perorangan" : "Keluarga") )
+      if(id_jenis == 1){
+        $("#form-perorangan").css("display", "");
+        $("#form-keluarga").css("display", "none");
+      }else{
+        $("#form-perorangan").css("display", "none");
+        $("#form-keluarga").css("display", "");
+      }
+      $("#myModal").modal("toggle");
+    }
+
+
+    function bukamodaledit(id_jenis, id_survey){
+      $.ajax({
+        "type" : "post",
+        "url" : "<?php echo base_url('api/formulir/getdetailpenerima'); ?>",
+        "data" : {
+          "id_jenis" : id_jenis,
+          "id_survey" : id_survey
+        },
+        "success" : function(data){
+            console.log(data);
+        } 
+      });
+
+
+      $("#title-modal-penerima").text("Edit Data Penerima - "+(id_jenis == 1 ? "Perorangan" : "Keluarga") )
+      if(id_jenis == 1){
+        $("#form-perorangan").css("display", "");
+        $("#form-keluarga").css("display", "none");
+      }else{
+        $("#form-perorangan").css("display", "none");
+        $("#form-keluarga").css("display", "");
+      }
+      $("#myModal").modal("toggle");
+    }
+
+
+    function bukamodalhapus(id_jenis, id_survey){
+      
+    }
+
 </script>
