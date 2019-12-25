@@ -5,23 +5,20 @@
 </head>
 <body id="page-top">
 
-<?php $this->load->view("admin/_partials/navbar.php") ?>
+  <div id="wrapper">
 
-<div id="wrapper">
+    <?php $this->load->view("admin/_partials/sidebar.php") ?>
 
-	<?php $this->load->view("admin/_partials/sidebar.php") ?>
+    <div id="content-wrapper" style="padding-top:0px;">
 
-	<div id="content-wrapper">
+    <?php $this->load->view("admin/_partials/navbar.php") ?>
 
-		<div class="container-fluid">
+      <div class="container-fluid" style="padding-top: 20px; background-color: #ecf0f5; padding-bottom: 200px; " >
 
-        <?php $this->load->view("admin/_partials/breadcrumb.php") ?>
+      <h5 style="margin-bottom : 3px;" >Perhitungan Promethee II </h5>
 
-    <!-- DataTables -->
-    <div class="card mb-3">
-          <div class="card-header">
-            <i class="fa fa-table"></i>
-            Konversi Data</div>
+        <div class="card mb-3" style="margin-top: 20px; " >
+        <div class="card-header" style="padding : 0 !important;"></div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

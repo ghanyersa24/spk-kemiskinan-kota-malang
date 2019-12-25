@@ -7,21 +7,24 @@
 
 <body id="page-top">
 
-  <?php $this->load->view("admin/_partials/navbar.php") ?>
-
   <div id="wrapper">
 
     <?php $this->load->view("admin/_partials/sidebar.php") ?>
 
-    <div id="content-wrapper">
+    <div id="content-wrapper" style="padding-top:0px;">
 
-      <div class="container-fluid">
+    <?php $this->load->view("admin/_partials/navbar.php") ?>
 
-        <?php $this->load->view("admin/_partials/breadcrumb.php") ?>
+      <div class="container-fluid" style="padding-top: 20px;" >
+
+        <h5 style="margin-bottom : 3px;" >Tambah Data Alternatif</h5>
+        <small style="color: #ffc156; margin-top: -10px !important; margin-bottom : 20px;" id="kembali" class="hovercursor"> <i class="fa fa-chevron-circle-left"></i> Kembali ke Data </small>
+
 
         <!-- Form jenis penerima -->
-        <form id="real-form" novalidate>
-          <div id="jenis-penerima">
+        <form id="real-form" novalidate style="margin-top: 30px;" >
+          <div id="jenis-penerima" style="height:100% !important; margin-bottom: 200px; ">
+           <div class="box">
             <div class="box-body">
               <div class="form-group">
                 <label>Jenis Penerima</label>
@@ -41,6 +44,7 @@
                 </div>
               </div>
             </div>
+            </div>
           </div>
 
           <!-- Form pengenalan tempat --> 
@@ -48,7 +52,7 @@
           <div id="form-pengenalan-tempat">
             <div class="box-body">
 
-              <div class="box box-primary">
+              <div class="box">
                 <div class="box-header with-border">
                   <h3 class="box-title">Pengenalan Tempat</h3>
                 </div>
@@ -162,7 +166,7 @@
           <!-- Form Keterangan Perumahan -->
           <div id="form-perumahan">
             <div class="box-body">
-              <div class="box box-primary">
+              <div class="box">
                 <div class="box-header with-border">
                   <h3 class="box-title">Keterangan Perumahan</h3>
                 </div>
@@ -380,7 +384,7 @@
           <!-- Form Keterangan Sosial -->
           <div id="form-sosial">
             <div class="box-body">
-              <div class="box box-primary">
+              <div class="box">
                 <div class="box-header with-border">
                   <h3 class="box-title">Keterangan Sosial</h3>
                 </div>
@@ -657,7 +661,7 @@
           <!-- Form Keterangan Kepemilikan asset dam keikutsertaan program -->
           <div id="form-asset">
             <div class="box-body">
-              <div class="box box-primary">
+              <div class="box">
                 <div class="box-header with-border">
                   <h3 class="box-title">Kepemilikan Aset & Keikutsertaan Program</h3>
                 </div>
@@ -787,9 +791,9 @@
           </div>
 
           
-        <div class="box-footer">
-          <button type="button" class="btn btn-default" id="prev" style="display: none ;">Prev</button>
-          <button type="button" class="btn btn-primary" id="next">Next</button>
+        <div class="box-footer" >
+          <button type="button" class="btn btn-default" id="prev" style="display: none ;">Kembali</button>
+          <button type="button" class="btn btn-warning" id="next">Selanjutnya</button>
           <button type="submit" class="btn btn-success float-right" id="submit" style="display: none ; float: right;">Submit</button>
         </div>
 
@@ -810,3 +814,9 @@
 </body>
 
 </html>
+
+<script>
+    $("#kembali").on("click" , function(e){
+        window.location.href = "<?php echo base_url("admin/alternatif"); ?>";
+    });
+</script>

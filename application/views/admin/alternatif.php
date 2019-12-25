@@ -13,36 +13,35 @@
 
 <body id="page-top">
 
-  <?php $this->load->view("admin/_partials/navbar.php") ?>
-
   <div id="wrapper">
 
     <?php $this->load->view("admin/_partials/sidebar.php") ?>
 
-    <div id="content-wrapper">
+    <div id="content-wrapper" style="padding-top:0px;">
 
-      <div class="container-fluid">
+    <?php $this->load->view("admin/_partials/navbar.php") ?>
 
-        <?php $this->load->view("admin/_partials/breadcrumb.php") ?>
+      <div class="container-fluid" style="padding-top: 20px; background-color: #ecf0f5; padding-bottom: 20px;" >
 
-        <!-- DataTables -->
-        <div class="card mb-3">
-          <div class="card-header">
-            <i class="fa fa-table"></i>
-            Data Alternatif</div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <div class="form-inline">
-                <div class="col-md-6">
+        <h5 style="margin-bottom : 3px;" >Data Alternatif Kemiskinan <small> Dinas Sosial Kota Malang </small> </h5>
+
+        <div class="form-inline" style="margin-bottom:20px; margin-top:20px;" >
+                <div class="col-md-6" style="padding: 0px; color: #555555! important;">
                   <a href="<?php echo site_url('admin/form') ?>" class="btn_a_style"> <button class="btn btn-warning"><i class="fa fa-plus-circle"></i> Tambah Data</button></a>
                 </div>
-                <select class="form-control col-md-3">
+                <select class="form-control col-md-2" style="margin-right:10px;">
                       <option value="">Semua Jenis</option>
                       <option value="">Perorangan</option>
                       <option value="">Keluarga</option>
                 </select>
                 <input type="text" id="input-search" name="search" placeholder="Search" class="form-control col-md-3">
               </div>
+
+        <!-- DataTables -->
+        <div class="card mb-3">
+         <div class="card-header" style="padding : 0rem !important;"></div>
+          <div class="card-body">
+            <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>

@@ -13,29 +13,28 @@
 
 <body id="page-top">
 
-  <?php $this->load->view("admin/_partials/navbar.php") ?>
-
   <div id="wrapper">
 
     <?php $this->load->view("admin/_partials/sidebar.php") ?>
 
-    <div id="content-wrapper">
+    <div id="content-wrapper" style="padding-top:0px;">
 
-      <div class="container-fluid">
+    <?php $this->load->view("admin/_partials/navbar.php") ?>
 
-        <?php $this->load->view("admin/_partials/breadcrumb.php") ?>
+      <div class="container-fluid" style="padding-top: 20px; background-color: #ecf0f5; " >
+
+      <h5 style="margin-bottom : 3px;" >Data Kriteria Kemiskinan <small> Dinas Sosial Kota Malang </small> </h5>
+
+      <div class="form-inline" style="margin-bottom:20px; margin-top:20px;" >
+          <a href="<?php echo site_url('admin/bobot/edit') ?>" class="btn_a_style"> <button class="btn btn-warning"><i class="fa fa-pencil"></i> Edit Bobot</button></a>
+      </div>
 
         <!-- DataTables -->
         <div class="card mb-3">
-          <div class="card-header">
-            <i class="fa fa-table"></i>
-            Data Bobot Kriteria</div>
+          <div class="card-header" style="padding : 0rem !important;"></div>
           <div class="card-body">
-            <div class="table-responsive">
-              <div class="form-inline">
-                  <a href="<?php echo site_url('admin/form') ?>" class="btn_a_style"> <button class="btn btn-warning"><i class="fa fa-pencil"></i> Edit Bobot</button></a>
-              </div>
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <div class="table-responsive">            
+              <table style="margin-top : 40px;" class="table table-bordered" id="tableBobotIndikator" width="100%" cellspacing="0">
                 <thead>
                   <tr>
                     <th>Nomor</th>
@@ -127,3 +126,24 @@
 </body>
 
 </html>
+
+<script type="text/javascript">
+
+    var tabel = null;
+    $(document).ready(function() {
+        tabel = $('#tableBobotIndikator').DataTable({
+            "language" : {
+                "url" : "//cdn.datatables.net/plug-ins/1.10.9/i18n/Indonesian.json",
+                "sEmptyTable" : "Tidads"
+            },
+            "processing": true,
+            "ordering": true, // Set true agar bisa di sorting
+            "searching" : false,
+            "lengthChange" : false,
+            "columnDefs" : [
+                {"targets" : 4 , "orderable" : false}
+            ],
+        });
+    })
+
+</script>

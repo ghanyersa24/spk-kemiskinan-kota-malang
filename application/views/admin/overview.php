@@ -7,29 +7,24 @@
 
 <body id="page-top">
 
-  <?php $this->load->view("admin/_partials/navbar.php") ?>
-
   <div id="wrapper">
 
     <?php $this->load->view("admin/_partials/sidebar.php") ?>
 
-    <div id="content-wrapper">
+    <div id="content-wrapper" style="padding-top:0px;">
 
-      <div class="content container-fluid">
+    <?php $this->load->view("admin/_partials/navbar.php") ?>
 
-        <!-- 
-        karena ini halaman overview (home), kita matikan partial breadcrumb.
-        Jika anda ingin mengampilkan breadcrumb di halaman overview,
-        silahkan hilangkan komentar (//) di tag PHP di bawah.
-        -->
-        <?php $this->load->view("admin/_partials/breadcrumb.php") ?>
+      <div class="container-fluid" style="padding-top: 20px; background-color: #ecf0f5; " >
+
+      <h5 style="margin-bottom : 15px; color:#585858;" >Dashboard  </h5>
 
         <!-- Icon Cards-->
         <!--Infografis Kemiskinan-->
         <div class="row">
           <div class="col-lg-3 col-xs-6">
             <!-- small box -->
-            <div class="small-box bg-aqua">
+            <div class="small-box bg-aqua" style="border-radius: 7px;"> 
               <div class="inner">
                 <h3>30</h3>
                 <p>Jumlah Alternatif <br> yang digunakan</p>
@@ -42,7 +37,7 @@
           <!-- ./col -->
           <div class="col-lg-3 col-xs-6">
             <!-- small box -->
-            <div class="small-box bg-green">
+            <div class="small-box bg-green" style="border-radius: 7px;" >
               <div class="inner">
                 <h3>5<sup style="font-size: 20px"></sup></h3>
 
@@ -56,7 +51,7 @@
           <!-- ./col -->
           <div class="col-lg-3 col-xs-6">
             <!-- small box -->
-            <div class="small-box bg-yellow">
+            <div class="small-box bg-yellow" style="border-radius: 7px;" >
               <div class="inner">
                 <h3>32</h3>
 
@@ -70,7 +65,7 @@
           <!-- ./col -->
           <div class="col-lg-3 col-xs-6">
             <!-- small box -->
-            <div class="small-box bg-red">
+            <div class="small-box bg-red" style="border-radius: 7px;" >
               <div class="inner">
                 <h3>65</h3>
 
