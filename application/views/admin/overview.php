@@ -58,7 +58,7 @@
             <!-- small box -->
             <div class="small-box bg-yellow">
               <div class="inner">
-                <h3>32</h3>
+                <h3>27</h3>
 
                 <p>Jumlah Kriteria <br> yang digunakan</p>
               </div>

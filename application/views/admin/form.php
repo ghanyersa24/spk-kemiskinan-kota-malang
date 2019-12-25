@@ -68,6 +68,7 @@
                       <option value="2">Klojen</option>
                       <option value="3">Lowokwaru</option>
                       <option value="4">Sukun</option>
+                      <option value="5">Blimbing</option>
                     </select>
                   </div>
 
@@ -193,7 +194,7 @@
 
                   <div class="form-group">
                     <label>Luas lantai</label>
-                    <input type="number"  min="1" max="9" maxlength="1" class="form-control" id="input-luas-lantai" name="LuasLantai" placeholder="Masukkan luas lantai" required="required">
+                    <input type="number"  min="1" max="9" maxlength="2" class="form-control" id="input-luas-lantai" name="LuasLantai" placeholder="Masukkan luas lantai" required="required">
                     <div id="warning-input-luas-lantai" style="display:none"><p style="color:red">Masukan hanya bisa berupa angka saja</p></div>
                   </div>
 
@@ -468,9 +469,9 @@
                     <label>Kepemilikan akta/buku nikah atau akta cerai</label>
                     <select class="form-control" style="width: 100%;" id="input-buku-nikah" name="KepemilikanBukuNikah" required="required">
                       <option selected="selected" disabled>Masukan kepemilikan buku nikah</option>
-                      <option value="1">1. Tidak</option>
-                      <option value="2">2. Ya, dapat ditunjukkan</option>
-                      <option value="3">3. Ya, tidak dapat ditunjukkan</option>
+                      <option value="1">0. Tidak</option>
+                      <option value="2">1. Ya, dapat ditunjukkan</option>
+                      <option value="3">2. Ya, tidak dapat ditunjukkan</option>
                     </select>
                   </div>
 
@@ -488,8 +489,8 @@
                     <select id="input-ada-kartu-identitas" class="select2" multiple="multiple" data-placeholder="Pilih kartu program" style="width: 100%;" name="KartuIdentitas[]">
                       <option value="1">1. Akta kelahiran</option>
                       <option value="2">2. Kartu pelajar</option>
-                      <option value="3">3. KTP</option>
-                      <option value="4">4. SIM</option>
+                      <option value="3">4. KTP</option>
+                      <option value="4">8. SIM</option>
                     </select>
                   </div>
 
@@ -506,19 +507,19 @@
                     <label>Jenis cacat</label>
                     <select class="form-control" style="width: 100%;" id="input-jenis-cacat" name="JenisCacat" required="required">
                       <option selected="selected" disabled>Jenis cacat</option>
-                      <option value="1">1. Tidak cacat</option>
-                      <option value="2">2. Tuna daksa/cacat tubuh</option>
-                      <option value="3">3. Tuna netra/buta</option>
-                      <option value="4">4. Tuna rungu</option>
-                      <option value="5">5. Tuna wicara</option>
-                      <option value="6">6. Tuna rungu & wicara</option>
-                      <option value="7">7. Tuna netra & cacat tubuh</option>
-                      <option value="8">8. Tuna netra, rungu & wicara</option>
-                      <option value="9">9. Tuna rungu, wicara & cacat tubuh</option>
-                      <option value="10">10. Tuna rungu, wicara, netra & cacat tubuh</option>
-                      <option value="11">11. Cacat mental retardasi</option>
-                      <option value="12">12. Mantan penderita gangguan jiwa</option>
-                      <option value="13">13. Cacat fisik & mental</option>
+                      <option value="1">0. Tidak cacat</option>
+                      <option value="2">1. Tuna daksa/cacat tubuh</option>
+                      <option value="3">2. Tuna netra/buta</option>
+                      <option value="4">3. Tuna rungu</option>
+                      <option value="5">4. Tuna wicara</option>
+                      <option value="6">5. Tuna rungu & wicara</option>
+                      <option value="7">6. Tuna netra & cacat tubuh</option>
+                      <option value="8">7. Tuna netra, rungu & wicara</option>
+                      <option value="9">8. Tuna rungu, wicara & cacat tubuh</option>
+                      <option value="10">9. Tuna rungu, wicara, netra & cacat tubuh</option>
+                      <option value="11">10. Cacat mental retardasi</option>
+                      <option value="12">11. Mantan penderita gangguan jiwa</option>
+                      <option value="13">12. Cacat fisik & mental</option>
                     </select>
                   </div>
 
@@ -526,16 +527,16 @@
                     <label>Penyakit kronis/menahun</label>
                     <select class="form-control" style="width: 100%;" id="input-penyakit-kronis" name="PenyakitKronis" required="required">
                       <option selected="selected" disabled>Jenis penyakit kronis yang diderita</option>
-                      <option value="1">1. Tidak ada</option>
-                      <option value="2">2. Hipertensi/tekanan darah tinggi</option>
-                      <option value="3">3. Rematik</option>
-                      <option value="4">4. Asma</option>
-                      <option value="5">5. Masalah jantung</option>
-                      <option value="6">6. Diabetes (kencing manis)</option>
-                      <option value="7">7. Tubercolosis (TBC)</option>
-                      <option value="8">8. Stroke</option>
-                      <option value="9">9. Kanker atau tumor ganas</option>
-                      <option value="10">10. Lainnya (gagal ginjal, paru-paru flek dan sejenisnya</option>
+                      <option value="1">0. Tidak ada</option>
+                      <option value="2">1. Hipertensi/tekanan darah tinggi</option>
+                      <option value="3">2. Rematik</option>
+                      <option value="4">3. Asma</option>
+                      <option value="5">4. Masalah jantung</option>
+                      <option value="6">5. Diabetes (kencing manis)</option>
+                      <option value="7">6. Tubercolosis (TBC)</option>
+                      <option value="8">7. Stroke</option>
+                      <option value="9">8. Kanker atau tumor ganas</option>
+                      <option value="10">9. Lainnya (gagal ginjal, paru-paru flek dan sejenisnya</option>
                     </select>
                   </div>
 
@@ -543,9 +544,9 @@
                     <label>Partisipasi sekolah</label>
                     <select class="form-control" style="width: 100%;" id="input-partisipasi-sekolah" name="PartisipasiSekolah" required="required">
                       <option selected="selected" disabled>Partisipasi sekolah</option>
-                      <option value="1">1. Tidak/belum pernah sekolah</option>
-                      <option value="2">2. Masih sekolah</option>
-                      <option value="3">3. Tidak bersekolah lagi</option>
+                      <option value="1">0. Tidak/belum pernah sekolah</option>
+                      <option value="2">1. Masih sekolah</option>
+                      <option value="3">2. Tidak bersekolah lagi</option>
                     </select>
                   </div>
 
@@ -585,13 +586,13 @@
                     <label>Ijazah tertinggi yang dimiliki</label>
                     <select class="form-control" style="width: 100%;" id="input-ijazah-tertinggi" name="IjazahTertinggi" required="required">
                       <option selected="selected" disabled>IjazahTertinggi</option>
-                      <option value="1">1. Tidak punya ijazah</option>
-                      <option value="2">2. SD/Sederajat</option>
-                      <option value="3">3. SMP/Sederajat</option>
-                      <option value="4">4. SMA/Sederajat</option>
-                      <option value="5">5. D1/D2/D3</option>
-                      <option value="6">6. D4/S1</option>
-                      <option value="7">7. S2/S3</option>
+                      <option value="1">0. Tidak punya ijazah</option>
+                      <option value="2">1. SD/Sederajat</option>
+                      <option value="3">2. SMP/Sederajat</option>
+                      <option value="4">3. SMA/Sederajat</option>
+                      <option value="5">4. D1/D2/D3</option>
+                      <option value="6">5. D4/S1</option>
+                      <option value="7">6. S2/S3</option>
                     </select>
                   </div>
 

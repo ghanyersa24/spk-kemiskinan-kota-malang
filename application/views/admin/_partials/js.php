@@ -2,7 +2,6 @@
 <script src="<?php echo base_url('assets/jquery/jquery.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/select2/js/select2.full.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
-
 <!-- Core plugin JavaScript-->
 <script src="<?php echo base_url('assets/jquery-easing/jquery.easing.min.js') ?>"></script>
 <!-- Page level plugin JavaScript-->

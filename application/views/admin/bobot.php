@@ -53,7 +53,7 @@
                     <td>41.62%</td>
                     <td>
                       <a href="#">
-                        <i class="fa fa-file-o"></i>
+                      <i class="far fa-edit"></i>
                       </a>
                     </td>
                   </tr>
@@ -64,7 +64,7 @@
                     <td>26.18%</td>
                     <td>
                       <a href="#">
-                        <i class="fa fa-file-o"></i>
+                      <i class="far fa-edit"></i>
                       </a>
                     </td>
                   </tr>
@@ -75,7 +75,7 @@
                     <td>16.11%</td>
                     <td>
                       <a href="#">
-                        <i class="fa fa-file-o"></i>
+                      <i class="far fa-edit"></i>
                       </a>
                     </td>
                   </tr>
@@ -86,7 +86,7 @@
                     <td>09.86%</td>
                     <td>
                       <a href="#">
-                        <i class="fa fa-file-o"></i>
+                      <i class="far fa-edit"></i>
                       </a>
                     </td>
                   </tr>
@@ -97,7 +97,7 @@
                     <td>06.24%</td>
                     <td>
                       <a href="#">
-                        <i class="fa fa-file-o"></i>
+                       <i class="far fa-edit"></i>
                       </a>
                     </td>
                   </tr>
