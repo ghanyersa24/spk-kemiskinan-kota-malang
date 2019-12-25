@@ -695,9 +695,15 @@
     var tabel = null;
     $(document).ready(function() {
         tabel = $('#dataTable').DataTable({
+            "language" : {
+                "url" : "//cdn.datatables.net/plug-ins/1.10.9/i18n/Indonesian.json",
+                "sEmptyTable" : "Tidads"
+            },
             "processing": true,
             "serverSide": true,
             "ordering": true, // Set true agar bisa di sorting
+            "searching" : false,
+            "lengthChange" : false,
             "order": [[ 0, 'asc' ]], // Default sortingnya berdasarkan kolom / field ke 0 (paling pertama)
             "ajax":
             {

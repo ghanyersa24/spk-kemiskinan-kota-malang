@@ -62,3 +62,5 @@ $route['admin/proses'] = 'admin/proses';
 $route['admin/hasilvote'] = 'admin/hasilvote';
 $route['api/formulir/submit'] = 'api/formulir/submit_post';
 $route['admin/akurasi'] = 'admin/akurasi';
+
+$route['admin/bobot/edit/(:any)'] = 'admin/bobot/edits/$1';

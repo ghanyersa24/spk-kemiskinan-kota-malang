@@ -7,23 +7,20 @@
 
 <body id="page-top">
 
-  <?php $this->load->view("admin/_partials/navbar.php") ?>
-
   <div id="wrapper">
 
     <?php $this->load->view("admin/_partials/sidebar.php") ?>
 
-    <div id="content-wrapper">
+    <div id="content-wrapper" style="padding-top:0px;">
 
-      <div class="container-fluid">
+    <?php $this->load->view("admin/_partials/navbar.php") ?>
 
-        <?php $this->load->view("admin/_partials/breadcrumb.php") ?>
+      <div class="container-fluid" style="padding-top: 20px; background-color: #ecf0f5; padding-bottom: 200px; " >
 
-        <!-- DataTables -->
-        <div class="card mb-3">
-          <div class="card-header">
-          <i class="fa fa-calculator" aria-hidden="true"></i>
-            Konversi Data</div>
+      <h5 style="margin-bottom : 3px;" >Perhitungan Promethee I</h5>
+
+        <div class="card mb-3" style="margin-top: 20px; " >
+        <div class="card-header" style="padding : 0 !important;"></div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

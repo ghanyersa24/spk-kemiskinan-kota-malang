@@ -26,5 +26,9 @@
     .hovercursor:hover{
       cursor : pointer;
     }
+
+    .active{
+      background-color : #32405a !important;
+    }
   </style>
   

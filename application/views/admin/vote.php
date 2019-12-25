@@ -5,27 +5,25 @@
 </head>
 <body id="page-top">
 
+  <div id="wrapper">
 
-<?php $this->load->view("admin/_partials/navbar.php") ?>
+    <?php $this->load->view("admin/_partials/sidebar.php") ?>
 
-<div id="wrapper">
+    <div id="content-wrapper" style="padding-top:0px;">
 
-	<?php $this->load->view("admin/_partials/sidebar.php") ?>
+    <?php $this->load->view("admin/_partials/navbar.php") ?>
 
-	<div id="content-wrapper">
+      <div class="container-fluid" style="padding-top: 20px; background-color: #ecf0f5; padding-bottom: 200px; " >
 
-		<div class="container-fluid">
+      <h5 style="margin-bottom : 3px;" >Voting - Copeland Score </h5>
 
-        <?php $this->load->view("admin/_partials/breadcrumb.php") ?>
+        <div class="card mb-3" style="margin-top: 20px; " >
+        <div class="card-header" style="padding : 0 !important;"></div>
 
-    <!-- DataTables -->
-    <div class="card mb-3">
-          <div class="card-header">
-            <i class="fa fa-handshake-o"></i>
-            Vote</div>
           <div class="card-body">
+           <h5>Vote</h5>
             <div class="table-responsive">
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <table class="table table-bordered" id="dataTableVote" width="100%" cellspacing="0">
                 <thead>
                   <tr>
                     <th>Nomor</th>
