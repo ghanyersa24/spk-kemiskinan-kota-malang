@@ -52,7 +52,7 @@
                     <td>41.62%</td>
                     <td>
                       <a href="#">
-                      <i class="far fa-edit"></i>
+                      <i class="fa fa-edit"></i>
                       </a>
                     </td>
                   </tr>
@@ -63,7 +63,7 @@
                     <td>26.18%</td>
                     <td>
                       <a href="#">
-                      <i class="far fa-edit"></i>
+                      <i class="fa fa-edit"></i>
                       </a>
                     </td>
                   </tr>
@@ -74,7 +74,7 @@
                     <td>16.11%</td>
                     <td>
                       <a href="#">
-                      <i class="far fa-edit"></i>
+                      <i class="fa fa-edit"></i>
                       </a>
                     </td>
                   </tr>
@@ -85,7 +85,7 @@
                     <td>09.86%</td>
                     <td>
                       <a href="#">
-                      <i class="far fa-edit"></i>
+                      <i class="fa fa-edit"></i>
                       </a>
                     </td>
                   </tr>
@@ -96,7 +96,7 @@
                     <td>06.24%</td>
                     <td>
                       <a href="#">
-                       <i class="far fa-edit"></i>
+                       <i class="fa fa-edit"></i>
                       </a>
                     </td>
                   </tr>
@@ -129,19 +129,51 @@
 
 <script type="text/javascript">
 
-    var tabel = null;
+    var tabel1 = null;
+    var urutanPrioritas = ['Lebih penting', 'Sedikit lebih penting dari cukup penting', 'Cukup penting', 'Sedikit lebih penting dari sama penting', 'Sama penting' ]
+    var iterator = 0;
     $(document).ready(function() {
-        tabel = $('#tableBobotIndikator').DataTable({
+      tabel1 = $('#tableBobotIndikator').DataTable({
             "language" : {
                 "url" : "//cdn.datatables.net/plug-ins/1.10.9/i18n/Indonesian.json",
                 "sEmptyTable" : "Tidads"
             },
             "processing": true,
+            "serverSide": true,
             "ordering": true, // Set true agar bisa di sorting
             "searching" : false,
             "lengthChange" : false,
-            "columnDefs" : [
-                {"targets" : 4 , "orderable" : false}
+            "order": [[ 0, 'asc' ]], // Default sortingnya berdasarkan kolom / field ke 0 (paling pertama)
+            "ajax":
+            {
+                "url": "<?php echo base_url('api/Formulir/listindikator') ?>", 
+                "type": "POST"
+            },
+            "deferRender": true,
+            "aLengthMenu": [[10, 50],[ 10, 50]], 
+            "columns": [
+                { "render": function (data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                }}, 
+                { "render" : function (data, type, row){
+                    return row.label;
+                }},  
+                { "render" : function (data, type, row){
+                   iterator = iterator >= urutanPrioritas.length ? 0 : iterator;
+                   var status = urutanPrioritas[ iterator  ];
+                   iterator++;
+                   return status ;
+                }},  
+                { "render" : function (data, type, row){
+                   return Number(row.bobot).toFixed(2) + " %" ;
+                }},  
+                { "render": function ( data, type, row ) { // Tampilkan kolom aksi
+                        var html  = '<a class="hovercursor" onclick="bukamodaledit('+row.id+');">'+
+                                    '<i class="fa fa-edit"></i>'+
+                                  '</a>' ;
+                        return html
+                    }
+                },
             ],
         });
     })

@@ -713,7 +713,9 @@
             "deferRender": true,
             "aLengthMenu": [[5, 10, 50],[ 5, 10, 50]], 
             "columns": [
-                { "data": "id_survey" }, 
+                { "render": function (data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                }}, 
                 { "render" : function (data, type, row){
                     return row.IdJenisPenerima == "1" ? "Perorangan" : "Keluarga";
                 }},  
@@ -739,6 +741,8 @@
                 },
             ],
         });
+
+ 
 
         $('#input-lahan').prop('disabled', true);
         $('#input-lahan').val(0);

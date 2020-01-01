@@ -43,132 +43,49 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Kesehatan</td>
-                    <td>Status Kehamilan</td>
-                    <td>Ya</td>
-                    <td>2,32</td>
-                    <td>
-                      <a href="#">
-                        <i class="fa fa-pencil"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>Kesehatan</td>
-                    <td>Status Kehamilan</td>
-                    <td>Tidak</td>
-                    <td>0,85</td>
-                    <td>
-                      <a href="#">
-                        <i class="fa fa-pencil"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>Kesehatan</td>
-                    <td>Jenis Cacat</td>
-                    <td>Tidak Cacat</td>
-                    <td>1,35</td>
-                    <td>    
-                      <a href="#">
-                        <i class="fa fa-pencil"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>4</td>
-                    <td>Kesehatan</td>
-                    <td>Jenis Cacat</td>
-                    <td>Tuna Daksa/Cacat Tubuh </td>
-                    <td>0,45</td>
-                    <td>
-                      <a href="#">
-                        <i class="fa fa-pencil"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>5</td>
-                    <td>Kesehatan</td>
-                    <td>Jenis Cacat</td>
-                    <td>Tuna Netra/Buta</td>
-                    <td>0,45</td>
-                    <td>
-                      <a href="#">
-                        <i class="fa fa-pencil"></i>
-                      </a>  
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>6</td>
-                    <td>Kesehatan</td>
-                    <td>Jenis Cacat</td>
-                    <td>Tuna Rungu</td>
-                    <td>0,45</td>
-                    <td>
-                      <a href="#">
-                        <i class="fa fa-pencil"></i>
-                      </a>  
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>7</td>
-                    <td>Kesehatan</td>
-                    <td>Jenis Cacat</td>
-                    <td>Tuna Wicara</td>
-                    <td>0,45</td>
-                    <td>
-                      <a href="#">
-                        <i class="fa fa-pencil"></i>
-                      </a>  
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>8</td>
-                    <td>Kesehatan</td>
-                    <td>Jenis Cacat</td>
-                    <td>Tuna Rungu dan Wicara</td>
-                    <td>0,98</td>
-                    <td>
-                      <a href="#">
-                        <i class="fa fa-pencil"></i>
-                      </a>  
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>9</td>
-                    <td>Kesehatan</td>
-                    <td>Jenis Cacat</td>
-                    <td>Tuna Netra dan Cacat Tubuh</td>
-                    <td>0,45</td>
-                    <td>
-                      <a href="#">
-                        <i class="fa fa-pencil"></i>
-                      </a>  
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>10</td>
-                    <td>Kesehatan</td>
-                    <td>Jenis Cacat</td>
-                    <td>Tuna Netra, Rungu dan Wicara</td>
-                    <td>2,19</td>
-                    <td>
-                      <a href="#">
-                        <i class="fa fa-pencil"></i>
-                      </a>  
-                    </td>
-                  </tr>
                 </tbody>
               </table>
             </div>
           </div>
-          <div class="card-footer small text-muted" style="color: #ff2727 !important;" >Bobot masih tersisa 1.1%</div>
+          <div class="card-footer small text-muted" style="color: #ff2727 !important;" id="sisabobot" ></div>
         </div>
+
+
+        <div class="modal fade" id="modalEditBobot" role="dialog">
+          <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 ><span class="glyphicon glyphicon-lock"></span> <span id="title-modal-penerima"> Edit Bobot</span></h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                  <div class="form-group">
+                    <label>
+                        Bobot saat ini :
+                      </label>
+                      <input class="pull-right" type="number" name="bobotLama" id="bobotLama" disabled> 
+                  </div>
+                  <div class="form-group">
+                    <label>
+                      Ubah bobot :
+                    </label>
+                    <input class="pull-right" type="number" name="bobotBaru" id="bobotBaru" > 
+                  </div>
+                  <div class="small text-muted" style="color: #ff2727 !important;" id="sisabobotmodal" ></div>
+              </div>
+              <div class="modal-footer">
+                <div class="form-inline" >
+                    <a href="<?php echo site_url('admin/bobot/edit') ?>" class=""> <button class="btn btn-warning">Simpan</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
 
       </div>
       <!-- /.container-fluid -->
@@ -193,22 +110,107 @@
 
 <script type="text/javascript">
 
-    var tabel = null;
+    var arrIndikator = ['ekonomi', 'kesehatan', 'pendidikan' , 'rumah', 'asset' ];
+
+    var tabel1 = null;
     $(document).ready(function() {
-        tabel = $('#tableBobot').DataTable({
+
+      tabel1 = $('#tableBobot').DataTable({
             "language" : {
                 "url" : "//cdn.datatables.net/plug-ins/1.10.9/i18n/Indonesian.json",
                 "sEmptyTable" : "Tidads"
             },
             "processing": true,
+            "serverSide": true,
             "ordering": true, // Set true agar bisa di sorting
             "searching" : false,
             "lengthChange" : false,
-            "columnDefs" : [
-                {"targets" : 5 , "orderable" : false}
+            "order": [[ 0, 'asc' ]], // Default sortingnya berdasarkan kolom / field ke 0 (paling pertama)
+            "ajax":
+            {
+                "url": "<?php echo base_url('api/Formulir/listsubkriteria') ?>", 
+                "data" : { "id_indikator" :  arrIndikator.indexOf( window.location.pathname.split("/").pop() ) + 1  },
+                "type": "POST"
+            },
+            "deferRender": true,
+            "aLengthMenu": [[10, 50],[ 10, 50]], 
+            "columns": [
+                { "render": function (data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                }}, 
+                { "render" : function (data, type, row){
+                    return row.indikator;
+                }},  
+                { "render" : function (data, type, row){
+                   return row.kriteria;
+                }},  
+                { "render" : function (data, type, row){
+                   return row.subkriteria;
+                }},  
+                { "render" : function (data, type, row){
+                   return Number(row.bobot).toFixed(3) ;
+                }},  
+                { "render": function ( data, type, row ) { // Tampilkan kolom aksi
+                        var html  = '<a class="hovercursor" onclick="modalEditBobot('+row.id+', '+ Number(row.bobot).toFixed(3)  +');">'+
+                                    '<i class="fa fa-pencil"></i>'+
+                                  '</a>' ;
+                        return html
+                    }
+                },
             ],
         });
-    })
+
+        getSisaBobot();
+
+    });
+
+
+    var double_sisa = 0;
+    var double_sisa_constants = 0;
+    function getSisaBobot(){
+       $.ajax({
+        "url" : "<?php echo base_url('api/Formulir/getSisaBobot') ?>", 
+        "success" : function(e){
+          var sisa = Number(e.result[0].bobot).toFixed(3);
+          $("#sisabobot").text("Bobot masih tersisa "+sisa+" %")
+          $("#sisabobotmodal").text("Bobot yang masih tersisa "+sisa+" %")
+          double_sisa = sisa;
+          double_sisa_constants = sisa;
+        }
+       });
+    }
+
+    function modalEditBobot(id, bobot){
+      $("#bobotLama").val(bobot);
+      $("#bobotBaru").val(bobot);
+      $("#modalEditBobot").modal("toggle");
+    }
+
+    $("#bobotBaru").keyup(function(e){
+      perubahanBobot(e);
+    });
+
+    $("#bobotBaru").change(function(e){
+      perubahanBobot(e);
+    });
+
+    function perubahanBobot(e){
+      var diff = 0;
+      if(e.target.valueAsNumber <= $("#bobotLama").val()  ){
+        diff = $("#bobotLama").val() - e.target.valueAsNumber
+      }else if( e.target.valueAsNumber > $("#bobotLama").val() && double_sisa != 0 ){
+        diff = e.target.valueAsNumber - $("#bobotLama").val() 
+      }else{
+        var lama = Number( $("#bobotLama").val() )
+        var constant = Number ( double_sisa_constants );
+        var sama = Number ( lama + constant );        
+        $("#bobotBaru").val( sama );
+      }
+      diff = diff.toFixed(3);
+      double_sisa = diff;
+      $("#sisabobotmodal").text("Bobot yang masih tersisa "+double_sisa+" %")
+    }
+
 
     $("#kembali").on("click" , function(e){
         window.location.href = "<?php echo base_url("admin/bobot"); ?>";
