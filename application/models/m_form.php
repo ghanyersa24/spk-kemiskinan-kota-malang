@@ -292,6 +292,20 @@ class M_form extends CI_Model{
 		return $query->num_rows(); // Untuk menghitung jumlah data sesuai dengan filter pada textbox pencarian
 	}
 
+
+	public function saveBobot( $id_subkriteria, $bobot, $sisa  ){
+		$this->db->set('b.bobot', $bobot);
+		$this->db->where('b.id_subkriteria', $id_subkriteria);
+		$this->db->update('bobot b');
+
+		$this->db->set('b.bobot', $sisa);
+		$this->db->where('b.id_subkriteria', 210);
+		$this->db->update('bobot b');
+
+		return 1; 
+	} 
+
+
 	public function getSisaBobot(){
 		$this->db->where("id_subkriteria", 210);
 		return $this->db->get('bobot')->result_array();

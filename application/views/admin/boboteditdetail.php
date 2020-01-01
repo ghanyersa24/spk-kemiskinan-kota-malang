@@ -60,6 +60,8 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
               </div>
               <div class="modal-body">
+                   <input type="hidden" id="id_subkriteria_modal">
+                  <div class="" id="label"></div><br>
                   <div class="form-group">
                     <label>
                         Bobot saat ini :
@@ -76,7 +78,7 @@
               </div>
               <div class="modal-footer">
                 <div class="form-inline" >
-                    <a href="<?php echo site_url('admin/bobot/edit') ?>" class=""> <button class="btn btn-warning">Simpan</button></a>
+                    <a id="btn-simpan-bobot"> <button class="btn btn-warning">Simpan</button></a>
                 </div>
               </div>
             </div>
@@ -151,7 +153,7 @@
                    return Number(row.bobot).toFixed(3) ;
                 }},  
                 { "render": function ( data, type, row ) { // Tampilkan kolom aksi
-                        var html  = '<a class="hovercursor" onclick="modalEditBobot('+row.id+', '+ Number(row.bobot).toFixed(3)  +');">'+
+                        var html  = '<a class="hovercursor" onclick="modalEditBobot('+row.id+', '+ Number(row.bobot).toFixed(3)  +' , \''+row.subkriteria+'\');">'+
                                     '<i class="fa fa-pencil"></i>'+
                                   '</a>' ;
                         return html
@@ -180,9 +182,12 @@
        });
     }
 
-    function modalEditBobot(id, bobot){
+    function modalEditBobot(id, bobot, label){
+      getSisaBobot();
+      $("#id_subkriteria_modal").val(id);
       $("#bobotLama").val(bobot);
       $("#bobotBaru").val(bobot);
+      $("#label").html("<i>"+label+"</i>");
       $("#modalEditBobot").modal("toggle");
     }
 
@@ -198,9 +203,9 @@
       var diff = 0;
       if(e.target.valueAsNumber <= $("#bobotLama").val()  ){
         diff = $("#bobotLama").val() - e.target.valueAsNumber
-      }else if( e.target.valueAsNumber > $("#bobotLama").val() && double_sisa != 0 ){
-        diff = e.target.valueAsNumber - $("#bobotLama").val() 
-      }else{
+      }else if( e.target.valueAsNumber > $("#bobotLama").val() && double_sisa > e.target.valueAsNumber - $("#bobotLama").val() ){
+        diff =  $("#bobotLama").val() - e.target.valueAsNumber 
+      }else if(e.target.valueAsNumber > $("#bobotLama").val() && double_sisa <= e.target.valueAsNumber - $("#bobotLama").val() ){
         var lama = Number( $("#bobotLama").val() )
         var constant = Number ( double_sisa_constants );
         var sama = Number ( lama + constant );        
@@ -210,6 +215,25 @@
       double_sisa = diff;
       $("#sisabobotmodal").text("Bobot yang masih tersisa "+double_sisa+" %")
     }
+
+
+    $("#btn-simpan-bobot").on("click", function(e){
+      $.ajax({
+        "url" : "<?php echo base_url('api/Formulir/saveBobot') ?>", 
+        "type" : "POST",
+        "data" : {
+           "id_subkriteria" : $("#id_subkriteria_modal").val(),
+           "bobot" : $("#bobotBaru").val(),
+           "sisa" : double_sisa
+        },
+        "success" : function(e){
+          tabel1.ajax.reload();
+          getSisaBobot();
+          snackbar("Bobot berhasil disimpan");
+          $("#modalEditBobot").modal("toggle");
+        }
+       });
+    });
 
 
     $("#kembali").on("click" , function(e){

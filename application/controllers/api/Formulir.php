@@ -111,6 +111,25 @@ class Formulir extends REST_Controller {
                 echo json_encode($return); // Convert array $callback ke json
         }
 
+
+        public function saveBobot_post(){
+                $this->load->model("m_form");
+                $id_subkriteria = (int)$_POST['id_subkriteria'];
+                $bobot = (float)$_POST['bobot'];
+                $sisa = (float)$_POST['sisa'];
+
+                $result = $this->m_form->saveBobot( $id_subkriteria, $bobot, $sisa );
+
+                $return = array(
+                        'result' => $result,
+                        'id_subkriteria' => $id_subkriteria,
+                        'bobot' => $bobot,
+                        'sisa' => $sisa
+                );
+                header('Content-Type: application/json');
+                echo json_encode($return); // Convert array $callback ke json
+        }
+
        
 
               
