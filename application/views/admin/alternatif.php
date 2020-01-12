@@ -43,6 +43,7 @@
                 </select>
                 <input type="text" id="input-search" name="search" placeholder="Search" class="form-control col-md-3">
               </div>
+              <h1><?php echo base_url()?></h1>
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
@@ -768,12 +769,7 @@
                         </div>
                       </div>
                     </div>
-
-
-
-
                 </div>
-               
           </form>
         </div>
         <div class="modal-footer">
