@@ -2,7 +2,6 @@
 <script src="<?php echo base_url('assets/jquery/jquery.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/select2/js/select2.full.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
-
 <!-- Core plugin JavaScript-->
 <script src="<?php echo base_url('assets/jquery-easing/jquery.easing.min.js') ?>"></script>
 <!-- Page level plugin JavaScript-->
@@ -696,9 +695,15 @@
     var tabel = null;
     $(document).ready(function() {
         tabel = $('#dataTable').DataTable({
+            "language" : {
+                "url" : "//cdn.datatables.net/plug-ins/1.10.9/i18n/Indonesian.json",
+                "sEmptyTable" : "Tidads"
+            },
             "processing": true,
             "serverSide": true,
             "ordering": true, // Set true agar bisa di sorting
+            "searching" : false,
+            "lengthChange" : false,
             "order": [[ 0, 'asc' ]], // Default sortingnya berdasarkan kolom / field ke 0 (paling pertama)
             "ajax":
             {
@@ -708,7 +713,9 @@
             "deferRender": true,
             "aLengthMenu": [[5, 10, 50],[ 5, 10, 50]], 
             "columns": [
-                { "data": "id_survey" }, 
+                { "render": function (data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                }}, 
                 { "render" : function (data, type, row){
                     return row.IdJenisPenerima == "1" ? "Perorangan" : "Keluarga";
                 }},  
@@ -734,6 +741,8 @@
                 },
             ],
         });
+
+ 
 
         $('#input-lahan').prop('disabled', true);
         $('#input-lahan').val(0);

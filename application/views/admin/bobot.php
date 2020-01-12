@@ -13,29 +13,28 @@
 
 <body id="page-top">
 
-  <?php $this->load->view("admin/_partials/navbar.php") ?>
-
   <div id="wrapper">
 
     <?php $this->load->view("admin/_partials/sidebar.php") ?>
 
-    <div id="content-wrapper">
+    <div id="content-wrapper" style="padding-top:0px;">
 
-      <div class="container-fluid">
+    <?php $this->load->view("admin/_partials/navbar.php") ?>
 
-        <?php $this->load->view("admin/_partials/breadcrumb.php") ?>
+      <div class="container-fluid" style="padding-top: 20px; background-color: #ecf0f5; " >
+
+      <h5 style="margin-bottom : 3px;" >Data Kriteria Kemiskinan <small> Dinas Sosial Kota Malang </small> </h5>
+
+      <div class="form-inline" style="margin-bottom:20px; margin-top:20px;" >
+          <a href="<?php echo site_url('admin/bobot/edit') ?>" class="btn_a_style"> <button class="btn btn-warning"><i class="fa fa-pencil"></i> Edit Bobot</button></a>
+      </div>
 
         <!-- DataTables -->
         <div class="card mb-3">
-          <div class="card-header">
-            <i class="fa fa-table"></i>
-            Data Bobot Kriteria</div>
+          <div class="card-header" style="padding : 0rem !important;"></div>
           <div class="card-body">
-            <div class="table-responsive">
-              <div class="form-inline">
-                  <a href="<?php echo site_url('admin/form') ?>" class="btn_a_style"> <button class="btn btn-warning"><i class="fa fa-pencil"></i> Edit Bobot</button></a>
-              </div>
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <div class="table-responsive">            
+              <table style="margin-top : 40px;" class="table table-bordered" id="tableBobotIndikator" width="100%" cellspacing="0">
                 <thead>
                   <tr>
                     <th>Nomor</th>
@@ -53,7 +52,7 @@
                     <td>41.62%</td>
                     <td>
                       <a href="#">
-                        <i class="fa fa-file-o"></i>
+                      <i class="fa fa-edit"></i>
                       </a>
                     </td>
                   </tr>
@@ -64,7 +63,7 @@
                     <td>26.18%</td>
                     <td>
                       <a href="#">
-                        <i class="fa fa-file-o"></i>
+                      <i class="fa fa-edit"></i>
                       </a>
                     </td>
                   </tr>
@@ -75,7 +74,7 @@
                     <td>16.11%</td>
                     <td>
                       <a href="#">
-                        <i class="fa fa-file-o"></i>
+                      <i class="fa fa-edit"></i>
                       </a>
                     </td>
                   </tr>
@@ -86,7 +85,7 @@
                     <td>09.86%</td>
                     <td>
                       <a href="#">
-                        <i class="fa fa-file-o"></i>
+                      <i class="fa fa-edit"></i>
                       </a>
                     </td>
                   </tr>
@@ -97,7 +96,7 @@
                     <td>06.24%</td>
                     <td>
                       <a href="#">
-                        <i class="fa fa-file-o"></i>
+                       <i class="fa fa-edit"></i>
                       </a>
                     </td>
                   </tr>
@@ -127,3 +126,56 @@
 </body>
 
 </html>
+
+<script type="text/javascript">
+
+    var tabel1 = null;
+    var urutanPrioritas = ['Lebih penting', 'Sedikit lebih penting dari cukup penting', 'Cukup penting', 'Sedikit lebih penting dari sama penting', 'Sama penting' ]
+    var iterator = 0;
+    $(document).ready(function() {
+      tabel1 = $('#tableBobotIndikator').DataTable({
+            "language" : {
+                "url" : "//cdn.datatables.net/plug-ins/1.10.9/i18n/Indonesian.json",
+                "sEmptyTable" : "Tidads"
+            },
+            "processing": true,
+            "serverSide": true,
+            "ordering": true, // Set true agar bisa di sorting
+            "searching" : false,
+            "lengthChange" : false,
+            "order": [[ 0, 'asc' ]], // Default sortingnya berdasarkan kolom / field ke 0 (paling pertama)
+            "ajax":
+            {
+                "url": "<?php echo base_url('api/Formulir/listindikator') ?>", 
+                "type": "POST"
+            },
+            "deferRender": true,
+            "aLengthMenu": [[10, 50],[ 10, 50]], 
+            "columns": [
+                { "render": function (data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                }}, 
+                { "render" : function (data, type, row){
+                    return row.label;
+                }},  
+                { "render" : function (data, type, row){
+                   iterator = iterator >= urutanPrioritas.length ? 0 : iterator;
+                   var status = urutanPrioritas[ iterator  ];
+                   iterator++;
+                   return status ;
+                }},  
+                { "render" : function (data, type, row){
+                   return Number(row.bobot).toFixed(2) + " %" ;
+                }},  
+                { "render": function ( data, type, row ) { // Tampilkan kolom aksi
+                        var html  = '<a class="hovercursor" onclick="bukamodaledit('+row.id+');">'+
+                                    '<i class="fa fa-edit"></i>'+
+                                  '</a>' ;
+                        return html
+                    }
+                },
+            ],
+        });
+    })
+
+</script>

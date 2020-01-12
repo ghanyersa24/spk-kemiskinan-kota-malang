@@ -13,30 +13,23 @@
 
 <body id="page-top">
 
-  <?php $this->load->view("admin/_partials/navbar.php") ?>
-
   <div id="wrapper">
 
     <?php $this->load->view("admin/_partials/sidebar.php") ?>
 
-    <div id="content-wrapper">
+    <div id="content-wrapper" style="padding-top:0px;">
 
-      <div class="container-fluid">
+    <?php $this->load->view("admin/_partials/navbar.php") ?>
 
-        <?php $this->load->view("admin/_partials/breadcrumb.php") ?>
+      <div class="container-fluid" style="padding-top: 20px; background-color: #ecf0f5; padding-bottom: 20px;" >
 
-        <!-- DataTables -->
-        <div class="card mb-3">
-          <div class="card-header">
-            <i class="fa fa-table"></i>
-            Data Alternatif</div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <div class="form-inline">
-                <div class="col-md-6">
+        <h5 style="margin-bottom : 3px;" >Data Alternatif Kemiskinan <small> Dinas Sosial Kota Malang </small> </h5>
+
+        <div class="form-inline" style="margin-bottom:20px; margin-top:20px;" >
+                <div class="col-md-6" style="padding: 0px; color: #555555! important;">
                   <a href="<?php echo site_url('admin/form') ?>" class="btn_a_style"> <button class="btn btn-warning"><i class="fa fa-plus-circle"></i> Tambah Data</button></a>
                 </div>
-                <select class="form-control col-md-3">
+                <select class="form-control col-md-2" style="margin-right:10px;">
                       <option value="">Semua Jenis</option>
                       <option value="">Perorangan</option>
                       <option value="">Keluarga</option>
@@ -44,6 +37,12 @@
                 <input type="text" id="input-search" name="search" placeholder="Search" class="form-control col-md-3">
               </div>
               <h1><?php echo base_url()?></h1>
+
+        <!-- DataTables -->
+        <div class="card mb-3">
+         <div class="card-header" style="padding : 0rem !important;"></div>
+          <div class="card-body">
+            <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
@@ -75,261 +74,293 @@
         <div class="modal-body">
           <form role="form">
                 <div id="form-perorangan">
-                   <div class="form-group">
-                    <label>Nama</label><br>
-                    <input type="text" class="form-control" id="input-nama" name="Nama" placeholder="Masukan nama anggota rumah tangga" required="required">
-                  </div>
+                  <div class="box box-primary">
+                      <div class="box-header with-border">
+                        <h3 class="box-title">Identitas Perorangan</h3>
+                      </div>
+                      <div class="box-body">
+                        <div class="form-group">
+                          <label>Nama</label><br>
+                          <input type="text" class="form-control" id="input-nama" name="Nama" placeholder="Masukan nama anggota rumah tangga" required="required">
+                        </div>
 
-                  <div class="form-group">
-                    <label>NIK</label>
-                    <input type="text" class="form-control" id="input-nik" name="NIK" placeholder="Masukan NIK anggota rumah tangga" required="required">
-                  </div>
+                        <div class="form-group">
+                          <label>NIK</label>
+                          <input type="text" class="form-control" id="input-nik" name="NIK" placeholder="Masukan NIK anggota rumah tangga" required="required">
+                        </div>
 
-                  <div class="form-group">
-                    <label>Hubungan dengan kepala rumah tangga</label>
-                    <select class="form-control" style="width: 100%;" id="input-hubungan-krt" name="HubKRT" required="required">
-                      <option selected="selected" disabled> Masukan hubungan kepala rumah tangga</option>
-                      <option value="1">1. Kepala rumah tangga</option>
-                      <option value="2">2. Istri/suami</option>
-                      <option value="3">3. Anak</option>
-                      <option value="4">4. Menantu</option>
-                      <option value="5">5. Cucu</option>
-                      <option value="6">6. Orang tua/mertua</option>
-                      <option value="7">7. Pumbantu Ruta</option>
-                      <option value="8">8. Lainnya</option>
-                    </select>
-                  </div>
+                        <div class="form-group">
+                          <label>Hubungan dengan kepala rumah tangga</label>
+                          <select class="form-control" style="width: 100%;" id="input-hubungan-krt" name="HubKRT" required="required">
+                            <option selected="selected" disabled> Masukan hubungan kepala rumah tangga</option>
+                            <option value="1">1. Kepala rumah tangga</option>
+                            <option value="2">2. Istri/suami</option>
+                            <option value="3">3. Anak</option>
+                            <option value="4">4. Menantu</option>
+                            <option value="5">5. Cucu</option>
+                            <option value="6">6. Orang tua/mertua</option>
+                            <option value="7">7. Pumbantu Ruta</option>
+                            <option value="8">8. Lainnya</option>
+                          </select>
+                        </div>
 
-                  <div class="form-group">
-                    <label>Nomor urut keluarga</label>
-                    <input type="text" class="form-control" id="input-no-keluarga" name="NoKeluarga" placeholder="Masukan nomor urut keluarga" required="required">
-                  </div>
+                        <div class="form-group">
+                          <label>Nomor urut keluarga</label>
+                          <input type="text" class="form-control" id="input-no-keluarga" name="NoKeluarga" placeholder="Masukan nomor urut keluarga" required="required">
+                        </div>
 
-                  <div class="form-row">
-                    <div class="form-group col-md-8">
-                      <label for="inputCity">Alamat</label>
-                      <input type="text" class="form-control" id="input-alamat1" name="Alamat1" required="required">
+                        <div class="form-row">
+                          <div class="form-group col-md-8">
+                            <label for="inputCity">Alamat</label>
+                            <input type="text" class="form-control" id="input-alamat1" name="Alamat1" required="required">
+                          </div>
+
+                          <div class="form-group col-md-2">
+                            <label for="inputZip">RT</label>
+                            <input type="text" class="form-control" id="input-rt1" name="RT1" required="required">
+                          </div>
+
+                          <div class="form-group col-md-2">
+                            <label for="inputZip">RW</label>
+                            <input type="text" class="form-control" id="input-rw1" name="RW1" required="required">
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label>Jenis kelamin</label>
+                          <select class="form-control" style="width: 100%;" id="input-jenis-kelamin" name="JenisKlamin" required="required">
+                            <option selected="selected" disabled=> Masukkan jenis kelamin</option>
+                            <option value="1">1. Laki-Laki</option>
+                            <option value="2">2. Perempuan</option>
+                          </select>
+                        </div>
+
+                        <div class="form-group">
+                          <label>Umur</label>
+                          <input type="text" class="form-control" id="input-umur" name="Umur" placeholder="Masukan umur anda" required="required">
+                        </div>
+
+                        <div class="form-group">
+                          <label>Status perkawinan</label>
+                          <select class="form-control" style="width: 100%;" id="input-status-perkawinan" name="StatusPerkawinan" required="required">
+                            <option selected="selected" disabled>Masukan status perkawinan</option>
+                            <option value="1">1. Belum kawin</option>
+                            <option value="2">2. Kawin/nikah</option>
+                            <option value="3">3. Cerai hidup</option>
+                            <option value="4">4. Cerai mati</option>
+                          </select>
+                        </div>
+
+                        <div class="form-group">
+                          <label>Kepemilikan akta/buku nikah atau akta cerai</label>
+                          <select class="form-control" style="width: 100%;" id="input-buku-nikah" name="KepemilikanBukuNikah" required="required">
+                            <option selected="selected" disabled>Masukan kepemilikan buku nikah</option>
+                            <option value="1">1. Tidak</option>
+                            <option value="2">2. Ya, dapat ditunjukkan</option>
+                            <option value="3">3. Ya, tidak dapat ditunjukkan</option>
+                          </select>
+                        </div>
+
+                        <div class="form-group">
+                          <label>Tercantum dalam Kartu Keluarga (KK) di rumah tangga ini</label>
+                          <select class="form-control" style="width: 100%;" id="input-ada-kk" name="TercantumDalamKertuKeluarga" required="required">
+                            <option selected="selected"></option>
+                            <option value="1">1. Ya</option>
+                            <option value="2">2. Tidak</option>
+                          </select>
+                        </div>
+
+                        <div class="form-group">
+                          <label>Kepemilikan kartu identitas</label>
+                          <select id="input-ada-kartu-identitas" class="select2" multiple="multiple" data-placeholder="Pilih kartu program" style="width: 100%;" name="KartuIdentitas[]">
+                            <option value="1">1. Akta kelahiran</option>
+                            <option value="2">2. Kartu pelajar</option>
+                            <option value="3">3. KTP</option>
+                            <option value="4">4. SIM</option>
+                          </select>
+                        </div>
+                      </div>
                     </div>
 
-                    <div class="form-group col-md-2">
-                      <label for="inputZip">RT</label>
-                      <input type="text" class="form-control" id="input-rt1" name="RT1" required="required">
+                      <div class="box box-primary">
+                        <div class="box-header with-border">
+                          <h3 class="box-title">Kesehatan</h3>
+                        </div>
+                        <div class="box-body">
+
+                        <div class="form-group">
+                          <label>Status Kehamilan</label>
+                          <select class="form-control" style="width: 100%;" id="input-kehamilan" name="StaHamil" required="required">
+                            <option selected="selected"></option>
+                            <option value="1">1. Ya</option>
+                            <option value="2">2. Tidak</option>
+                          </select>
+                        </div>
+
+                        <div class="form-group">
+                          <label>Jenis cacat</label>
+                          <select class="form-control" style="width: 100%;" id="input-jenis-cacat" name="JenisCacat" required="required">
+                            <option selected="selected" disabled>Jenis cacat</option>
+                            <option value="1">1. Tidak cacat</option>
+                            <option value="2">2. Tuna daksa/cacat tubuh</option>
+                            <option value="3">3. Tuna netra/buta</option>
+                            <option value="4">4. Tuna rungu</option>
+                            <option value="5">5. Tuna wicara</option>
+                            <option value="6">6. Tuna rungu & wicara</option>
+                            <option value="7">7. Tuna netra & cacat tubuh</option>
+                            <option value="8">8. Tuna netra, rungu & wicara</option>
+                            <option value="9">9. Tuna rungu, wicara & cacat tubuh</option>
+                            <option value="10">10. Tuna rungu, wicara, netra & cacat tubuh</option>
+                            <option value="11">11. Cacat mental retardasi</option>
+                            <option value="12">12. Mantan penderita gangguan jiwa</option>
+                            <option value="13">13. Cacat fisik & mental</option>
+                          </select>
+                        </div>
+
+                        <div class="form-group">
+                          <label>Penyakit kronis/menahun</label>
+                          <select class="form-control" style="width: 100%;" id="input-penyakit-kronis" name="PenyakitKronis" required="required">
+                            <option selected="selected" disabled>Jenis penyakit kronis yang diderita</option>
+                            <option value="1">1. Tidak ada</option>
+                            <option value="2">2. Hipertensi/tekanan darah tinggi</option>
+                            <option value="3">3. Rematik</option>
+                            <option value="4">4. Asma</option>
+                            <option value="5">5. Masalah jantung</option>
+                            <option value="6">6. Diabetes (kencing manis)</option>
+                            <option value="7">7. Tubercolosis (TBC)</option>
+                            <option value="8">8. Stroke</option>
+                            <option value="9">9. Kanker atau tumor ganas</option>
+                            <option value="10">10. Lainnya (gagal ginjal, paru-paru flek dan sejenisnya</option>
+                          </select>
+                        </div>
+                      </div>
                     </div>
 
-                    <div class="form-group col-md-2">
-                      <label for="inputZip">RW</label>
-                      <input type="text" class="form-control" id="input-rw1" name="RW1" required="required">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                          <h3 class="box-title">Pendidikan</h3>
+                        </div>
+                        <div class="box-body">
+
+                        <div class="form-group">
+                          <label>Partisipasi sekolah</label>
+                          <select class="form-control" style="width: 100%;" id="input-partisipasi-sekolah" name="PartisipasiSekolah" required="required">
+                            <option selected="selected" disabled>Partisipasi sekolah</option>
+                            <option value="1">1. Tidak/belum pernah sekolah</option>
+                            <option value="2">2. Masih sekolah</option>
+                            <option value="3">3. Tidak bersekolah lagi</option>
+                          </select>
+                        </div>
+
+                        <div class="form-group">
+                          <label>Jenjang dan jenis pendidikan tertinggi yang pernah atau sedang diduduki</label>
+                          <select class="form-control" style="width: 100%;" id="input-jenjang-pendidikan" name="JenjangPendidikanTertinggi" required="required">
+                            <option selected="selected" disabled>Jenjang pendidikan tertinggi</option>
+                            <option value="1">1. SD/SDLB</option>
+                            <option value="2">2. Paket A</option>
+                            <option value="3">3. M. Ibtidaiyah</option>
+                            <option value="4">4. SMP/SMPLB</option>
+                            <option value="5">5. Paket B</option>
+                            <option value="6">6. M. Tsanawiyah</option>
+                            <option value="7">7. SMA/SMK/SMALB</option>
+                            <option value="8">8. Paket C</option>
+                            <option value="9">9. M. Aliyah</option>
+                            <option value="10">10. Perguruan tinggi</option>
+                          </select>
+                        </div>
+
+                        <div class="form-group">
+                          <label>Kelas tertinggi yang pernah atau sedang diduduki</label>
+                          <select class="form-control" style="width: 100%;" id="input-kelas-tertinggi" name="KelasTertinggi" required="required">
+                            <option selected="selected" disabled>Kelas tertinggi</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8 (tamat)</option>
+                          </select>
+                        </div>
+
+                        <div class="form-group">
+                          <label>Ijazah tertinggi yang dimiliki</label>
+                          <select class="form-control" style="width: 100%;" id="input-ijazah-tertinggi" name="IjazahTertinggi" required="required">
+                            <option selected="selected" disabled>IjazahTertinggi</option>
+                            <option value="1">1. Tidak punya ijazah</option>
+                            <option value="2">2. SD/Sederajat</option>
+                            <option value="3">3. SMP/Sederajat</option>
+                            <option value="4">4. SMA/Sederajat</option>
+                            <option value="5">5. D1/D2/D3</option>
+                            <option value="6">6. D4/S1</option>
+                            <option value="7">7. S2/S3</option>
+                          </select>
+                        </div>
+                      </div>
                     </div>
-                  </div>
 
-                  <div class="form-group">
-                    <label>Jenis kelamin</label>
-                    <select class="form-control" style="width: 100%;" id="input-jenis-kelamin" name="JenisKlamin" required="required">
-                      <option selected="selected" disabled=> Masukkan jenis kelamin</option>
-                      <option value="1">1. Laki-Laki</option>
-                      <option value="2">2. Perempuan</option>
-                    </select>
-                  </div>
+                      <div class="box box-primary">
+                        <div class="box-header with-border">
+                          <h3 class="box-title">Ekonomi</h3>
+                        </div>
+                        <div class="box-body">
 
-                  <div class="form-group">
-                    <label>Umur</label>
-                    <input type="text" class="form-control" id="input-umur" name="Umur" placeholder="Masukan umur anda" required="required">
-                  </div>
+                        <div class="form-group">
+                          <label>Bekerja/membantu bekerja selama seminggu yang lalu</label>
+                          <select class="form-control" style="width: 100%;" id="input-status-bekerja" name="StatusBekerja" required="required">
+                            <option selected="selected" disabled>Status bekerja</option>
+                            <option value="1">1. Ya</option>
+                            <option value="2">2. Tidak</option>
+                          </select>
+                        </div>
 
-                  <div class="form-group">
-                    <label>Status perkawinan</label>
-                    <select class="form-control" style="width: 100%;" id="input-status-perkawinan" name="StatusPerkawinan" required="required">
-                      <option selected="selected" disabled>Masukan status perkawinan</option>
-                      <option value="1">1. Belum kawin</option>
-                      <option value="2">2. Kawin/nikah</option>
-                      <option value="3">3. Cerai hidup</option>
-                      <option value="4">4. Cerai mati</option>
-                    </select>
-                  </div>
+                        <div class="form-group">
+                          <label>Lapangan usaha dari pekerjaan utama</label>
+                          <select class="form-control" style="width: 100%;" id="input-lapangan-pekerjaan" name="LapanganPekerjaan" required="required">
+                            <option selected="selected" disabled>Masukan jenis lapangan pekerjaan</option>
+                            <option value="1">1. Pertanian tanaman padi & palawija</option>
+                            <option value="2">2. Hortikultura</option>
+                            <option value="3">3. Perkebunan</option>
+                            <option value="4">4. Perikanan tangkap</option>
+                            <option value="5">5. Perikanan budidaya</option>
+                            <option value="6">6. Peternakan</option>
+                            <option value="7">7. Kehutanan & pertanian lainnya</option>
+                            <option value="8">8. Pertambangan/penggalian</option>
+                            <option value="9">9. Industri pengolahan</option>
+                            <option value="10">10. Listrik dan gas</option>
+                            <option value="11">11. Bangunan/konstruksi</option>
+                            <option value="12">12. Perdagangan</option>
+                            <option value="13">13. Hotel & rumah makan</option>
+                            <option value="14">14. Transportasi & pergudangan</option>
+                            <option value="15">15. Informasi & komunikasi</option>
+                            <option value="16">16. Keuangan & asuransi</option>
+                            <option value="17">17. Jasa pendidikan</option>
+                            <option value="18">18. Jasa kesehatan</option>
+                            <option value="19">19. Jasa kemasyarakatan, pemerintahan & perorangan</option>
+                            <option value="20">20. Pemulung</option>
+                            <option value="21">21. Lainnya</option>
+                          </select>
+                        </div>
 
-                  <div class="form-group">
-                    <label>Kepemilikan akta/buku nikah atau akta cerai</label>
-                    <select class="form-control" style="width: 100%;" id="input-buku-nikah" name="KepemilikanBukuNikah" required="required">
-                      <option selected="selected" disabled>Masukan kepemilikan buku nikah</option>
-                      <option value="1">1. Tidak</option>
-                      <option value="2">2. Ya, dapat ditunjukkan</option>
-                      <option value="3">3. Ya, tidak dapat ditunjukkan</option>
-                    </select>
-                  </div>
-
-                  <div class="form-group">
-                    <label>Tercantum dalam Kartu Keluarga (KK) di rumah tangga ini</label>
-                    <select class="form-control" style="width: 100%;" id="input-ada-kk" name="TercantumDalamKertuKeluarga" required="required">
-                      <option selected="selected"></option>
-                      <option value="1">1. Ya</option>
-                      <option value="2">2. Tidak</option>
-                    </select>
-                  </div>
-
-                  <div class="form-group">
-                    <label>Kepemilikan kartu identitas</label>
-                    <select id="input-ada-kartu-identitas" class="select2" multiple="multiple" data-placeholder="Pilih kartu program" style="width: 100%;" name="KartuIdentitas[]">
-                      <option value="1">1. Akta kelahiran</option>
-                      <option value="2">2. Kartu pelajar</option>
-                      <option value="3">3. KTP</option>
-                      <option value="4">4. SIM</option>
-                    </select>
-                  </div>
-
-                  <div class="form-group">
-                    <label>Status Kehamilan</label>
-                    <select class="form-control" style="width: 100%;" id="input-kehamilan" name="StaHamil" required="required">
-                      <option selected="selected"></option>
-                      <option value="1">1. Ya</option>
-                      <option value="2">2. Tidak</option>
-                    </select>
-                  </div>
-
-                  <div class="form-group">
-                    <label>Jenis cacat</label>
-                    <select class="form-control" style="width: 100%;" id="input-jenis-cacat" name="JenisCacat" required="required">
-                      <option selected="selected" disabled>Jenis cacat</option>
-                      <option value="1">1. Tidak cacat</option>
-                      <option value="2">2. Tuna daksa/cacat tubuh</option>
-                      <option value="3">3. Tuna netra/buta</option>
-                      <option value="4">4. Tuna rungu</option>
-                      <option value="5">5. Tuna wicara</option>
-                      <option value="6">6. Tuna rungu & wicara</option>
-                      <option value="7">7. Tuna netra & cacat tubuh</option>
-                      <option value="8">8. Tuna netra, rungu & wicara</option>
-                      <option value="9">9. Tuna rungu, wicara & cacat tubuh</option>
-                      <option value="10">10. Tuna rungu, wicara, netra & cacat tubuh</option>
-                      <option value="11">11. Cacat mental retardasi</option>
-                      <option value="12">12. Mantan penderita gangguan jiwa</option>
-                      <option value="13">13. Cacat fisik & mental</option>
-                    </select>
-                  </div>
-
-                  <div class="form-group">
-                    <label>Penyakit kronis/menahun</label>
-                    <select class="form-control" style="width: 100%;" id="input-penyakit-kronis" name="PenyakitKronis" required="required">
-                      <option selected="selected" disabled>Jenis penyakit kronis yang diderita</option>
-                      <option value="1">1. Tidak ada</option>
-                      <option value="2">2. Hipertensi/tekanan darah tinggi</option>
-                      <option value="3">3. Rematik</option>
-                      <option value="4">4. Asma</option>
-                      <option value="5">5. Masalah jantung</option>
-                      <option value="6">6. Diabetes (kencing manis)</option>
-                      <option value="7">7. Tubercolosis (TBC)</option>
-                      <option value="8">8. Stroke</option>
-                      <option value="9">9. Kanker atau tumor ganas</option>
-                      <option value="10">10. Lainnya (gagal ginjal, paru-paru flek dan sejenisnya</option>
-                    </select>
-                  </div>
-
-                  <div class="form-group">
-                    <label>Partisipasi sekolah</label>
-                    <select class="form-control" style="width: 100%;" id="input-partisipasi-sekolah" name="PartisipasiSekolah" required="required">
-                      <option selected="selected" disabled>Partisipasi sekolah</option>
-                      <option value="1">1. Tidak/belum pernah sekolah</option>
-                      <option value="2">2. Masih sekolah</option>
-                      <option value="3">3. Tidak bersekolah lagi</option>
-                    </select>
-                  </div>
-
-                  <div class="form-group">
-                    <label>Jenjang dan jenis pendidikan tertinggi yang pernah atau sedang diduduki</label>
-                    <select class="form-control" style="width: 100%;" id="input-jenjang-pendidikan" name="JenjangPendidikanTertinggi" required="required">
-                      <option selected="selected" disabled>Jenjang pendidikan tertinggi</option>
-                      <option value="1">1. SD/SDLB</option>
-                      <option value="2">2. Paket A</option>
-                      <option value="3">3. M. Ibtidaiyah</option>
-                      <option value="4">4. SMP/SMPLB</option>
-                      <option value="5">5. Paket B</option>
-                      <option value="6">6. M. Tsanawiyah</option>
-                      <option value="7">7. SMA/SMK/SMALB</option>
-                      <option value="8">8. Paket C</option>
-                      <option value="9">9. M. Aliyah</option>
-                      <option value="10">10. Perguruan tinggi</option>
-                    </select>
-                  </div>
-
-                  <div class="form-group">
-                    <label>Kelas tertinggi yang pernah atau sedang diduduki</label>
-                    <select class="form-control" style="width: 100%;" id="input-kelas-tertinggi" name="KelasTertinggi" required="required">
-                      <option selected="selected" disabled>Kelas tertinggi</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
-                      <option value="7">7</option>
-                      <option value="8">8 (tamat)</option>
-                    </select>
-                  </div>
-
-                  <div class="form-group">
-                    <label>Ijazah tertinggi yang dimiliki</label>
-                    <select class="form-control" style="width: 100%;" id="input-ijazah-tertinggi" name="IjazahTertinggi" required="required">
-                      <option selected="selected" disabled>IjazahTertinggi</option>
-                      <option value="1">1. Tidak punya ijazah</option>
-                      <option value="2">2. SD/Sederajat</option>
-                      <option value="3">3. SMP/Sederajat</option>
-                      <option value="4">4. SMA/Sederajat</option>
-                      <option value="5">5. D1/D2/D3</option>
-                      <option value="6">6. D4/S1</option>
-                      <option value="7">7. S2/S3</option>
-                    </select>
-                  </div>
-
-                  <div class="form-group">
-                    <label>Bekerja/membantu bekerja selama seminggu yang lalu</label>
-                    <select class="form-control" style="width: 100%;" id="input-status-bekerja" name="StatusBekerja" required="required">
-                      <option selected="selected" disabled>Status bekerja</option>
-                      <option value="1">1. Ya</option>
-                      <option value="2">2. Tidak</option>
-                    </select>
-                  </div>
-
-                  <div class="form-group">
-                    <label>Lapangan usaha dari pekerjaan utama</label>
-                    <select class="form-control" style="width: 100%;" id="input-lapangan-pekerjaan" name="LapanganPekerjaan" required="required">
-                      <option selected="selected" disabled>Masukan jenis lapangan pekerjaan</option>
-                      <option value="1">1. Pertanian tanaman padi & palawija</option>
-                      <option value="2">2. Hortikultura</option>
-                      <option value="3">3. Perkebunan</option>
-                      <option value="4">4. Perikanan tangkap</option>
-                      <option value="5">5. Perikanan budidaya</option>
-                      <option value="6">6. Peternakan</option>
-                      <option value="7">7. Kehutanan & pertanian lainnya</option>
-                      <option value="8">8. Pertambangan/penggalian</option>
-                      <option value="9">9. Industri pengolahan</option>
-                      <option value="10">10. Listrik dan gas</option>
-                      <option value="11">11. Bangunan/konstruksi</option>
-                      <option value="12">12. Perdagangan</option>
-                      <option value="13">13. Hotel & rumah makan</option>
-                      <option value="14">14. Transportasi & pergudangan</option>
-                      <option value="15">15. Informasi & komunikasi</option>
-                      <option value="16">16. Keuangan & asuransi</option>
-                      <option value="17">17. Jasa pendidikan</option>
-                      <option value="18">18. Jasa kesehatan</option>
-                      <option value="19">19. Jasa kemasyarakatan, pemerintahan & perorangan</option>
-                      <option value="20">20. Pemulung</option>
-                      <option value="21">21. Lainnya</option>
-                    </select>
-                  </div>
-
-                  <div class="form-group">
-                    <label>Status kedudukan dalam pekerjaan utama</label>
-                    <select class="form-control" style="width: 100%;" id="input-kedudukan-pekerjaan" name="StatusKedudukanPekerjaan" required="required">
-                      <option selected="selected" disabled>Status kedudukkan</option>
-                      <option value="1">1. Berusaha sendiri</option>
-                      <option value="2">2. Berusaha dibantu buruh tidak tetap/tidak dibayar</option>
-                      <option value="3">3. Berusaha dibantu buruh tetap/ dibayar</option>
-                      <option value="4">4. Buruh/karyawan/pegawai swasta</option>
-                      <option value="5">5. PNS/TNI/POLRI/BUMN/BUMD/anggota legislatif</option>
-                      <option value="6">6. Pekerjaan bebas pertanian</option>
-                      <option value="7">7. Pekerja bebas non-pertanian</option>
-                      <option value="8">8. Pekerja keluarga/tidak dibayar</option>
-                    </select>
-                  </div>
+                        <div class="form-group">
+                          <label>Status kedudukan dalam pekerjaan utama</label>
+                          <select class="form-control" style="width: 100%;" id="input-kedudukan-pekerjaan" name="StatusKedudukanPekerjaan" required="required">
+                            <option selected="selected" disabled>Status kedudukkan</option>
+                            <option value="1">1. Berusaha sendiri</option>
+                            <option value="2">2. Berusaha dibantu buruh tidak tetap/tidak dibayar</option>
+                            <option value="3">3. Berusaha dibantu buruh tetap/ dibayar</option>
+                            <option value="4">4. Buruh/karyawan/pegawai swasta</option>
+                            <option value="5">5. PNS/TNI/POLRI/BUMN/BUMD/anggota legislatif</option>
+                            <option value="6">6. Pekerjaan bebas pertanian</option>
+                            <option value="7">7. Pekerja bebas non-pertanian</option>
+                            <option value="8">8. Pekerja keluarga/tidak dibayar</option>
+                          </select>
+                        </div>
+                      </div>
+                   </div>
                 </div>
+
 
 
 
@@ -342,7 +373,7 @@
                     <div class="box-body">
                       <div class="form-group">
                         <label>Nama</label><br>
-                        <input type="text" class="form-control" id="input-nama1" name="Nama1" placeholder="Masukan nama anggota rumah tangga" required="required">
+                        <input type="text" class="form-control" id="input-nama1" name="Nama1" placeholder="Masukan nama kepala rumah tangga" required="required">
                       </div>
                       
                       <div class="form-group">

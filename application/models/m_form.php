@@ -216,4 +216,121 @@ class M_form extends CI_Model{
 		$this->db->join('pengenalantempat pt', 'pt.IdPengenalanTempat = sr.IdPengenalanTempat', 'left');
 		return $this->db->get('survey sr')->num_rows(); // Untuk menghitung jumlah data sesuai dengan filter pada textbox pencarian
 	}
+
+
+
+	public function filter_subkriteria($search, $limit, $start, $order_field, $order_ascdesc, $indikator){
+		$this->db->select('s.id, i.label indikator, k.label kriteria, s.label subkriteria, b.bobot' );
+		$this->db->from('subkriteria s');
+		$this->db->join('kriteria k', 'k.id = s.id_kriteria', 'left');
+		$this->db->join('indikator i', 'i.id = k.id_indikator', 'left');
+		$this->db->join('bobot b', 'b.id_subkriteria = s.id', 'left');
+		$this->db->where('i.id', $indikator );
+		$this->db->order_by($order_field, $order_ascdesc); // Untuk menambahkan query ORDER BY
+		$this->db->limit($limit, $start); // Untuk menambahkan query LIMIT
+		return $this->db->get()->result_array(); // Eksekusi query sql sesuai kondisi diatas
+	}
+
+	public function count_all_subkriteria($indikator){
+			$this->db->join('kriteria k', 'k.id = s.id_kriteria', 'left');
+			$this->db->join('indikator i', 'i.id = k.id_indikator', 'left');
+			$this->db->join('bobot b', 'b.id_subkriteria = s.id', 'left');
+			$this->db->where('i.id', $indikator );
+			$this->db->select('s.id, i.label indikator, k.label kriteria, s.label subkriteria, b.bobot' );
+			return $this->db->count_all('subkriteria s'); // Untuk menghitung semua data siswa
+	}
+
+	public function count_filter_subkriteria($search, $indikator){
+		$this->db->select('s.id, i.label indikator, k.label kriteria, s.label subkriteria, b.bobot' );
+		$this->db->from('subkriteria s');
+		$this->db->join('kriteria k', 'k.id = s.id_kriteria', 'left');
+		$this->db->join('indikator i', 'i.id = k.id_indikator', 'left');
+		$this->db->join('bobot b', 'b.id_subkriteria = s.id', 'left');
+		$this->db->where('i.id', $indikator );	
+		return $this->db->get()->num_rows(); // Untuk menghitung jumlah data sesuai dengan filter pada textbox pencarian
+	}
+
+
+	
+
+	public function filter_indikator($search, $limit, $start, $order_field, $order_ascdesc){
+		$query = $this->db->query("SELECT i.id, i.label, ( SELECT SUM(b.bobot) bobot 
+											FROM bobot b 
+											JOIN subkriteria s 
+											ON s.id = b.id_subkriteria 
+											JOIN kriteria k 
+											ON k.id = s.id_kriteria 
+											WHERE k.id_indikator = i.id) bobot
+									from indikator i
+									ORDER BY bobot DESC");
+		return $query->result_array(); // Eksekusi query sql sesuai kondisi diatas
+	}
+
+	public function count_all_indikator(){
+		$query = $this->db->query("SELECT i.id, i.label, ( SELECT SUM(b.bobot) bobot 
+											FROM bobot b 
+											JOIN subkriteria s 
+											ON s.id = b.id_subkriteria 
+											JOIN kriteria k 
+											ON k.id = s.id_kriteria 
+											WHERE k.id_indikator = i.id) bobot
+									from indikator i
+									ORDER BY bobot DESC");
+			return $query->num_rows(); // Untuk menghitung semua data siswa
+	}
+
+	public function count_filter_indikator($search){
+		$query = $this->db->query("SELECT i.id, i.label, ( SELECT SUM(b.bobot) bobot 
+											FROM bobot b 
+											JOIN subkriteria s 
+											ON s.id = b.id_subkriteria 
+											JOIN kriteria k 
+											ON k.id = s.id_kriteria 
+											WHERE k.id_indikator = i.id) bobot
+									from indikator i
+									ORDER BY bobot DESC");
+		return $query->num_rows(); // Untuk menghitung jumlah data sesuai dengan filter pada textbox pencarian
+	}
+
+
+	public function saveBobot( $id_subkriteria, $bobot, $sisa  ){
+		$this->db->set('b.bobot', $bobot);
+		$this->db->where('b.id_subkriteria', $id_subkriteria);
+		$this->db->update('bobot b');
+
+		$this->db->set('b.bobot', $sisa);
+		$this->db->where('b.id_subkriteria', 210);
+		$this->db->update('bobot b');
+
+		return 1; 
+	} 
+
+
+	public function getSisaBobot(){
+		$this->db->where("id_subkriteria", 210);
+		return $this->db->get('bobot')->result_array();
+	}
+
+
+	public function getdetailpenerima( $id_jenis, $id_survey ){
+		$return = array();
+		switch($id_jenis){
+			case 1:
+				$this->db->where('s.id_survey', $id_survey );
+				$this->db->join('perorangan pr', 'pr.IdEkonomi = s.IdEkonomi', 'left');
+				$this->db->select('pr.IdEkonomi, pr.NIK, pr.Nama, pr.NamaSLS, pr.Alamat, 
+				pr.HubKRT, pr.NoKK, pr.JnsKel, pr.Umur, pr.StaKawin, 
+				pr.AktaNikah, pr.AdaDiKK, pr.AdaKartuIdentitas, pr.StaHamil, 
+				pr.JenisCacat, pr.PenyakitKornis, pr.PartisipasiSekolah, 
+				pr.PendidikanTertnggi, pr.KelasTertinggi, pr.IjazahTertinggi, 
+				pr.StaBekerja, pr.LapanganUsaha, pr.StatusPekerjaan');
+				$return = $this->db->get('survey s')->result_array();
+				break;
+			case 2:
+				
+				break;
+		}
+		return $return;
+	}
+
 }

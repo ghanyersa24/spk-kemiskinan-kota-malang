@@ -1,5 +1,14 @@
 <!-- Sidebar -->
-<ul class="sidebar navbar-nav">
+<ul class="sidebar navbar-nav" style="background-color: #32405a; padding-top: 30px;" >
+
+    <div style="color : white; padding-left: 20px;margin-bottom:20px;">
+        <img src="<?php echo base_url();?>/assets/img/Logo_Kota_Malang_color.png" style="width:60px;display:block;background-repeat:no-repeat;float:left;margin-right: 10px;">
+        <span>
+            <div style="font-size: 12pt;"> <b> BANSOS </b> </div>
+            <div style="font-size: 8pt;margin-top: 5px;"> Rekomendasi penerima bantuan kemiskinan kota Malang </div>
+        </span>
+    </div>
+
     <li class="nav-item <?php echo $this->uri->segment(2) == '' ? 'active' : '' ?>">
         <a class="nav-link" href="<?php echo site_url('admin') ?>">
             <i class="fa fa-tachometer fa-tachometer-alt"></i>
