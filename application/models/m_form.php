@@ -189,7 +189,7 @@ class M_form extends CI_Model{
 		);
 		return $return;
 	}
-
+	
 	public function filter_alternatif($search, $limit, $start, $order_field, $order_ascdesc){
 		$this->db->like('pr.Nama', $search); // Untuk menambahkan query where OR LIKE
 		$this->db->or_like('pt.NamaKRT', $search); // Untuk menambahkan query where OR LIKE
