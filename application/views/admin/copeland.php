@@ -119,16 +119,9 @@
             <span><i class="fa fa-calculator" aria-hidden="true"></i>
               Pairwase Contest
             </span>
-            <div class="row" style="width: 205px">
-              <select class="form-control col-9">
-                <option value="">PROMETHEE</option>
-                <option value="">Weighted Product</option>
-                <option value="">Simple Additive Weighting</option>
-              </select>
-              <button type="button" id="btn-minimize-PC" class="btn btn-tool d-inline col-3" data-card-widget="collapse">
-                <i class="fa fa-plus" id="icon-PC"></i>
-              </button>
-            </div>
+            <button type="button" id="btn-minimize-PC" class="btn btn-tool" data-card-widget="collapse">
+              <i class="fa fa-plus" id="icon-PC"></i>
+            </button>          
           </div>
           <div class="card-body" id="card-PC" style="display: none">
             <div class="table-responsive">
