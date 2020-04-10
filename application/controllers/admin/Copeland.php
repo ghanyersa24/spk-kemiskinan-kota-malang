@@ -1,6 +1,6 @@
 <?php
 
-class Promethee2 extends CI_Controller {
+class Copeland extends CI_Controller {
     public function __construct()
     {
 		parent::__construct();
@@ -9,6 +9,6 @@ class Promethee2 extends CI_Controller {
 	public function index()
 	{
         // load view admin/overview.php
-        $this->load->view("admin/promethee2");
+        $this->load->view("admin/copeland");
 	}
 }
