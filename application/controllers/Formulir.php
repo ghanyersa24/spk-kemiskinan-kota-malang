@@ -47,12 +47,14 @@ class Formulir extends CI_Controller
 			);
 
 			// Data Aset Bergerak
-			$paramAssetBergerak = post('AssetBergerak', 'required');
+			$paramAssetBergerak = $this->input->post('AssetBergerak');
 			$arrayAssetBergerak = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-			for ($i = 0; $i < count($paramAssetBergerak); $i++) {
-				$valueAssetBergerak = (int) $paramAssetBergerak[$i];
-				$arrayAssetBergerak[$valueAssetBergerak - 1] = 1;
-			}
+			if (!is_null($paramAssetBergerak))
+				for ($i = 0; $i < count($paramAssetBergerak); $i++) {
+					$valueAssetBergerak = (int) $paramAssetBergerak[$i];
+					$arrayAssetBergerak[$valueAssetBergerak - 1] = 1;
+				}
+
 			$asetbergerak = array(
 				'AdaTabungGas' => $arrayAssetBergerak[0],
 				'AdaLemariEs' => $arrayAssetBergerak[1],
@@ -73,7 +75,7 @@ class Formulir extends CI_Controller
 
 			// Data aset tidak bergerak
 			$asettidakbergerak = array(
-				'LuasAtb' => post('Lahan'),
+				'LuasAtb' => post('luasLahan'),
 				'RumahLain' => post('Rumah')
 			);
 
@@ -87,12 +89,13 @@ class Formulir extends CI_Controller
 			);
 
 			// Data Program
-			$paramKartuPemerintah = post('KartuPemerintah', 'required');
+			$paramKartuPemerintah = $this->input->post('KartuPemerintah');
 			$arrayKartuPemerintah = array(0, 0, 0, 0, 0, 0, 0, 0, 0);
-			for ($i = 0; $i < count($paramKartuPemerintah); $i++) {
-				$valueKartuPemerintah = (int) $paramKartuPemerintah[$i];
-				$arrayKartuPemerintah[$valueKartuPemerintah - 1] = 1;
-			}
+			if (!is_null($paramKartuPemerintah))
+				for ($i = 0; $i < count($paramKartuPemerintah); $i++) {
+					$valueKartuPemerintah = (int) $paramKartuPemerintah[$i];
+					$arrayKartuPemerintah[$valueKartuPemerintah - 1] = 1;
+				}
 			$program = array(
 				'StaKKS' => $arrayKartuPemerintah[0],
 				'StaKIP' => $arrayKartuPemerintah[1],
@@ -316,17 +319,17 @@ class Formulir extends CI_Controller
 
 			// Data aset tidak bergerak
 			$asettidakbergerak = array(
-				'LuasAtb' => post('Lahan'),
-				'RumahLain' => post('Rumah')
+				'LuasAtb' => post('LuasAtb', 'numberic'),
+				'RumahLain' => post('Rumah', 'numberic')
 			);
 
 			// Data Ternak
 			$ternak = array(
-				'JumlahSapi' => post('JumlahSapi'),
-				'JumlahKerbau' => post('JumlahKerbau'),
-				'JumlahKuda' => post('JumlahKuda'),
-				'JumlahBabi' => post('JumlahBabi'),
-				'JumlahKambing' => post('JumlahKambing')
+				'JumlahSapi' => post('JumlahSapi', 'numberic'),
+				'JumlahKerbau' => post('JumlahKerbau', 'numberic'),
+				'JumlahKuda' => post('JumlahKuda', 'numberic'),
+				'JumlahBabi' => post('JumlahBabi', 'numberic'),
+				'JumlahKambing' => post('JumlahKambing', 'numberic')
 			);
 
 			// Data Program

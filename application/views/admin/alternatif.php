@@ -147,6 +147,7 @@
 				}
 			});
 		});
+
 		$(document).ready(function() {
 			$('#dataTable').DataTable({
 				ajax: api + 'formulir/get',
@@ -210,8 +211,6 @@
 					}
 				});
 			});
-
-			// click button view datatable
 			$('#dataTable tbody').on('click', 'a.btn-edit', function() {
 				var data = table.row($(this).parents('tr')).data();
 				$.ajax({
@@ -238,7 +237,7 @@
 				});
 			});
 
-
+			// click button delete datatable
 			$('#dataTable tbody').on('click', 'a.btn-delete', function() {
 				var data = table.row($(this).parents('tr')).data();
 				Swal.fire({
@@ -281,6 +280,9 @@
 			});
 		});
 
+		// click button view datatable
+
+
 		// ajax perorangan
 		function ajax_peroangan(response) {
 			let res = response.data
@@ -304,7 +306,12 @@
 		function ajax_keluarga(response) {
 			let res = response.data
 			for (key in res) {
+				$('.input-group.mb-3 > #view1-' + key).prop('readonly', false)
 				$('#view1-' + key).val(res[key])
+				if (res[key] > 0)
+					$('#check-' + key).prop('checked', true)
+				else
+					$('.input-group.mb-3 > #view1-' + key).prop('readonly', true)
 			}
 			var data_program = res.program
 			let program = []

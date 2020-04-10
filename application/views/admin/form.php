@@ -153,7 +153,7 @@
 
 										<div class="form-group col-md-2">
 											<label for="inputZip">RT</label>
-											<input type="text" class="form-control" id="input-rt" name="RT" required="required">
+											<input type="number" class="form-control" id="input-rt" name="RT" required="required">
 											<div id="warning-input-rt" style="display:none">
 												<p style="color:red">Tidak kurang dari 1 atau tidak lebih dari 9</p>
 											</div>
@@ -161,7 +161,7 @@
 
 										<div class="form-group col-md-2">
 											<label for="inputZip">RW</label>
-											<input type="text" class="form-control" id="input-rw" name="RW" required="required">
+											<input type="number" class="form-control" id="input-rw" name="RW" required="required">
 											<div id="warning-input-rw" style="display:none">
 												<p style="color:red">Tidak kurang dari 1 atau tidak lebih dari 9</p>
 											</div>
@@ -724,7 +724,7 @@
 													<input type="checkbox" id="enable-input-lahan">
 												</span>
 											</div>
-											<input type="text" maxlength="3" class="form-control" id="input-lahan" name="Lahan" placeholder="Masukkan luas lahan yang dimiliki (Ha)" required="required">
+											<input type="number" value="0" maxlength="3" class="form-control" id="input-lahan" name="luasLahan" placeholder="Masukkan luas lahan yang dimiliki (Ha)" required="required">
 											<div id="warning-input-lahan" style="display:none">
 												<p style="color:red">Masukan tidak dapat menggunakan huruf</p>
 											</div>
@@ -737,7 +737,7 @@
 													<input type="checkbox" id="enable-input-rumah">
 												</span>
 											</div>
-											<input type="text" maxlength="3" class="form-control" id="input-rumah" name="Rumah" placeholder="Masukkan jumlah rumah yang dimiliki (unit)" required="required">
+											<input type="number" value="0" maxlength="3" class="form-control" id="input-rumah" name="Rumah" placeholder="Masukkan jumlah rumah yang dimiliki (unit)" required="required">
 											<div id="warning-input-rumah" style="display:none">
 												<p style="color:red">Masukkan tidak dapat menggunakan huruf</p>
 											</div>
@@ -753,7 +753,7 @@
 													<input type="checkbox" id="enable-input-sapi">
 												</span>
 											</div>
-											<input type="text" maxlength="3" class="form-control" id="input-sapi" name="JumlahSapi" placeholder="Masukan jumlah sapi yang dimiliki (ekor)" required="required">
+											<input type="number" value="0" maxlength="3" class="form-control" id="input-sapi" name="JumlahSapi" placeholder="Masukan jumlah sapi yang dimiliki (ekor)" required="required">
 											<div id="warning-input-sapi" style="display:none">
 												<p style="color:red">Masukkan tidak dapat menggunakan huruf</p>
 											</div>
@@ -766,7 +766,7 @@
 													<input type="checkbox" id="enable-input-kerbau">
 												</span>
 											</div>
-											<input type="text" maxlength="3" class="form-control" id="input-kerbau" name="JumlahKerbau" placeholder="Masukkan jumlah kerbau yang dimiliki (ekor)" required="required">
+											<input type="number" value="0" maxlength="3" class="form-control" id="input-kerbau" name="JumlahKerbau" placeholder="Masukkan jumlah kerbau yang dimiliki (ekor)" required="required">
 											<div id="warning-input-kerbau" style="display:none">
 												<p style="color:red">Masukkan tidak dapat menggunakan huruf</p>
 											</div>
@@ -779,7 +779,7 @@
 													<input type="checkbox" id="enable-input-kuda">
 												</span>
 											</div>
-											<input type="text" maxlength="3" class="form-control" id="input-kuda" name="JumlahKuda" placeholder="Masukkan jumlah kuda yang dimiliki (ekor)" required="required">
+											<input type="number" value="0" maxlength="3" class="form-control" id="input-kuda" name="JumlahKuda" placeholder="Masukkan jumlah kuda yang dimiliki (ekor)" required="required">
 											<div id="warning-input-kuda" style="display:none">
 												<p style="color:red">Masukkan tidak dapat menggunakan huruf</p>
 											</div>
@@ -792,7 +792,7 @@
 													<input type="checkbox" id="enable-input-babi">
 												</span>
 											</div>
-											<input type="text" maxlength="3" class="form-control" id="input-babi" name="JumlahBabi" placeholder="Masukkan jumlah babi yang dimiliki (ekor)" required="required">
+											<input type="number" value="0" maxlength="3" class="form-control" id="input-babi" name="JumlahBabi" placeholder="Masukkan jumlah babi yang dimiliki (ekor)" required="required">
 											<div id="warning-input-babi" style="display:none">
 												<p style="color:red">Masukkan tidak dapat menggunakan huruf</p>
 											</div>
@@ -805,7 +805,7 @@
 													<input type="checkbox" id="enable-input-kambing">
 												</span>
 											</div>
-											<input type="text" maxlength="3" class="form-control" id="input-kambing" name="JumlahKambing" placeholder="Masukkan jumlah kambing/domba yang dimiliki (ekor)" required="required">
+											<input type="number" value="0" maxlength="3" class="form-control" id="input-kambing" name="JumlahKambing" placeholder="Masukkan jumlah kambing/domba yang dimiliki (ekor)" required="required">
 											<div id="warning-input-kambing" style="display:none">
 												<p style="color:red">Masukkan tidak dapat menggunakan huruf</p>
 											</div>

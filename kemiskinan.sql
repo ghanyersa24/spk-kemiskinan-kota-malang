@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 07, 2020 at 07:52 PM
+-- Generation Time: Apr 10, 2020 at 07:22 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -73,7 +73,7 @@ CREATE TABLE `asetbergerak` (
 
 CREATE TABLE `asettidakbergerak` (
   `IdAsetTidakBergerak` int(10) UNSIGNED NOT NULL,
-  `LuasAtb` varchar(255) DEFAULT NULL,
+  `LuasAtb` tinyint(4) DEFAULT NULL,
   `RumahLain` int(10) UNSIGNED DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()

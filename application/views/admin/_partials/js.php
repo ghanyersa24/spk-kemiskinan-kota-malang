@@ -735,98 +735,108 @@
 
 
 
-		$('#input-lahan').prop('disabled', true);
+		$('#input-lahan').prop('readonly', true);
 		$('#input-lahan').val(0);
 
-		$('#input-rumah').prop('disabled', true);
+		$('#input-rumah').prop('readonly', true);
 		$('#input-rumah').val(0);
 
-		$('#input-sapi').prop('disabled', true);
+		$('#input-sapi').prop('readonly', true);
 		$('#input-sapi').val(0);
 
-		$('#input-kerbau').prop('disabled', true);
+		$('#input-kerbau').prop('readonly', true);
 		$('#input-kerbau').val(0);
 
-		$('#input-kuda').prop('disabled', true);
+		$('#input-kuda').prop('readonly', true);
 		$('#input-kuda').val(0);
 
-		$('#input-babi').prop('disabled', true);
+		$('#input-babi').prop('readonly', true);
 		$('#input-babi').val(0);
 
-		$('#input-kambing').prop('disabled', true);
+		$('#input-kambing').prop('readonly', true);
 		$('#input-kambing').val(0);
 
 		$('#enable-input-lahan').click(function() {
-			if ($('#input-lahan').is(':disabled')) {
-				$('#input-lahan').prop('disabled', false);
-				$('#input-lahan').val('');
+			if ($('#input-lahan').is('[readonly]')) {
+				$('#input-lahan').prop('readonly', false);
+				$('#input-lahan').val(0);
 			} else {
-				$('#input-lahan').prop('disabled', true);
+				$('#input-lahan').prop('readonly', true);
 				$('#input-lahan').val(0);
 			}
 		})
 
 		$('#enable-input-rumah').click(function() {
-			if ($('#input-rumah').is(':disabled')) {
-				$('#input-rumah').prop('disabled', false);
-				$('#input-rumah').val('');
+			if ($('#input-rumah').is('[readonly]')) {
+				$('#input-rumah').prop('readonly', false);
+				$('#input-rumah').val(0);
 			} else {
-				$('#input-rumah').prop('disabled', true);
+				$('#input-rumah').prop('readonly', true);
 				$('#input-rumah').val(0);
 			}
 		})
 
 		$('#enable-input-sapi').click(function() {
-			if ($('#input-sapi').is(':disabled')) {
-				$('#input-sapi').prop('disabled', false);
-				$('#input-sapi').val('');
+			if ($('#input-sapi').is('[readonly]')) {
+				$('#input-sapi').prop('readonly', false);
+				$('#input-sapi').val(0);
 			} else {
-				$('#input-sapi').prop('disabled', true);
+				$('#input-sapi').prop('readonly', true);
 				$('#input-sapi').val(0);
 			}
 		})
 
 		$('#enable-input-kerbau').click(function() {
-			if ($('#input-kerbau').is(':disabled')) {
-				$('#input-kerbau').prop('disabled', false);
-				$('#input-kerbau').val('');
+			if ($('#input-kerbau').is('[readonly]')) {
+				$('#input-kerbau').prop('readonly', false);
+				$('#input-kerbau').val(0);
 			} else {
-				$('#input-kerbau').prop('disabled', true);
+				$('#input-kerbau').prop('readonly', true);
 				$('#input-kerbau').val(0);
 			}
 		})
 
 		$('#enable-input-kuda').click(function() {
-			if ($('#input-kuda').is(':disabled')) {
-				$('#input-kuda').prop('disabled', false);
-				$('#input-kuda').val('');
+			if ($('#input-kuda').is('[readonly]')) {
+				$('#input-kuda').prop('readonly', false);
+				$('#input-kuda').val(0);
 			} else {
-				$('#input-kuda').prop('disabled', true);
+				$('#input-kuda').prop('readonly', true);
 				$('#input-kuda').val(0);
 			}
 		})
 
 		$('#enable-input-babi').click(function() {
-			if ($('#input-babi').is(':disabled')) {
-				$('#input-babi').prop('disabled', false);
-				$('#input-babi').val('');
+			if ($('#input-babi').is('[readonly]')) {
+				$('#input-babi').prop('readonly', false);
+				$('#input-babi').val(0);
 			} else {
-				$('#input-babi').prop('disabled', true);
+				$('#input-babi').prop('readonly', true);
 				$('#input-babi').val(0);
 			}
 		})
 
 		$('#enable-input-kambing').click(function() {
-			if ($('#input-kambing').is(':disabled')) {
-				$('#input-kambing').prop('disabled', false);
-				$('#input-kambing').val('');
+			if ($('#input-kambing').is('[readonly]')) {
+				$('#input-kambing').prop('readonly', false);
+				$('#input-kambing').val(0);
 			} else {
-				$('#input-kambing').prop('disabled', true);
+				$('#input-kambing').prop('readonly', true);
 				$('#input-kambing').val(0);
 			}
 		})
 
 	});
+
+	function checkbox(field) {
+		if ($('#view1-' + field).is('[readonly]')) {
+			$('#view1-' + field).prop('readonly', false);
+			$('#view1-' + field).val(0);
+		} else {
+			$('#view1-' + field).prop('readonly', true);
+			$('#view1-' + field).val(0);
+		}
+	}
 
 	function bukamodaldetail(id_jenis, id_survey) {
 		$.ajax({
