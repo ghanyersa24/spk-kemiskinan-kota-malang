@@ -2,7 +2,7 @@
 	<div class="modal-dialog modal-xl modal-dialog-centered" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h4 style="color:red;"><span class="glyphicon glyphicon-lock"></span> <span id="title-modal-penerima"> Detail Data Penerima - Keluarga</span></h4>
+				<h4 style="color:black;"><span class="glyphicon glyphicon-lock"></span> <span id="title-modal-penerima"> Detail Data Penerima - Keluarga</span></h4>
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
 			</div>
 			<div class="modal-body">
