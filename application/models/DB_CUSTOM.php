@@ -24,16 +24,19 @@ class DB_CUSTOM extends CI_Model
 			->get()->result();
 		return true($query);
 	}
-	public static function detail_alternatif($id_survey, $id_jenis)
+	public static function detail_alternatif($id_survey = null, $id_jenis)
 	{
 		$CI = &get_instance();
 		if ($id_jenis == 1) {
-			$query = $CI->db->from('survey')
+			$CI->db->from('survey')
 				->join('petugas', 'survey.IdPetugas=petugas.IdPetugas', 'left')
 				->join('perorangan', 'survey.IdEkonomi=perorangan.IdEkonomi', 'left')
 				->join('kartuidentitas', 'perorangan.AdaKartuIdentitas=kartuidentitas.IdKartuIdentitas')
-				->where(['id_Survey' => $id_survey])
-				->get()->row();
+				->where(['is_deleted' => 0]);
+			if (!is_null($id_survey))
+				$query = $CI->db->where(['id_Survey' => $id_survey])->get()->row();
+			else
+				$query = $CI->db->get()->result();
 		} elseif ($id_jenis == 2) {
 			$query = $CI->db->from('survey')
 				->join('pengenalantempat', 'survey.IdPengenalanTempat=PengenalanTempat.IdPengenalanTempat', 'left')
@@ -42,9 +45,22 @@ class DB_CUSTOM extends CI_Model
 				->join('asettidakbergerak', 'asettidakbergerak.IdAsetTidakBergerak=aset.IdAsetTidakBergerak')
 				->join('ternak', 'ternak.IdTernak=aset.IdTernak')
 				->join('petugas', 'survey.IdPetugas=petugas.IdPetugas', 'left')
-				->where(['id_Survey' => $id_survey])
-				->get()->row();
+				->where(['is_deleted' => 0]);
+			if (!is_null($id_survey))
+				$query = $CI->db->where(['id_Survey' => $id_survey])->get()->row();
+			else
+				$query = $CI->db->get()->result();
 		}
+		return true($query);
+	}
+	public static function bobot($tujuan)
+	{
+		$CI = &get_instance();
+		$query = $CI->db
+			->select("indikator.*, `kriteria`(`indikator`.`id`) as kriteria")
+			->from('indikator')
+			->where("indikator.tujuan = '$tujuan'")
+			->get()->result();
 		return true($query);
 	}
 }
