@@ -684,7 +684,16 @@
 			$(this).html('<input type="text" class="form-control-sm" placeholder="Search ' + title + '" />');
 		});
 
-
+		$('#input-kepemilikan-usaha').change(function() {
+			if ($('#input-kepemilikan-usaha').val() == 1) {
+				$('#is-usaha').show()
+			} else {
+				$('#is-usaha').hide()
+				$('#input-JumlahPekerja').val(0)
+				$('#input-TempatUsaha').val("")
+				$('#input-OmsetUsaha').val(0)
+			}
+		});
 		// tabel = $('#dataTable').DataTable({
 		//     "language" : {
 		//         "url" : "//cdn.datatables.net/plug-ins/1.10.9/i18n/Indonesian.json",

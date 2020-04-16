@@ -18,10 +18,9 @@
 			<div class="container-fluid" style="padding-top: 20px; background-color: #ecf0f5; padding-bottom: 200px; ">
 
 				<h5 style="margin-bottom : 3px;" class="d-flex justify-content-between">PROMETHEE
-					<select class="form-control col-md-2" style="margin-right:10px;">
-						<option value="">Semua Jenis</option>
-						<option value="">Perorangan</option>
-						<option value="">Keluarga</option>
+					<select class="form-control col-md-2" style="margin-right:10px;" id="select-type">
+						<option value="individu">Individu</option>
+						<option selected value="keluarga">Keluarga</option>
 					</select>
 				</h5>
 
@@ -36,17 +35,31 @@
 					</div>
 					<div class="card-body" id="card-DA" style="display: block">
 						<div class="table-responsive">
-							<table class="table table-bordered" id="individu-alternatif" width="100%" cellspacing="0">
-								<thead>
-									<tr>
-										<th>ID Nama</th>
-										<th>Nama</th>
-										<th>Ekonomi</th>
-										<th>Pendidikan</th>
-										<th>Kesehatan</th>
-									</tr>
-								</thead>
-							</table>
+							<div id="individu-alternatif" style="display:none">
+								<table class="table table-bordered" width="100%" cellspacing="0">
+									<thead>
+										<tr>
+											<th>ID Nama</th>
+											<th>Nama</th>
+											<th>Ekonomi</th>
+											<th>Pendidikan</th>
+											<th>Kesehatan</th>
+										</tr>
+									</thead>
+								</table>
+							</div>
+							<div id="keluarga-alternatif">
+								<table class="table table-bordered" width="100%" cellspacing="0">
+									<thead>
+										<tr>
+											<th>ID Nama</th>
+											<th>Nama</th>
+											<th>Perumahan</th>
+											<th>Asset</th>
+										</tr>
+									</thead>
+								</table>
+							</div>
 						</div>
 					</div>
 					<div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
@@ -63,17 +76,31 @@
 					</div>
 					<div class="card-body" id="card-KD" style="display: none">
 						<div class="table-responsive">
-							<table class="table table-bordered" id="individu-konfersi" width="100%" cellspacing="0">
-								<thead>
-									<tr>
-										<th>ID Nama</th>
-										<th>Nama</th>
-										<th>Ekonomi</th>
-										<th>Pendidikan</th>
-										<th>Kesehatan</th>
-									</tr>
-								</thead>
-							</table>
+							<div id="individu-konfersi" style="display:none">
+								<table class="table table-bordered" width="100%" cellspacing="0">
+									<thead>
+										<tr>
+											<th>ID Nama</th>
+											<th>Nama</th>
+											<th>Ekonomi</th>
+											<th>Pendidikan</th>
+											<th>Kesehatan</th>
+										</tr>
+									</thead>
+								</table>
+							</div>
+							<div id="keluarga-konfersi">
+								<table class="table table-bordered" width="100%" cellspacing="0">
+									<thead>
+										<tr>
+											<th>ID Nama</th>
+											<th>Nama</th>
+											<th>Perumahan</th>
+											<th>Asset</th>
+										</tr>
+									</thead>
+								</table>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -89,16 +116,29 @@
 					</div>
 					<div class="card-body" id="card-D" style="display: none">
 						<div class="table-responsive">
-							<table class="table table-bordered" id="individu-deviasi" width="100%" cellspacing="0">
-								<thead>
-									<tr>
-										<th>D (a,b)</th>
-										<th>Ekonomi</th>
-										<th>Pendidikan</th>
-										<th>Kesehatan</th>
-									</tr>
-								</thead>
-							</table>
+							<div id="individu-deviasi" style="display:none">
+								<table class="table table-bordered" width="100%" cellspacing="0">
+									<thead>
+										<tr>
+											<th>D (a,b)</th>
+											<th>Ekonomi</th>
+											<th>Pendidikan</th>
+											<th>Kesehatan</th>
+										</tr>
+									</thead>
+								</table>
+							</div>
+							<div id="keluarga-deviasi">
+								<table class="table table-bordered" width="100%" cellspacing="0">
+									<thead>
+										<tr>
+											<th>D (a,b)</th>
+											<th>Perumahan</th>
+											<th>Asset</th>
+										</tr>
+									</thead>
+								</table>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -114,16 +154,29 @@
 					</div>
 					<div class="card-body" id="card-P" style="display: none">
 						<div class="table-responsive">
-							<table class="table table-bordered" id="individu-preferensi" width="100%" cellspacing="0">
-								<thead>
-									<tr>
-										<th>D (a,b)</th>
-										<th>Ekonomi</th>
-										<th>Pendidikan</th>
-										<th>Kesehatan</th>
-									</tr>
-								</thead>
-							</table>
+							<div id="individu-preferensi" style="display:none">
+								<table class="table table-bordered" width="100%" cellspacing="0">
+									<thead>
+										<tr>
+											<th>D (a,b)</th>
+											<th>Ekonomi</th>
+											<th>Pendidikan</th>
+											<th>Kesehatan</th>
+										</tr>
+									</thead>
+								</table>
+							</div>
+							<div id="keluarga-preferensi">
+								<table class="table table-bordered" width="100%" cellspacing="0">
+									<thead>
+										<tr>
+											<th>D (a,b)</th>
+											<th>Perumahan</th>
+											<th>Asset</th>
+										</tr>
+									</thead>
+								</table>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -139,17 +192,31 @@
 					</div>
 					<div class="card-body" id="card-IP" style="display: none">
 						<div class="table-responsive">
-							<table class="table table-bordered" id="individu-ip" width="100%" cellspacing="0">
-								<thead>
-									<tr>
-										<th>D (a,b)</th>
-										<th>Ekonomi</th>
-										<th>Pendidikan</th>
-										<th>Kesehatan</th>
-										<th>Jumlah</th>
-									</tr>
-								</thead>
-							</table>
+							<div id="individu-ip" style="display:none">
+								<table class="table table-bordered" width="100%" cellspacing="0">
+									<thead>
+										<tr>
+											<th>D (a,b)</th>
+											<th>Ekonomi</th>
+											<th>Pendidikan</th>
+											<th>Kesehatan</th>
+											<th>Jumlah</th>
+										</tr>
+									</thead>
+								</table>
+							</div>
+							<div id="keluarga-ip">
+								<table class="table table-bordered" width="100%" cellspacing="0">
+									<thead>
+										<tr>
+											<th>D (a,b)</th>
+											<th>Pendidikan</th>
+											<th>Kesehatan</th>
+											<th>Jumlah</th>
+										</tr>
+									</thead>
+								</table>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -165,15 +232,28 @@
 					</div>
 					<div class="card-body" id="card-PR" style="display: none">
 						<div class="table-responsive">
-							<table class="table table-bordered" id="individu-pr" width="100%" cellspacing="0">
-								<thead>
-									<tr>
-										<th>ID Nama</th>
-										<th>Leaving Flow</th>
-										<th>Entering Flow</th>
-									</tr>
-								</thead>
-							</table>
+							<div id="individu-pr" style="display:none">
+								<table class="table table-bordered" width="100%" cellspacing="0">
+									<thead>
+										<tr>
+											<th>ID Nama</th>
+											<th>Leaving Flow</th>
+											<th>Entering Flow</th>
+										</tr>
+									</thead>
+								</table>
+							</div>
+							<div id="keluarga-pr">
+								<table class="table table-bordered" width="100%" cellspacing="0">
+									<thead>
+										<tr>
+											<th>ID Nama</th>
+											<th>Leaving Flow</th>
+											<th>Entering Flow</th>
+										</tr>
+									</thead>
+								</table>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -189,14 +269,26 @@
 					</div>
 					<div class="card-body" id="card-CR" style="display: none">
 						<div class="table-responsive">
-							<table class="table table-bordered" id="individu-cr" width="100%" cellspacing="0">
-								<thead>
-									<tr>
-										<th>ID Nama</th>
-										<th>Net Flow</th>
-									</tr>
-								</thead>
-							</table>
+							<div id="individu-cr" style="display:none">
+								<table class="table table-bordered" width="100%" cellspacing="0">
+									<thead>
+										<tr>
+											<th>ID Nama</th>
+											<th>Net Flow</th>
+										</tr>
+									</thead>
+								</table>
+							</div>
+							<div id="keluarga-cr">
+								<table class="table table-bordered" width="100%" cellspacing="0">
+									<thead>
+										<tr>
+											<th>ID Nama</th>
+											<th>Net Flow</th>
+										</tr>
+									</thead>
+								</table>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -212,15 +304,28 @@
 					</div>
 					<div class="card-body" id="card-PA" style="display: none">
 						<div class="table-responsive">
-							<table class="table table-bordered" id="individu-pa" width="100%" cellspacing="0">
-								<thead>
-									<tr>
-										<th>ID Nama</th>
-										<th>Nama</th>
-										<th>Net Flow</th>
-									</tr>
-								</thead>
-							</table>
+							<div id="individu-pa" style="display:none">
+								<table class="table table-bordered" width="100%" cellspacing="0">
+									<thead>
+										<tr>
+											<th>ID Nama</th>
+											<th>Nama</th>
+											<th>Net Flow</th>
+										</tr>
+									</thead>
+								</table>
+							</div>
+							<div id="keluarga-pa">
+								<table class="table table-bordered" width="100%" cellspacing="0">
+									<thead>
+										<tr>
+											<th>ID Nama</th>
+											<th>Nama</th>
+											<th>Net Flow</th>
+										</tr>
+									</thead>
+								</table>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -246,7 +351,7 @@
 				type: "GET",
 				url: api + 'PROMETHEE/individu',
 				success: function(response) {
-					$('#individu-alternatif').DataTable({
+					$('#individu-alternatif table').DataTable({
 						data: response.data.alternatif.nilai,
 						columns: [{
 								"render": function(data, type, row, meta) {
@@ -279,7 +384,7 @@
 							}
 						]
 					});
-					$('#individu-konfersi').DataTable({
+					$('#individu-konfersi table').DataTable({
 						data: response.data.konfersi,
 						columns: [{
 								"render": function(data, type, row, meta) {
@@ -312,7 +417,7 @@
 							}
 						]
 					});
-					$('#individu-deviasi').DataTable({
+					$('#individu-deviasi table').DataTable({
 						data: response.data.deviasi,
 						columns: [{
 								"render": function(data, type, row, meta) {
@@ -340,7 +445,7 @@
 							}
 						]
 					});
-					$('#individu-preferensi').DataTable({
+					$('#individu-preferensi table').DataTable({
 						data: response.data.preferensi,
 						columns: [{
 								"render": function(data, type, row, meta) {
@@ -368,7 +473,7 @@
 							}
 						]
 					});
-					$('#individu-ip').DataTable({
+					$('#individu-ip table').DataTable({
 						data: response.data.ip,
 						columns: [{
 								"render": function(data, type, row, meta) {
@@ -402,7 +507,7 @@
 							}
 						]
 					});
-					$('#individu-pr').DataTable({
+					$('#individu-pr table').DataTable({
 						data: response.data.pr,
 						columns: [{
 								"render": function(data, type, row, meta) {
@@ -424,7 +529,7 @@
 							}
 						]
 					});
-					$('#individu-cr').DataTable({
+					$('#individu-cr table').DataTable({
 						data: response.data.cr,
 						columns: [{
 								"render": function(data, type, row, meta) {
@@ -440,7 +545,7 @@
 							}
 						]
 					});
-					$('#individu-pa').DataTable({
+					$('#individu-pa table').DataTable({
 						data: response.data.pa,
 						order: [
 							[2, "desc"]
@@ -466,8 +571,252 @@
 				}
 			})
 		}
+
+		function ajax_keluarga() {
+			$.ajax({
+				type: "GET",
+				url: api + 'PROMETHEE/keluarga',
+				success: function(response) {
+					$('#keluarga-alternatif table').DataTable({
+						data: response.data.alternatif.nilai,
+						columns: [{
+								"render": function(data, type, row, meta) {
+									return row.id
+								},
+								className: "text-center"
+							},
+							{
+								"render": function(data, type, row) {
+									return row.nama
+								}
+							},
+							{
+								"render": function(data, type, row) {
+									return row.perumahan
+								},
+								className: "text-center"
+							},
+							{
+								"render": function(data, type, row) {
+									return row.asset
+								},
+								className: "text-center"
+							}
+						]
+					});
+					$('#keluarga-konfersi table').DataTable({
+						data: response.data.konfersi,
+						columns: [{
+								"render": function(data, type, row, meta) {
+									return row.id
+								},
+								className: "text-center"
+							},
+							{
+								"render": function(data, type, row) {
+									return row.nama
+								}
+							},
+							{
+								"render": function(data, type, row) {
+									return row.perumahan
+								},
+								className: "text-center"
+							},
+							{
+								"render": function(data, type, row) {
+									return row.asset
+								},
+								className: "text-center"
+							}
+						]
+					});
+					$('#keluarga-deviasi table').DataTable({
+						data: response.data.deviasi,
+						columns: [{
+								"render": function(data, type, row, meta) {
+									return row.id
+								},
+								className: "text-center"
+							},
+							{
+								"render": function(data, type, row) {
+									return row.perumahan
+								},
+								className: "text-center"
+							},
+							{
+								"render": function(data, type, row) {
+									return row.asset
+								},
+								className: "text-center"
+							}
+						]
+					});
+					$('#keluarga-preferensi table').DataTable({
+						data: response.data.preferensi,
+						columns: [{
+								"render": function(data, type, row, meta) {
+									return row.id
+								},
+								className: "text-center"
+							},
+							{
+								"render": function(data, type, row) {
+									return row.perumahan
+								},
+								className: "text-center"
+							},
+							{
+								"render": function(data, type, row) {
+									return row.asset
+								},
+								className: "text-center"
+							}
+						]
+					});
+					$('#keluarga-ip table').DataTable({
+						data: response.data.ip,
+						columns: [{
+								"render": function(data, type, row, meta) {
+									return row.id
+								},
+								className: "text-center"
+							},
+							{
+								"render": function(data, type, row) {
+									return row.perumahan
+								},
+								className: "text-center"
+							},
+							{
+								"render": function(data, type, row) {
+									return row.asset
+								},
+								className: "text-center"
+							},
+							{
+								"render": function(data, type, row) {
+									return row.jumlah
+								},
+								className: "text-center"
+							}
+						]
+					});
+					$('#keluarga-pr table').DataTable({
+						data: response.data.pr,
+						columns: [{
+								"render": function(data, type, row, meta) {
+									return row.id
+								},
+								className: "text-center"
+							},
+							{
+								"render": function(data, type, row) {
+									return row.leaving_flow
+								},
+								className: "text-center"
+							},
+							{
+								"render": function(data, type, row) {
+									return row.entering_flow
+								},
+								className: "text-center"
+							}
+						]
+					});
+					$('#keluarga-cr table').DataTable({
+						data: response.data.cr,
+						columns: [{
+								"render": function(data, type, row, meta) {
+									return row.id
+								},
+								className: "text-center"
+							},
+							{
+								"render": function(data, type, row) {
+									return row.net_flow
+								},
+								className: "text-center"
+							}
+						]
+					});
+					$('#keluarga-pa table').DataTable({
+						data: response.data.pa,
+						order: [
+							[2, "desc"]
+						],
+						columns: [{
+								"render": function(data, type, row, meta) {
+									return row.id
+								},
+								className: "text-center"
+							},
+							{
+								"render": function(data, type, row) {
+									return row.nama
+								}
+							}, {
+								"render": function(data, type, row) {
+									return row.net_flow
+								},
+								className: "text-center"
+							}
+						]
+					});
+				}
+			})
+		}
+		$('#select-type').change(function() {
+			if ($('#select-type').val() == 'keluarga') {
+				ajax_keluarga()
+
+				$('#keluarga-alternatif').show()
+				$('#keluarga-konfersi').show()
+				$('#keluarga-deviasi').show()
+				$('#keluarga-preferensi').show()
+				$('#keluarga-ip').show()
+				$('#keluarga-matrix').show()
+				$('#keluarga-pr').show()
+				$('#keluarga-cr').show()
+				$('#keluarga-pa').show()
+
+				$('#individu-alternatif').hide()
+				$('#individu-konfersi').hide()
+				$('#individu-deviasi').hide()
+				$('#individu-preferensi').hide()
+				$('#individu-ip').hide()
+				$('#individu-matrix').hide()
+				$('#individu-pr').hide()
+				$('#individu-cr').hide()
+				$('#individu-pa').hide()
+			} else {
+				ajax_individu()
+
+				$('#keluarga-alternatif').hide()
+				$('#keluarga-konfersi').hide()
+				$('#keluarga-deviasi').hide()
+				$('#keluarga-preferensi').hide()
+				$('#keluarga-ip').hide()
+				$('#keluarga-matrix').hide()
+				$('#keluarga-pr').hide()
+				$('#keluarga-cr').hide()
+				$('#keluarga-pa').hide()
+
+				$('#individu-alternatif').show()
+				$('#individu-konfersi').show()
+				$('#individu-deviasi').show()
+				$('#individu-preferensi').show()
+				$('#individu-ip').show()
+				$('#individu-matrix').show()
+				$('#individu-pr').show()
+				$('#individu-cr').show()
+				$('#individu-pa').show()
+
+			}
+		});
 		$(document).ready(function() {
-			ajax_individu()
+			ajax_keluarga()
 		});
 	</script>
 	<script>

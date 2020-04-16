@@ -811,7 +811,31 @@
 											</div>
 										</div>
 									</div>
+									<div class="form-group">
+										<label>Kepemilikan Usaha</label>
+										<select class="form-control" style="width: 100%;" id="input-kepemilikan-usaha" name="StaUsaha" required="required">
+											<option selected="selected" disabled>Kepemilikan Usaha</option>
+											<option value="1">1. Ya</option>
+											<option value="2">2. Tidak</option>
+										</select>
+									</div>
 
+									<div id="is-usaha" style="display:none">
+										<div class="form-group">
+											<label>Jumlah Pekerja</label><br>
+											<input type="number" class="form-control" id="input-JumlahPekerja" name="JumlahPekerja" placeholder="Masukan Jumlah Pekerja" required="required">
+										</div>
+
+										<div class="form-group">
+											<label>Tempat Usaha</label><br>
+											<input type="text" class="form-control" id="input-TempatUsaha" name="TempatUsaha" placeholder="Masukan Tempat Usaha" required="required">
+										</div>
+
+										<div class="form-group">
+											<label>Omset Usaha</label><br>
+											<input type="number" class="form-control" id="input-OmsetUsaha" name="OmsetUsaha" placeholder="Masukan Omset Usaha" required="required">
+										</div>
+									</div>
 									<div class="form-group">
 										<label>Memiliki/terdaftar dalam kartu pemerintah</label>
 										<select id="input-kartu-pemerintah" class="select2" multiple="multiple" data-placeholder="Pilih kartu program" style="width: 100%;" name="KartuPemerintah[]" required="required">

@@ -42,7 +42,10 @@ class DB_CUSTOM extends CI_Model
 				->join('pengenalantempat', 'survey.IdPengenalanTempat=PengenalanTempat.IdPengenalanTempat', 'left')
 				->join('perumahan', 'survey.IdPerumahan=perumahan.IdPerumahan', 'left')
 				->join('aset', 'survey.IdAset=aset.IdAset', 'left')
+				->join('asetbergerak', 'asetbergerak.IdAsetBergerak=aset.IdAsetBergerak')
 				->join('asettidakbergerak', 'asettidakbergerak.IdAsetTidakBergerak=aset.IdAsetTidakBergerak')
+				->join('jenisusaha', 'jenisusaha.IdJenisUsaha=aset.IdJenisUsaha')
+				->join('program', 'program.IdProgram=aset.IdProgram')
 				->join('ternak', 'ternak.IdTernak=aset.IdTernak')
 				->join('petugas', 'survey.IdPetugas=petugas.IdPetugas', 'left')
 				->where(['is_deleted' => 0]);

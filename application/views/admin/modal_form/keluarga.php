@@ -401,89 +401,129 @@
 													<option value="9">Kredit Usaha Rakyat (KUR)</option>
 												</select>
 											</div>
-											<br>
 											<div class="form-group">
-												<h6 class="box-title">Asset tidak bergerak</h6>
-												<label>lahan</label>
-												<div class="view1-group">
-													<div class="input-group mb-3">
-														<div class="input-group-prepend">
-															<div class="input-group-text">
-																<input type="checkbox" aria-label="Checkbox for following text input" id="check-LuasAtb" onclick="checkbox('LuasAtb')">
-															</div>
-														</div>
-														<input type="number" class="form-control" id="view1-LuasAtb" name="LuasAtb" placeholder="Masukkan luas lahan yang dimiliki (Ha)" required="required">
-													</div>
-												</div>
-												<label>rumah</label>
-												<div class="view1-group">
-													<div class="input-group mb-3">
-														<div class="input-group-prepend">
-															<div class="input-group-text">
-																<input type="checkbox" aria-label="Checkbox for following text input" id="check-RumahLain" onclick="checkbox('RumahLain')">
-															</div>
-														</div>
-														<input type="number" class="form-control" id="view1-RumahLain" name="Rumah" placeholder="Masukkan jumlah rumah yang dimiliki (unit)" required="required">
-													</div>
-												</div>
+												<label>Kepemilikan Usaha</label>
+												<select class="form-control" style="width: 100%;" id="view1-StaUsaha" name="StaUsaha" required="required">
+													<option selected="selected" disabled>Kepemilikan Usaha</option>
+													<option value="1">1. Ya</option>
+													<option value="2">2. Tidak</option>
+												</select>
+											</div>
+											<div class="form-group">
+												<label>Jumlah Pekerja</label><br>
+												<input type="number" class="form-control" id="view1-JumlahPekerja" name="JumlahPekerja" placeholder="Masukan Jumlah Pekerja" required="required">
+											</div>
+
+											<div class="form-group">
+												<label>Tempat Usaha</label><br>
+												<input type="text" class="form-control" id="view1-TempatUsaha" name="TempatUsaha" placeholder="Masukan Tempat Usaha" required="required">
+											</div>
+
+											<div class="form-group">
+												<label>Omset Usaha</label><br>
+												<input type="number" class="form-control" id="view1-OmsetUsaha" name="OmsetUsaha" placeholder="Masukan Omset Usaha" required="required">
 											</div>
 										</div>
 										<div class="col">
 											<div class="form-group">
 												<h6 class="box-title">Jumlah ternak yang dimiliki</h6>
-												<label>Sapi</label>
-												<div class="view1-group">
-													<div class="input-group mb-3">
-														<div class="input-group-prepend">
-															<div class="input-group-text">
-																<input type="checkbox" aria-label="Checkbox for following text input" id="check-JumlahSapi" onclick="checkbox('JumlahSapi')">
+												<div class="row">
+													<div class="col-6">
+														<label>Sapi</label>
+														<div class="view1-group">
+															<div class="input-group mb-3">
+																<div class="input-group-prepend">
+																	<div class="input-group-text">
+																		<input type="checkbox" aria-label="Checkbox for following text input" id="check-JumlahSapi" onclick="checkbox('JumlahSapi')">
+																	</div>
+																</div>
+																<input type="number" class="form-control" id="view1-JumlahSapi" name="JumlahSapi" placeholder="Masukan jumlah sapi yang dimiliki (ekor)" required="required">
 															</div>
 														</div>
-														<input type="number" class="form-control" id="view1-JumlahSapi" name="JumlahSapi" placeholder="Masukan jumlah sapi yang dimiliki (ekor)" required="required">
+													</div>
+													<div class="col-6">
+														<label>Kerbau</label>
+														<div class="view1-group">
+															<div class="input-group mb-3">
+																<div class="input-group-prepend">
+																	<div class="input-group-text">
+																		<input type="checkbox" aria-label="Checkbox for following text input" id="check-JumlahKerbau" onclick="checkbox('JumlahKerbau')">
+																	</div>
+																</div>
+																<input type="number" class="form-control" id="view1-JumlahKerbau" name="JumlahKerbau" placeholder="Masukkan jumlah kerbau yang dimiliki (ekor)" required="required">
+															</div>
+														</div>
+													</div>
+													<div class="col-6">
+														<label>Kuda</label>
+														<div class="view1-group">
+															<div class="input-group mb-3">
+																<div class="input-group-prepend">
+																	<div class="input-group-text">
+																		<input type="checkbox" aria-label="Checkbox for following text input" id="check-JumlahKuda" onclick="checkbox('JumlahKuda')">
+																	</div>
+																</div>
+																<input type="number" class="form-control" id="view1-JumlahKuda" name="JumlahKuda" placeholder="Masukkan jumlah kuda yang dimiliki (ekor)" required="required">
+															</div>
+														</div>
+													</div>
+													<div class="col-6">
+														<label>Babi</label>
+														<div class="view1-group">
+															<div class="input-group mb-3">
+																<div class="input-group-prepend">
+																	<div class="input-group-text">
+																		<input type="checkbox" aria-label="Checkbox for following text input" id="check-JumlahBabi" onclick="checkbox('JumlahBabi')">
+																	</div>
+																</div>
+																<input type="number" class="form-control" id="view1-JumlahBabi" name="JumlahBabi" placeholder="Masukkan jumlah babi yang dimiliki (ekor)" required="required">
+															</div>
+														</div>
+													</div>
+													<div class="col-6">
+														<label>Kambing/Domba</label>
+														<div class="view1-group">
+															<div class="input-group mb-3">
+																<div class="input-group-prepend">
+																	<div class="input-group-text">
+																		<input type="checkbox" aria-label="Checkbox for following text input" id="check-JumlahKambing" onclick="checkbox('JumlahKambing')">
+																	</div>
+																</div>
+																<input type="number" class="form-control" id="view1-JumlahKambing" name="JumlahKambing" placeholder="Masukkan jumlah kambing/domba yang dimiliki (ekor)" required="required">
+															</div>
+														</div>
 													</div>
 												</div>
-												<label>Kerbau</label>
-												<div class="view1-group">
-													<div class="input-group mb-3">
-														<div class="input-group-prepend">
-															<div class="input-group-text">
-																<input type="checkbox" aria-label="Checkbox for following text input" id="check-JumlahKerbau" onclick="checkbox('JumlahKerbau')">
+											</div>
+											<div class="form-group ">
+												<!-- <h6 class="box-title">Asset tidak bergerak</h6> -->
+												<div class="row">
+													<div class="col">
+														<label>Asset tidak bergerak (lahan)</label>
+														<div class="view1-group">
+															<div class="input-group mb-3">
+																<div class="input-group-prepend">
+																	<div class="input-group-text">
+																		<input type="checkbox" aria-label="Checkbox for following text input" id="check-LuasAtb" onclick="checkbox('LuasAtb')">
+																	</div>
+																</div>
+																<input type="number" class="form-control" id="view1-LuasAtb" name="LuasAtb" placeholder="Masukkan luas lahan yang dimiliki (Ha)" required="required">
 															</div>
 														</div>
-														<input type="number" class="form-control" id="view1-JumlahKerbau" name="JumlahKerbau" placeholder="Masukkan jumlah kerbau yang dimiliki (ekor)" required="required">
 													</div>
-												</div>
-												<label>Kuda</label>
-												<div class="view1-group">
-													<div class="input-group mb-3">
-														<div class="input-group-prepend">
-															<div class="input-group-text">
-																<input type="checkbox" aria-label="Checkbox for following text input" id="check-JumlahKuda" onclick="checkbox('JumlahKuda')">
+
+													<div class="col">
+														<label>Asset tidak bergerak (rumah)</label>
+														<div class="view1-group">
+															<div class="input-group mb-3">
+																<div class="input-group-prepend">
+																	<div class="input-group-text">
+																		<input type="checkbox" aria-label="Checkbox for following text input" id="check-RumahLain" onclick="checkbox('RumahLain')">
+																	</div>
+																</div>
+																<input type="number" class="form-control" id="view1-RumahLain" name="Rumah" placeholder="Masukkan jumlah rumah yang dimiliki (unit)" required="required">
 															</div>
 														</div>
-														<input type="number" class="form-control" id="view1-JumlahKuda" name="JumlahKuda" placeholder="Masukkan jumlah kuda yang dimiliki (ekor)" required="required">
-													</div>
-												</div>
-												<label>Babi</label>
-												<div class="view1-group">
-													<div class="input-group mb-3">
-														<div class="input-group-prepend">
-															<div class="input-group-text">
-																<input type="checkbox" aria-label="Checkbox for following text input" id="check-JumlahBabi" onclick="checkbox('JumlahBabi')">
-															</div>
-														</div>
-														<input type="number" class="form-control" id="view1-JumlahBabi" name="JumlahBabi" placeholder="Masukkan jumlah babi yang dimiliki (ekor)" required="required">
-													</div>
-												</div>
-												<label>Kambing/Domba</label>
-												<div class="view1-group">
-													<div class="input-group mb-3">
-														<div class="input-group-prepend">
-															<div class="input-group-text">
-																<input type="checkbox" aria-label="Checkbox for following text input" id="check-JumlahKambing" onclick="checkbox('JumlahKambing')">
-															</div>
-														</div>
-														<input type="number" class="form-control" id="view1-JumlahKambing" name="JumlahKambing" placeholder="Masukkan jumlah kambing/domba yang dimiliki (ekor)" required="required">
 													</div>
 												</div>
 											</div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 12, 2020 at 09:29 PM
+-- Generation Time: Apr 16, 2020 at 08:27 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -81,9 +81,19 @@ CREATE TABLE `aset` (
   `IdAsetTidakBergerak` int(10) UNSIGNED NOT NULL,
   `IdProgram` int(10) UNSIGNED NOT NULL,
   `IdAsetBergerak` int(10) UNSIGNED NOT NULL,
+  `IdJenisUsaha` int(10) UNSIGNED NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `aset`
+--
+
+INSERT INTO `aset` (`IdAset`, `IdTernak`, `IdAsetTidakBergerak`, `IdProgram`, `IdAsetBergerak`, `IdJenisUsaha`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 1, 1, 1, '2020-04-16 14:05:14', '2020-04-16 16:33:56'),
+(2, 2, 2, 2, 2, 1, '2020-04-16 15:03:13', '2020-04-16 15:03:13'),
+(3, 3, 3, 3, 3, 2, '2020-04-16 18:06:59', '2020-04-16 18:06:59');
 
 -- --------------------------------------------------------
 
@@ -112,6 +122,15 @@ CREATE TABLE `asetbergerak` (
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `asetbergerak`
+--
+
+INSERT INTO `asetbergerak` (`IdAsetBergerak`, `AdaTabungGas`, `AdaLemariEs`, `AdaAC`, `AdaPemanas`, `AdaTelepon`, `AdaTv`, `AdaEmas`, `AdaLaptop`, `AdaSepeda`, `AdaMotor`, `AdaMobil`, `AdaPerahu`, `AdaMotorTempel`, `AdaPerahuMotor`, `AdaKapal`, `created_at`, `updated_at`) VALUES
+(1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, '2020-04-16 14:05:13', '2020-04-16 17:08:34'),
+(2, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, '2020-04-16 15:03:13', '2020-04-16 15:03:13'),
+(3, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, '2020-04-16 18:06:59', '2020-04-16 18:06:59');
+
 -- --------------------------------------------------------
 
 --
@@ -125,6 +144,15 @@ CREATE TABLE `asettidakbergerak` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `asettidakbergerak`
+--
+
+INSERT INTO `asettidakbergerak` (`IdAsetTidakBergerak`, `LuasAtb`, `RumahLain`, `created_at`, `updated_at`) VALUES
+(1, 1, 0, '2020-04-16 14:05:13', '2020-04-16 14:05:13'),
+(2, 0, 0, '2020-04-16 15:03:13', '2020-04-16 15:03:13'),
+(3, 0, 0, '2020-04-16 18:06:59', '2020-04-16 18:06:59');
 
 -- --------------------------------------------------------
 
@@ -173,14 +201,21 @@ INSERT INTO `indikator` (`id`, `indikator`, `bobot_indikator`, `tujuan`, `create
 
 CREATE TABLE `jenisusaha` (
   `IdJenisUsaha` int(10) UNSIGNED NOT NULL,
-  `IdUsaha` int(10) UNSIGNED NOT NULL,
-  `IdEkonomi` int(10) UNSIGNED DEFAULT NULL,
+  `StaUsaha` tinyint(4) NOT NULL,
   `JumlahPekerja` int(10) UNSIGNED DEFAULT NULL,
-  `TempatUsaha` int(10) UNSIGNED DEFAULT NULL,
+  `TempatUsaha` varchar(100) DEFAULT NULL,
   `OmsetUsaha` int(10) UNSIGNED DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `jenisusaha`
+--
+
+INSERT INTO `jenisusaha` (`IdJenisUsaha`, `StaUsaha`, `JumlahPekerja`, `TempatUsaha`, `OmsetUsaha`, `created_at`, `updated_at`) VALUES
+(1, 2, 2, '', 0, '2020-04-16 15:03:13', '2020-04-16 16:34:06'),
+(2, 2, 0, '', 0, '2020-04-16 18:06:59', '2020-04-16 18:06:59');
 
 -- --------------------------------------------------------
 
@@ -346,6 +381,15 @@ CREATE TABLE `pengenalantempat` (
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `pengenalantempat`
+--
+
+INSERT INTO `pengenalantempat` (`IdPengenalanTempat`, `IdKecamatan`, `IdKelurahan`, `NamaSLS`, `Alamat`, `NamaKRT`, `JumlahART`, `JumlahKeluarga`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, '1/3', 'Jalan', 'MUHAMMAD FAJAR', NULL, NULL, '2020-04-16 14:05:13', '2020-04-16 14:05:13'),
+(2, 1, 55, '10/84', 'Aliqua Irure aut ve', 'Dolore ad nobis plac', NULL, NULL, '2020-04-16 15:03:13', '2020-04-16 15:03:13'),
+(3, 5, 1, '1/1', 'AXSA', 'ADI SUTRISNO', NULL, NULL, '2020-04-16 18:06:59', '2020-04-16 18:06:59');
+
 -- --------------------------------------------------------
 
 --
@@ -434,6 +478,15 @@ CREATE TABLE `perumahan` (
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `perumahan`
+--
+
+INSERT INTO `perumahan` (`IdPerumahan`, `StaBangunan`, `StaLahan`, `LuasLantai`, `Lantai`, `Dinding`, `KondisiDinding`, `Atap`, `KondisiAtap`, `JumlahKamar`, `SumberAirminum`, `MemperolehAirminum`, `SumberPenerangan`, `Daya`, `BahanMasak`, `FasilitasBAB`, `Kloset`, `BuangTinja`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 30, 2, 1, 2, 4, 2, 3, 3, 2, 1, 1, 3, 1, 1, 2, '2020-04-16 14:05:13', '2020-04-16 14:05:13'),
+(2, 5, 4, 9, 4, 4, 2, 6, 2, 2, 11, 1, 2, 6, 6, 1, 4, 3, '2020-04-16 15:03:13', '2020-04-16 15:03:13'),
+(3, 1, 1, 30, 9, 1, 2, 4, 2, 2, 12, 3, 1, 6, 3, 1, 1, 2, '2020-04-16 18:06:59', '2020-04-16 18:06:59');
+
 -- --------------------------------------------------------
 
 --
@@ -456,7 +509,10 @@ INSERT INTO `petugas` (`IdPetugas`, `TglPemeriksa`, `IdPemeriksa`, `created_at`,
 (1, '2018-12-09', 1, '2020-04-12 11:13:55', '2020-04-12 11:13:55'),
 (2, '1978-09-11', 1, '2020-04-12 12:07:59', '2020-04-12 12:07:59'),
 (3, '2020-04-12', 1, '2020-04-12 16:21:49', '2020-04-12 16:21:49'),
-(4, '2020-04-13', 1, '2020-04-12 16:25:07', '2020-04-12 16:25:07');
+(4, '2020-04-13', 1, '2020-04-12 16:25:07', '2020-04-12 16:25:07'),
+(5, '2020-04-16', 1, '2020-04-16 14:05:14', '2020-04-16 14:05:14'),
+(6, '1971-04-24', 1, '2020-04-16 15:03:14', '2020-04-16 15:03:14'),
+(7, '2020-04-17', 1, '2020-04-16 18:06:59', '2020-04-16 18:06:59');
 
 -- --------------------------------------------------------
 
@@ -478,6 +534,15 @@ CREATE TABLE `program` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `program`
+--
+
+INSERT INTO `program` (`IdProgram`, `StaKKS`, `StaKIP`, `StaKIS`, `StaBPJSMandiri`, `StaJamsostek`, `StaAsuransi`, `StaPkh`, `Raskin`, `StaKur`, `created_at`, `updated_at`) VALUES
+(1, 0, 1, 0, 0, 0, 0, 0, 1, 0, '2020-04-16 14:05:14', '2020-04-16 14:06:33'),
+(2, 0, 1, 1, 0, 0, 1, 0, 1, 1, '2020-04-16 15:03:13', '2020-04-16 15:03:13'),
+(3, 1, 0, 1, 0, 0, 0, 0, 0, 0, '2020-04-16 18:06:59', '2020-04-16 18:06:59');
 
 -- --------------------------------------------------------
 
@@ -593,7 +658,7 @@ INSERT INTO `sub_kriteria` (`id`, `kriteria_id`, `sub_kriteria`, `bobot_sub`, `c
 (92, 12, '24 m2', 0.623178, '2020-04-12 15:59:34', NULL),
 (93, 12, '25 <luas/area <=27 m2 ', 0.362183, '2020-04-12 15:59:34', NULL),
 (94, 12, '>28 m2', 0.215798, '2020-04-12 15:59:34', NULL),
-(95, 12, 'Marmer/Granit', 0.0359663, '2020-04-12 15:59:34', NULL),
+(95, 13, 'Marmer/Granit', 0.0359663, '2020-04-16 15:39:51', NULL),
 (96, 13, 'Keramik', 0.0359663, '2020-04-12 15:59:34', NULL),
 (97, 13, 'Parket/vinil/permadani', 0.0359663, '2020-04-12 15:59:34', NULL),
 (98, 13, 'Ubin/tegel/teraso', 0.0359663, '2020-04-12 15:59:34', NULL),
@@ -736,7 +801,10 @@ INSERT INTO `survey` (`id_Survey`, `IdJenisPenerima`, `IdAset`, `IdPengenalanTem
 (1, 1, 0, 0, 0, 1, 1, 1, '2020-04-12 11:13:55', '2020-04-12 19:02:33'),
 (2, 1, 0, 0, 0, 2, 2, 1, '2020-04-12 12:08:00', '2020-04-12 19:02:36'),
 (3, 1, 0, 0, 0, 3, 3, 0, '2020-04-12 16:21:49', '2020-04-12 16:21:49'),
-(4, 1, 0, 0, 0, 4, 4, 0, '2020-04-12 16:25:07', '2020-04-12 16:25:07');
+(4, 1, 0, 0, 0, 4, 4, 0, '2020-04-12 16:25:07', '2020-04-12 16:25:07'),
+(5, 2, 1, 1, 1, 5, 0, 0, '2020-04-16 14:05:14', '2020-04-16 14:05:14'),
+(6, 2, 2, 2, 2, 6, 0, 1, '2020-04-16 15:03:14', '2020-04-16 15:03:28'),
+(7, 2, 3, 3, 3, 7, 0, 0, '2020-04-16 18:06:59', '2020-04-16 18:06:59');
 
 -- --------------------------------------------------------
 
@@ -771,20 +839,14 @@ CREATE TABLE `ternak` (
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `usaha`
+-- Dumping data for table `ternak`
 --
 
-CREATE TABLE `usaha` (
-  `IdUsaha` int(10) UNSIGNED NOT NULL,
-  `IdAset` int(10) UNSIGNED NOT NULL,
-  `IdJenisUsaha` int(10) UNSIGNED DEFAULT NULL,
-  `StaAtUsaha` int(10) UNSIGNED DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO `ternak` (`IdTernak`, `JumlahSapi`, `JumlahKerbau`, `JumlahKuda`, `JumlahBabi`, `JumlahKambing`, `created_at`, `updated_at`) VALUES
+(1, 0, 0, 0, 0, 0, '2020-04-16 14:05:14', '2020-04-16 14:05:14'),
+(2, 0, 0, 0, 0, 0, '2020-04-16 15:03:13', '2020-04-16 15:03:13'),
+(3, 0, 0, 0, 0, 0, '2020-04-16 18:06:59', '2020-04-16 18:06:59');
 
 --
 -- Indexes for dumped tables
@@ -824,8 +886,7 @@ ALTER TABLE `indikator`
 -- Indexes for table `jenisusaha`
 --
 ALTER TABLE `jenisusaha`
-  ADD PRIMARY KEY (`IdJenisUsaha`,`IdUsaha`),
-  ADD KEY `JenisUsaha_FKIndex1` (`IdUsaha`);
+  ADD PRIMARY KEY (`IdJenisUsaha`) USING BTREE;
 
 --
 -- Indexes for table `kartuidentitas`
@@ -937,13 +998,6 @@ ALTER TABLE `ternak`
   ADD PRIMARY KEY (`IdTernak`);
 
 --
--- Indexes for table `usaha`
---
-ALTER TABLE `usaha`
-  ADD PRIMARY KEY (`IdUsaha`),
-  ADD KEY `Usaha_FKIndex1` (`IdAset`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -951,19 +1005,19 @@ ALTER TABLE `usaha`
 -- AUTO_INCREMENT for table `aset`
 --
 ALTER TABLE `aset`
-  MODIFY `IdAset` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `IdAset` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `asetbergerak`
 --
 ALTER TABLE `asetbergerak`
-  MODIFY `IdAsetBergerak` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `IdAsetBergerak` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `asettidakbergerak`
 --
 ALTER TABLE `asettidakbergerak`
-  MODIFY `IdAsetTidakBergerak` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `IdAsetTidakBergerak` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `ekonomi`
@@ -981,7 +1035,7 @@ ALTER TABLE `indikator`
 -- AUTO_INCREMENT for table `jenisusaha`
 --
 ALTER TABLE `jenisusaha`
-  MODIFY `IdJenisUsaha` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `IdJenisUsaha` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `kartuidentitas`
@@ -1023,7 +1077,7 @@ ALTER TABLE `optionperumahan`
 -- AUTO_INCREMENT for table `pengenalantempat`
 --
 ALTER TABLE `pengenalantempat`
-  MODIFY `IdPengenalanTempat` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `IdPengenalanTempat` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `pengguna`
@@ -1041,19 +1095,19 @@ ALTER TABLE `perorangan`
 -- AUTO_INCREMENT for table `perumahan`
 --
 ALTER TABLE `perumahan`
-  MODIFY `IdPerumahan` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `IdPerumahan` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `petugas`
 --
 ALTER TABLE `petugas`
-  MODIFY `IdPetugas` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `IdPetugas` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `program`
 --
 ALTER TABLE `program`
-  MODIFY `IdProgram` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `IdProgram` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `sub_kriteria`
@@ -1065,7 +1119,7 @@ ALTER TABLE `sub_kriteria`
 -- AUTO_INCREMENT for table `survey`
 --
 ALTER TABLE `survey`
-  MODIFY `id_Survey` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_Survey` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `tanggunganpendidikan`
@@ -1077,13 +1131,7 @@ ALTER TABLE `tanggunganpendidikan`
 -- AUTO_INCREMENT for table `ternak`
 --
 ALTER TABLE `ternak`
-  MODIFY `IdTernak` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `usaha`
---
-ALTER TABLE `usaha`
-  MODIFY `IdUsaha` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `IdTernak` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables

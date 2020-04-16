@@ -24,6 +24,12 @@ class Formulir extends CI_Controller
 				'Alamat' => post('Alamat', 'required'),
 				'NamaKRT' => post('Nama1', 'required')
 			);
+			$jenis_usaha = array(
+				'StaUsaha' => $this->input->post('StaUsaha', 'required|enum:1&2'),
+				'jumlahPekerja' => $this->input->post('JumlahPekerja', 'required'),
+				'TempatUsaha' => $this->input->post('TempatUsaha', 'required'),
+				'OmsetUsaha' => $this->input->post('OmsetUsaha', 'required'),
+			);
 
 			// Data perumahan
 			$perumahan = array(
@@ -108,6 +114,11 @@ class Formulir extends CI_Controller
 				'StaKur' => $arrayKartuPemerintah[8]
 			);
 
+			$do_jenis_usaha = DB_MODEL::insert('jenisUsaha', $jenis_usaha);
+			if ($do_jenis_usaha->error)
+				error("bermasalah pada insert data Jenis Usaha");
+			$id_jenis_usaha = $do_jenis_usaha->data['id'];
+
 			$do_pengenalan_tempat = DB_MODEL::insert('pengenalantempat', $pengenalantempat);
 			if ($do_pengenalan_tempat->error)
 				error("bermasalah pada insert data pengenalan tempat");
@@ -143,7 +154,8 @@ class Formulir extends CI_Controller
 				'IdAsetTidakBergerak' => $Id_AsetTidakBergerak,
 				'IdAsetBergerak' => $Id_AsetBergerak,
 				'IdProgram' => $Id_Progam,
-				'IdTernak' => $Id_Ternak
+				'IdTernak' => $Id_Ternak,
+				'IdJenisUsaha' => $id_jenis_usaha
 			);
 
 			$do_aset = DB_MODEL::insert('aset', $aset);
@@ -241,6 +253,7 @@ class Formulir extends CI_Controller
 			$penerima = post('id_jenis', 'required|enum:1&2');
 			$do = DB_CUSTOM::detail_alternatif($id, $penerima);
 		}
+		// var_dump($do);
 		if (!$do->error) {
 			if (!is_null($id)) {
 				$temp = explode('/', $do->data->NamaSLS);
