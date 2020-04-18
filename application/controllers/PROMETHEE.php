@@ -6,14 +6,14 @@ class PROMETHEE extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->helper(['promethee']);
+		$this->load->helper(['promethee', 'alternatif']);
 	}
 
 	public function individu()
 	{
 		$data = DB_CUSTOM::detail_alternatif(null, 1)->data;
 		$response = [
-			'alternatif' => $alternatif = PROMETHEE_METHOD::alternatif('individu', $data),
+			'alternatif' => $alternatif = ALTERNATIF::get('individu', $data),
 			'konfersi' => $konfersi = PROMETHEE_METHOD::konfersi('individu', $alternatif),
 			'deviasi' => $deviasi = PROMETHEE_METHOD::deviasi('individu', $konfersi),
 			'preferensi' => $preferensi = PROMETHEE_METHOD::preferensi('individu', $deviasi),
