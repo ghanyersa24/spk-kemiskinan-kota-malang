@@ -30,15 +30,15 @@ class PROMETHEE extends CI_Controller
 	{
 		$data = DB_CUSTOM::detail_alternatif(null, 2)->data;
 		$response = [
-			'alternatif' => $alternatif = PROMETHEE_METHOD::alternatif('keluarga', $data),
+			'alternatif' => $alternatif = ALTERNATIF::get('keluarga', $data),
 			'konfersi' => $konfersi = PROMETHEE_METHOD::konfersi('keluarga', $alternatif),
 			'deviasi' => $deviasi = PROMETHEE_METHOD::deviasi('keluarga', $konfersi),
 			'preferensi' => $preferensi = PROMETHEE_METHOD::preferensi('keluarga', $deviasi),
 			'ip' => $ip = PROMETHEE_METHOD::ip('keluarga', $preferensi, $alternatif['rerata']),
 			'matrix' => $matrix = PROMETHEE_METHOD::matrix($ip),
 			'pr' => $pr = PROMETHEE_METHOD::pr($matrix),
-			// 'cr' => $cr = PROMETHEE_METHOD::cr($pr),
-			// 'pa' => PROMETHEE_METHOD::pa($cr, $alternatif['nilai'])
+			'cr' => $cr = PROMETHEE_METHOD::cr($pr),
+			'pa' => PROMETHEE_METHOD::pa($cr, $alternatif['nilai'])
 		];
 		success("data promethee berhasil diterima", $response);
 	}

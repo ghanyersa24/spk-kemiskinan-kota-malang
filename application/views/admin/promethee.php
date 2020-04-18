@@ -366,19 +366,19 @@
 							},
 							{
 								"render": function(data, type, row) {
-									return row.ekonomi
+									return row.ekonomi.toFixed(2)
 								},
 								className: "text-center"
 							},
 							{
 								"render": function(data, type, row) {
-									return row.pendidikan
+									return row.pendidikan.toFixed(2)
 								},
 								className: "text-center"
 							},
 							{
 								"render": function(data, type, row) {
-									return row.kesehatan
+									return row.kesehatan.toFixed(2)
 								},
 								className: "text-center"
 							}
@@ -399,19 +399,19 @@
 							},
 							{
 								"render": function(data, type, row) {
-									return row.ekonomi
+									return row.ekonomi.toFixed(2)
 								},
 								className: "text-center"
 							},
 							{
 								"render": function(data, type, row) {
-									return row.pendidikan
+									return row.pendidikan.toFixed(2)
 								},
 								className: "text-center"
 							},
 							{
 								"render": function(data, type, row) {
-									return row.kesehatan
+									return row.kesehatan.toFixed(2)
 								},
 								className: "text-center"
 							}
@@ -427,19 +427,19 @@
 							},
 							{
 								"render": function(data, type, row) {
-									return row.ekonomi
+									return row.ekonomi.toFixed(2)
 								},
 								className: "text-center"
 							},
 							{
 								"render": function(data, type, row) {
-									return row.pendidikan
+									return row.pendidikan.toFixed(2)
 								},
 								className: "text-center"
 							},
 							{
 								"render": function(data, type, row) {
-									return row.kesehatan
+									return row.kesehatan.toFixed(2)
 								},
 								className: "text-center"
 							}
@@ -455,19 +455,19 @@
 							},
 							{
 								"render": function(data, type, row) {
-									return row.ekonomi
+									return row.ekonomi.toFixed(2)
 								},
 								className: "text-center"
 							},
 							{
 								"render": function(data, type, row) {
-									return row.pendidikan
+									return row.pendidikan.toFixed(2)
 								},
 								className: "text-center"
 							},
 							{
 								"render": function(data, type, row) {
-									return row.kesehatan
+									return row.kesehatan.toFixed(2)
 								},
 								className: "text-center"
 							}
@@ -483,25 +483,25 @@
 							},
 							{
 								"render": function(data, type, row) {
-									return row.ekonomi
+									return row.ekonomi.toFixed(2)
 								},
 								className: "text-center"
 							},
 							{
 								"render": function(data, type, row) {
-									return row.pendidikan
+									return row.pendidikan.toFixed(2)
 								},
 								className: "text-center"
 							},
 							{
 								"render": function(data, type, row) {
-									return row.kesehatan
+									return row.kesehatan.toFixed(2)
 								},
 								className: "text-center"
 							},
 							{
 								"render": function(data, type, row) {
-									return row.jumlah
+									return row.jumlah.toFixed(2)
 								},
 								className: "text-center"
 							}
@@ -517,13 +517,13 @@
 							},
 							{
 								"render": function(data, type, row) {
-									return row.leaving_flow
+									return row.leaving_flow.toFixed(2)
 								},
 								className: "text-center"
 							},
 							{
 								"render": function(data, type, row) {
-									return row.entering_flow
+									return row.entering_flow.toFixed(2)
 								},
 								className: "text-center"
 							}
@@ -539,7 +539,7 @@
 							},
 							{
 								"render": function(data, type, row) {
-									return row.net_flow
+									return row.net_flow.toFixed(2)
 								},
 								className: "text-center"
 							}
@@ -562,7 +562,7 @@
 								}
 							}, {
 								"render": function(data, type, row) {
-									return row.net_flow
+									return row.net_flow.toFixed(2)
 								},
 								className: "text-center"
 							}
@@ -592,13 +592,13 @@
 							},
 							{
 								"render": function(data, type, row) {
-									return row.perumahan
+									return row.perumahan.toFixed(2)
 								},
 								className: "text-center"
 							},
 							{
 								"render": function(data, type, row) {
-									return row.asset
+									return row.asset.toFixed(2)
 								},
 								className: "text-center"
 							}
@@ -619,13 +619,13 @@
 							},
 							{
 								"render": function(data, type, row) {
-									return row.perumahan
+									return row.perumahan.toFixed(2)
 								},
 								className: "text-center"
 							},
 							{
 								"render": function(data, type, row) {
-									return row.asset
+									return row.asset.toFixed(2)
 								},
 								className: "text-center"
 							}
@@ -641,13 +641,13 @@
 							},
 							{
 								"render": function(data, type, row) {
-									return row.perumahan
+									return row.perumahan.toFixed(2)
 								},
 								className: "text-center"
 							},
 							{
 								"render": function(data, type, row) {
-									return row.asset
+									return row.asset.toFixed(2)
 								},
 								className: "text-center"
 							}
@@ -663,13 +663,13 @@
 							},
 							{
 								"render": function(data, type, row) {
-									return row.perumahan
+									return row.perumahan.toFixed(2)
 								},
 								className: "text-center"
 							},
 							{
 								"render": function(data, type, row) {
-									return row.asset
+									return row.asset.toFixed(2)
 								},
 								className: "text-center"
 							}
@@ -685,13 +685,13 @@
 							},
 							{
 								"render": function(data, type, row) {
-									return row.perumahan
+									return row.perumahan.toFixed(2)
 								},
 								className: "text-center"
 							},
 							{
 								"render": function(data, type, row) {
-									return row.asset
+									return row.asset.toFixed(2)
 								},
 								className: "text-center"
 							},
@@ -713,13 +713,13 @@
 							},
 							{
 								"render": function(data, type, row) {
-									return row.leaving_flow
+									return row.leaving_flow.toFixed(2)
 								},
 								className: "text-center"
 							},
 							{
 								"render": function(data, type, row) {
-									return row.entering_flow
+									return row.entering_flow.toFixed(2)
 								},
 								className: "text-center"
 							}
@@ -735,7 +735,7 @@
 							},
 							{
 								"render": function(data, type, row) {
-									return row.net_flow
+									return row.net_flow.toFixed(2)
 								},
 								className: "text-center"
 							}
@@ -758,7 +758,7 @@
 								}
 							}, {
 								"render": function(data, type, row) {
-									return row.net_flow
+									return row.net_flow.toFixed(2)
 								},
 								className: "text-center"
 							}

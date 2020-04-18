@@ -2,6 +2,11 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 class ALTERNATIF
 {
+	private static function format($value)
+	{
+		// return round($value, 2);
+		return $value;
+	}
 	public static function get($type, $data)
 	{
 		if ($type == 'individu') {
@@ -68,7 +73,7 @@ class ALTERNATIF
 			$kesehatan = ($bobot->kriteria[0]->sub_kriteria[$data->StaHamil - 1]->bobot_sub) +
 				($bobot->kriteria[1]->sub_kriteria[$data->JenisCacat - 1]->bobot_sub) +
 				($bobot->kriteria[2]->sub_kriteria[$data->PenyakitKronis - 1]->bobot_sub);
-			return number_format((float) $kesehatan, 2, '.', '');
+			return self::format($kesehatan);
 		} elseif ($do == 'konfersi') {
 			if ($data < 3.6) {
 				return 1.00;
@@ -86,7 +91,7 @@ class ALTERNATIF
 			$ekonomi = ($bobot->kriteria[0]->sub_kriteria[$data->StaBekerja - 1]->bobot_sub) +
 				($bobot->kriteria[1]->sub_kriteria[$data->LapanganUsaha - 1]->bobot_sub) +
 				($bobot->kriteria[2]->sub_kriteria[$data->StatusPekerjaan - 1]->bobot_sub);
-			return number_format((float) $ekonomi, 2, '.', '');
+			return self::format($ekonomi);
 		} elseif ($do == 'konfersi') {
 			if ($data < 8.94) {
 				return 1.00;
@@ -114,7 +119,7 @@ class ALTERNATIF
 			else
 				$pendidikan += ($bobot->kriteria[2]->sub_kriteria[3]->bobot_sub);
 
-			return number_format((float) $pendidikan, 2, '.', '');
+			return self::format($pendidikan);
 		} elseif ($do == 'konfersi') {
 			if ($data < 1.57) {
 				return 1.00;
@@ -162,7 +167,7 @@ class ALTERNATIF
 			else
 				$perumahan += self::data($bobot, 5, 4);
 
-			return number_format((float) $perumahan, 2, '.', '');
+			return self::format($perumahan);
 		} elseif ($do == 'konfersi') {
 			if ($data < 6.74) {
 				return 1.00;
@@ -269,7 +274,7 @@ class ALTERNATIF
 
 			$asset += self::data($bobot, 3, $data->StaUsaha);
 
-			return number_format((float) $asset, 2, '.', '');
+			return self::format($asset);
 		} elseif ($do == 'konfersi') {
 			if ($data < 9.14) {
 				return 1.00;
