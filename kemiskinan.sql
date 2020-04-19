@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 16, 2020 at 08:27 PM
+-- Generation Time: Apr 19, 2020 at 08:48 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -190,8 +190,8 @@ INSERT INTO `indikator` (`id`, `indikator`, `bobot_indikator`, `tujuan`, `create
 (1, 'Kesehatan', 29.7258, 'individu', '2020-04-12 15:58:11', NULL),
 (2, 'Pendidikan', 16.3781, 'individu', '2020-04-12 15:58:11', NULL),
 (3, 'Ekonomi', 53.8961, 'individu', '2020-04-12 15:58:11', NULL),
-(4, 'Perumahan', 33.3333, 'keluarga', '2020-04-12 15:58:11', NULL),
-(5, 'Asset', 66.6667, 'keluarga', '2020-04-12 15:58:11', NULL);
+(4, 'Perumahan', 66.6667, 'keluarga', '2020-04-19 15:53:33', NULL),
+(5, 'Asset', 33.3333, 'keluarga', '2020-04-19 15:53:26', NULL);
 
 -- --------------------------------------------------------
 
