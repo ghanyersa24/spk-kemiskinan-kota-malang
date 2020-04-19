@@ -28,9 +28,9 @@ class WP_METHOD
 				$vektor_si['nilai'][] = [
 					'id' => $value['id'],
 					'nama' => $value['nama'],
-					'ekonomi' => $ekonomi = self::format(pow($value['ekonomi'], $bobot[2]->bobot_indikator)),
+					'ekonomi' => $ekonomi = self::format(pow($value['ekonomi'], (-1) * $bobot[2]->bobot_indikator)),
 					'kesehatan' => $kesehatan = self::format(pow($value['kesehatan'], $bobot[0]->bobot_indikator)),
-					'pendidikan' => $pendidikan = self::format(pow($value['pendidikan'], $bobot[1]->bobot_indikator)),
+					'pendidikan' => $pendidikan = self::format(pow($value['pendidikan'], (-1) * $bobot[1]->bobot_indikator)),
 					's' => $temp = $ekonomi * $kesehatan * $pendidikan
 				];
 				$total += $temp;
@@ -41,8 +41,8 @@ class WP_METHOD
 				$vektor_si['nilai'][] = [
 					'id' => $value['id'],
 					'nama' => $value['nama'],
-					'perumahan' => $perumahan = self::format(pow($value['perumahan'], $bobot[0]->bobot_indikator)),
-					'asset' => $asset = self::format(pow($value['asset'], $bobot[1]->bobot_indikator)),
+					'perumahan' => $perumahan = self::format(pow($value['perumahan'], (-1) * $bobot[0]->bobot_indikator)),
+					'asset' => $asset = self::format(pow($value['asset'], (-1) * $bobot[1]->bobot_indikator)),
 					's' => $temp = $perumahan * $asset
 				];
 				$total += $temp;
