@@ -6,7 +6,7 @@ class Auth extends CI_Controller
 	public function index()
 	{
 		$username = post('username', 'required');
-		$do = DB_MODEL::login('customer', $username);
+		$do = DB_MODEL::login('users', $username);
 		if (is_null($do->data)) {
 			error("username and password isn't match");
 		} else {

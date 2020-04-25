@@ -169,6 +169,7 @@
 				}
 			});
 		}
+
 		function ajax_individu(callback) {
 			$.ajax({
 				type: 'GET',

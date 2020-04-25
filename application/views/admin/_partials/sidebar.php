@@ -47,7 +47,7 @@
         </a>
         <div class="dropdown-menu <?php echo $this->uri->segment(2) == 'vote' || $this->uri->segment(2) == 'proses' || $this->uri->segment(2) == 'hasilvote' ? 'show' : '' ?>" aria-labelledby="pagesDropdown">
             <a class="dropdown-item <?php echo $this->uri->segment(2) == 'vote' ? 'active' : '' ?>" href="<?php echo site_url('admin/vote') ?>"> Vote</a>
-            <a class="dropdown-item <?php echo $this->uri->segment(2) == 'proses' ? 'active' : '' ?>" href="<?php echo site_url('admin/proses') ?>"> Proses</a>
+            <!-- <a class="dropdown-item <?php echo $this->uri->segment(2) == 'proses' ? 'active' : '' ?>" href="<?php echo site_url('admin/proses') ?>"> Proses</a> -->
             <a class="dropdown-item <?php echo $this->uri->segment(2) == 'hasilvote' ? 'active' : '' ?>" href="<?php echo site_url('admin/hasilvote') ?>"> Hasil Vote</a>
         </div>
     </li>

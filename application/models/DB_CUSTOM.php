@@ -66,4 +66,15 @@ class DB_CUSTOM extends CI_Model
 			->get()->result();
 		return true($query);
 	}
+
+	public static function vote()
+	{
+		$CI = &get_instance();
+		$query = $CI->db
+			->select("vote.*,count(*) vote")
+			->from('vote')
+			->group_by('id')
+			->get()->result();
+		return true($query);
+	}
 }

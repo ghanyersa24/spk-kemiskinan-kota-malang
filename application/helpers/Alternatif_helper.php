@@ -19,7 +19,7 @@ class ALTERNATIF
 			}
 			for ($i = 0; $i < count($data); $i++) {
 				$alternatif['nilai'][] = array(
-					"id" => "A" . $data[$i]->id_Survey,
+					"id" => "A" . ($i + 1) . '.' . $data[$i]->id_Survey,
 					"nama" => $data[$i]->Nama,
 					"ekonomi" => self::ekonomi('alternatif', $data[$i], $bobot[2]),
 					"kesehatan" => self::kesehatan('alternatif', $data[$i], $bobot[0]),
@@ -48,7 +48,7 @@ class ALTERNATIF
 
 			for ($i = 0; $i < count($data); $i++) {
 				$alternatif['nilai'][] = array(
-					"id" => "A" . $data[$i]->id_Survey,
+					"id" => "A" . ($i + 1) . '.' . $data[$i]->id_Survey,
 					"nama" => $data[$i]->NamaKRT,
 					"perumahan" => self::perumahan('alternatif', $data[$i], $bobot[0]),
 					"asset" => self::asset('alternatif', $data[$i], $bobot[1]),
