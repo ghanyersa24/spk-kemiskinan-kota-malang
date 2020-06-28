@@ -34,7 +34,7 @@ class PROMETHEE_METHOD
 			for ($i = 0; $i < count($data); $i++) {
 				for ($j = 0; $j < count($data); $j++) {
 					$deviasi[] = [
-						"id" => $data[$i]['id'] . "," . $data[$j]['id'],
+						"id" => $data[$i]['id'] . " , " . $data[$j]['id'],
 						"ekonomi" => $data[$i]['ekonomi'] - $data[$j]['ekonomi'],
 						"kesehatan" => $data[$i]['kesehatan'] - $data[$j]['kesehatan'],
 						"pendidikan" => $data[$i]['pendidikan'] - $data[$j]['pendidikan'],
@@ -46,7 +46,7 @@ class PROMETHEE_METHOD
 			for ($i = 0; $i < count($data); $i++) {
 				for ($j = 0; $j < count($data); $j++) {
 					$deviasi[] = [
-						"id" => $data[$i]['id'] . "," . $data[$j]['id'],
+						"id" => $data[$i]['id'] . " , " . $data[$j]['id'],
 						"perumahan" => $data[$i]['perumahan'] - $data[$j]['perumahan'],
 						"asset" => $data[$i]['asset'] - $data[$j]['asset'],
 					];
@@ -110,13 +110,13 @@ class PROMETHEE_METHOD
 	public static function matrix($data)
 	{
 		foreach ($data as $value) {
-			$key = explode(',', $value['id']);
+			$key = explode(' , ', $value['id']);
 			$matrix[$key[0]][$key[1]] = $value['jumlah'];
 		}
 		return $matrix;
 	}
 
-	public static function pr($data)
+	public static function pr($data, $alternatif)
 	{
 		$i = 0;
 		foreach ($data as $key => $value) {
@@ -126,19 +126,23 @@ class PROMETHEE_METHOD
 				$ef += $data[$key2][$key];
 			}
 			$pr[$i]['id'] = $key;
+			$pr[$i]['nama'] = $alternatif[$i]['nama'];
 			$pr[$i]['leaving_flow'] = $lf / (count($data) - 1);
 			$pr[$i]['entering_flow'] = $ef / (count($data) - 1);
 			$i++;
 		}
 		return $pr;
 	}
-	public static function cr($data)
+	public static function cr($data, $alternatif)
 	{
+		$i = 0;
 		foreach ($data as $value) {
 			$cr[] = [
 				'id' => $value['id'],
+				'nama' => $alternatif[$i]['nama'],
 				'net_flow' => $value['leaving_flow'] - $value['entering_flow']
 			];
+			$i++;
 		}
 		return $cr;
 	}

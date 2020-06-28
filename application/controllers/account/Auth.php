@@ -12,6 +12,8 @@ class Auth extends CI_Controller
 		} else {
 			if (password_verify(post("password"), $do->data->password)) {
 				$do->data->token = AUTHORIZATION::generateToken($do->data);
+				$do->data->logged_in = true;
+				$this->session->set_userdata((array) $do->data);
 				success("Welcome to system", $do->data);
 			} else
 				error("username and password isn't match");

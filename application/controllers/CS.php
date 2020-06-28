@@ -29,8 +29,9 @@ class CS extends CI_Controller
 					"pairwase" => $pairwase3 = CS_METHOD::pairwase($ranking3)
 				]
 			],
-			"PERHITUNGAN" => $perhitungan = CS_METHOD::perhitungan($pairwase, $pairwase2, $pairwase3),
-			"PERANKINGAN" => CS_METHOD::perankingan($perhitungan)
+			"PAIRWASE" => $full_pairwase = CS_METHOD::perhitungan($pairwase, $pairwase2, $pairwase3),
+			"PERKALIAN" => $perkalian = CS_METHOD::perkalian($full_pairwase),
+			"PERANKINGAN" => CS_METHOD::perankingan($perkalian)
 		];
 		success("data CS individu", $data);
 	}
@@ -55,8 +56,9 @@ class CS extends CI_Controller
 					"pairwase" => $pairwase3 = CS_METHOD::pairwase($ranking3)
 				]
 			],
-			"PERHITUNGAN" => $perhitungan = CS_METHOD::perhitungan($pairwase, $pairwase2, $pairwase3),
-			"PERANKINGAN" => CS_METHOD::perankingan($perhitungan)
+			"PAIRWASE" => $full_pairwase = CS_METHOD::perhitungan($pairwase, $pairwase2, $pairwase3),
+			"PERKALIAN" => $perkalian = CS_METHOD::perkalian($full_pairwase),
+			"PERANKINGAN" => CS_METHOD::perankingan($perkalian)
 		];
 		success("data CS keluarga", $data);
 	}

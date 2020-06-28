@@ -93,6 +93,32 @@
 					<!-- Hasil Copelans -->
 					<div class="card-header d-flex justify-content-between">
 						<span><i class="fa fa-calculator" aria-hidden="true"></i>
+							Pairwase Keseluruhan</span>
+						<button type="button" id="btn-minimize-pk" class="btn btn-tool" data-card-widget="collapse">
+							<i class="fa fa-plus" id="icon-pk"></i>
+						</button>
+					</div>
+					<div class="card-body" id="card-pk" style="display: none">
+						<div class="table-responsive">
+							<table class="table table-bordered" id="keseluruhan" width="100%" cellspacing="0">
+								<thead>
+									<tr>
+										<th>ID</th>
+										<th>Alternatif</th>
+										<th>Menang</th>
+										<th>Seri</th>
+										<th>Kalah</th>
+									</tr>
+								</thead>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<div class="card mb-3">
+					<!-- Hasil Copelans -->
+					<div class="card-header d-flex justify-content-between">
+						<span><i class="fa fa-calculator" aria-hidden="true"></i>
 							Hasil Copeland Score</span>
 						<button type="button" id="btn-minimize-HCS" class="btn btn-tool" data-card-widget="collapse">
 							<i class="fa fa-plus" id="icon-HCS"></i>
@@ -103,7 +129,7 @@
 							<table class="table table-bordered" id="perhitungan" width="100%" cellspacing="0">
 								<thead>
 									<tr>
-										<th>Alternatif</th>
+										<th>ID</th>
 										<th>Alternatif</th>
 										<th>Menang</th>
 										<th>Seri</th>
@@ -200,6 +226,9 @@
 			$('#DA').DataTable().destroy()
 			$('#DA').DataTable({
 				data: ranking,
+				order: [
+					[2, "desc"]
+				],
 				columns: [{
 						"render": function(data, type, row, meta) {
 							return row.id
@@ -267,9 +296,44 @@
 				]
 			})
 
+			$('#keseluruhan').DataTable().destroy()
+			$('#keseluruhan').DataTable({
+				data: response.data.PAIRWASE,
+				columns: [{
+						"render": function(data, type, row, meta) {
+							return row.id
+						},
+						className: "text-center"
+					},
+					{
+						"render": function(data, type, row) {
+							return row.nama
+						}
+					},
+					{
+						"render": function(data, type, row) {
+							return row.menang
+						},
+						className: "text-center"
+					},
+					{
+						"render": function(data, type, row) {
+							return row.seri
+						},
+						className: "text-center"
+					},
+					{
+						"render": function(data, type, row) {
+							return row.kalah
+						},
+						className: "text-center"
+					}
+				]
+			})
+
 			$('#perhitungan').DataTable().destroy()
 			$('#perhitungan').DataTable({
-				data: response.data.PERHITUNGAN,
+				data: response.data.PERKALIAN,
 				columns: [{
 						"render": function(data, type, row, meta) {
 							return row.id
@@ -397,6 +461,20 @@
 				$('#icon-HCS').removeClass('fa fa-minus');
 				$('#icon-HCS').addClass('fa fa-plus');
 				is_hcs_open = true
+			}
+		});
+
+		let is_pk_open = true //Hasil Copeland Score
+		$('#btn-minimize-pk').click(function() {
+			$('#card-pk').toggle('fast')
+			if (is_hcs_open) {
+				$('#icon-pk').removeClass('fa fa-plus');
+				$('#icon-pk').addClass('fa fa-minus');
+				is_hcs_open = false
+			} else {
+				$('#icon-pk').removeClass('fa fa-minus');
+				$('#icon-pk').addClass('fa fa-plus');
+				is_pk_open = true
 			}
 		});
 

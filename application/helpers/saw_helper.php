@@ -72,7 +72,7 @@ class SAW_METHOD
 					'id' => $value['id'],
 					'nama' => $value['nama'],
 					'ekonomi' => $alternatif['min_max']['minimal']['ekonomi'] / $value['ekonomi'],
-					'kesehatan' => $alternatif['min_max']['maksimal']['kesehatan'] / $value['kesehatan'],
+					'kesehatan' => $value['kesehatan'] / $alternatif['min_max']['maksimal']['kesehatan'],
 					'pendidikan' => $alternatif['min_max']['minimal']['pendidikan'] / $value['pendidikan'],
 				];
 			}

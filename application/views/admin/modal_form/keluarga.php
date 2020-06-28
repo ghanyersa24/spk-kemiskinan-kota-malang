@@ -149,7 +149,7 @@
 										<div class="col">
 											<div class="form-group">
 												<label>Status penguasaan bangunan</label>
-												<select class="form-control select2" style="width: 100%;" id="view1-StaBangunan" name="Bangunan" required="required">
+												<select class="form-control" style="width: 100%;" id="view1-StaBangunan" name="Bangunan" required="required">
 													<!-- <option selected="selected" disabled> Pilih status</option> -->
 													<option value="1">1. Milik sendiri</option>
 													<option value="2">2. Kontrak/sewa</option>
@@ -161,7 +161,7 @@
 
 											<div class="form-group">
 												<label>Status lahan tempat tinggal yang ditempati</label>
-												<select class="form-control select2" style="width: 100%;" id="view1-StaLahan" name="Lahan" required="required">
+												<select class="form-control" style="width: 100%;" id="view1-StaLahan" name="Lahan" required="required">
 													<!-- <option selected="selected" disabled> Pilih status</option> -->
 													<option value="1">1. Milik sendiri</option>
 													<option value="2">2. Milik orang lain</option>

@@ -41,9 +41,9 @@
 										<tr>
 											<th>ID Nama</th>
 											<th>Nama</th>
-											<th>Ekonomi</th>
 											<th>Pendidikan</th>
 											<th>Kesehatan</th>
+											<th>Ekonomi</th>
 										</tr>
 									</thead>
 								</table>
@@ -82,9 +82,9 @@
 										<tr>
 											<th>ID Nama</th>
 											<th>Nama</th>
-											<th>Ekonomi</th>
 											<th>Pendidikan</th>
 											<th>Kesehatan</th>
+											<th>Ekonomi</th>
 										</tr>
 									</thead>
 								</table>
@@ -121,9 +121,9 @@
 									<thead>
 										<tr>
 											<th>D (a,b)</th>
-											<th>Ekonomi</th>
 											<th>Pendidikan</th>
 											<th>Kesehatan</th>
+											<th>Ekonomi</th>
 										</tr>
 									</thead>
 								</table>
@@ -159,9 +159,9 @@
 									<thead>
 										<tr>
 											<th>D (a,b)</th>
-											<th>Ekonomi</th>
 											<th>Pendidikan</th>
 											<th>Kesehatan</th>
+											<th>Ekonomi</th>
 										</tr>
 									</thead>
 								</table>
@@ -197,9 +197,9 @@
 									<thead>
 										<tr>
 											<th>D (a,b)</th>
-											<th>Ekonomi</th>
 											<th>Pendidikan</th>
 											<th>Kesehatan</th>
+											<th>Ekonomi</th>
 											<th>Jumlah</th>
 										</tr>
 									</thead>
@@ -210,8 +210,8 @@
 									<thead>
 										<tr>
 											<th>D (a,b)</th>
-											<th>Pendidikan</th>
-											<th>Kesehatan</th>
+											<th>Perumahan</th>
+											<th>Asset</th>
 											<th>Jumlah</th>
 										</tr>
 									</thead>
@@ -236,7 +236,8 @@
 								<table class="table table-bordered" width="100%" cellspacing="0">
 									<thead>
 										<tr>
-											<th>ID Nama</th>
+											<th>ID</th>
+											<th>Nama</th>
 											<th>Leaving Flow</th>
 											<th>Entering Flow</th>
 										</tr>
@@ -247,7 +248,8 @@
 								<table class="table table-bordered" width="100%" cellspacing="0">
 									<thead>
 										<tr>
-											<th>ID Nama</th>
+											<th>ID</th>
+											<th>Nama</th>
 											<th>Leaving Flow</th>
 											<th>Entering Flow</th>
 										</tr>
@@ -273,7 +275,8 @@
 								<table class="table table-bordered" width="100%" cellspacing="0">
 									<thead>
 										<tr>
-											<th>ID Nama</th>
+											<th>ID</th>
+											<th>Nama</th>
 											<th>Net Flow</th>
 										</tr>
 									</thead>
@@ -283,7 +286,8 @@
 								<table class="table table-bordered" width="100%" cellspacing="0">
 									<thead>
 										<tr>
-											<th>ID Nama</th>
+											<th>ID</th>
+											<th>Nama</th>
 											<th>Net Flow</th>
 										</tr>
 									</thead>
@@ -366,12 +370,6 @@
 							},
 							{
 								"render": function(data, type, row) {
-									return row.ekonomi.toFixed(2)
-								},
-								className: "text-center"
-							},
-							{
-								"render": function(data, type, row) {
 									return row.pendidikan.toFixed(2)
 								},
 								className: "text-center"
@@ -379,6 +377,12 @@
 							{
 								"render": function(data, type, row) {
 									return row.kesehatan.toFixed(2)
+								},
+								className: "text-center"
+							},
+							{
+								"render": function(data, type, row) {
+									return row.ekonomi.toFixed(2)
 								},
 								className: "text-center"
 							}
@@ -399,12 +403,6 @@
 							},
 							{
 								"render": function(data, type, row) {
-									return row.ekonomi.toFixed(2)
-								},
-								className: "text-center"
-							},
-							{
-								"render": function(data, type, row) {
 									return row.pendidikan.toFixed(2)
 								},
 								className: "text-center"
@@ -412,6 +410,12 @@
 							{
 								"render": function(data, type, row) {
 									return row.kesehatan.toFixed(2)
+								},
+								className: "text-center"
+							},
+							{
+								"render": function(data, type, row) {
+									return row.ekonomi.toFixed(2)
 								},
 								className: "text-center"
 							}
@@ -427,12 +431,6 @@
 							},
 							{
 								"render": function(data, type, row) {
-									return row.ekonomi.toFixed(2)
-								},
-								className: "text-center"
-							},
-							{
-								"render": function(data, type, row) {
 									return row.pendidikan.toFixed(2)
 								},
 								className: "text-center"
@@ -440,6 +438,12 @@
 							{
 								"render": function(data, type, row) {
 									return row.kesehatan.toFixed(2)
+								},
+								className: "text-center"
+							},
+							{
+								"render": function(data, type, row) {
+									return row.ekonomi.toFixed(2)
 								},
 								className: "text-center"
 							}
@@ -455,12 +459,6 @@
 							},
 							{
 								"render": function(data, type, row) {
-									return row.ekonomi.toFixed(2)
-								},
-								className: "text-center"
-							},
-							{
-								"render": function(data, type, row) {
 									return row.pendidikan.toFixed(2)
 								},
 								className: "text-center"
@@ -468,6 +466,12 @@
 							{
 								"render": function(data, type, row) {
 									return row.kesehatan.toFixed(2)
+								},
+								className: "text-center"
+							},
+							{
+								"render": function(data, type, row) {
+									return row.ekonomi.toFixed(2)
 								},
 								className: "text-center"
 							}
@@ -483,12 +487,6 @@
 							},
 							{
 								"render": function(data, type, row) {
-									return row.ekonomi.toFixed(2)
-								},
-								className: "text-center"
-							},
-							{
-								"render": function(data, type, row) {
 									return row.pendidikan.toFixed(2)
 								},
 								className: "text-center"
@@ -496,6 +494,12 @@
 							{
 								"render": function(data, type, row) {
 									return row.kesehatan.toFixed(2)
+								},
+								className: "text-center"
+							},
+							{
+								"render": function(data, type, row) {
+									return row.ekonomi.toFixed(2)
 								},
 								className: "text-center"
 							},
@@ -514,6 +518,11 @@
 									return row.id
 								},
 								className: "text-center"
+							},
+							{
+								"render": function(data, type, row) {
+									return row.nama
+								}
 							},
 							{
 								"render": function(data, type, row) {
@@ -538,6 +547,10 @@
 								className: "text-center"
 							},
 							{
+								"render": function(data, type, row) {
+									return row.nama
+								}
+							}, {
 								"render": function(data, type, row) {
 									return row.net_flow.toFixed(2)
 								},
@@ -713,6 +726,11 @@
 							},
 							{
 								"render": function(data, type, row) {
+									return row.nama
+								}
+							},
+							{
+								"render": function(data, type, row) {
 									return row.leaving_flow.toFixed(2)
 								},
 								className: "text-center"
@@ -734,6 +752,10 @@
 								className: "text-center"
 							},
 							{
+								"render": function(data, type, row) {
+									return row.nama
+								}
+							}, {
 								"render": function(data, type, row) {
 									return row.net_flow.toFixed(2)
 								},

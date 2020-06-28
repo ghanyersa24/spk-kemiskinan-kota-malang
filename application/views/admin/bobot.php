@@ -95,9 +95,9 @@
 						</table>
 					</div>
 				</div>
-				<div class="modal-footer">
+				<!-- <div class="modal-footer">
 					<button class="btn btn-primary" type="button">Text</button>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</div>
@@ -133,9 +133,9 @@
 						</table>
 					</div>
 				</div>
-				<div class="modal-footer">
+				<!-- <div class="modal-footer">
 					<button class="btn btn-primary" type="button">Text</button>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</div>

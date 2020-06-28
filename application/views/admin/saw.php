@@ -41,9 +41,9 @@
 										<tr>
 											<th>ID Nama</th>
 											<th>Nama</th>
-											<th>Ekonomi</th>
 											<th>Pendidikan</th>
 											<th>Kesehatan</th>
+											<th>Ekonomi</th>
 										</tr>
 									</thead>
 								</table>
@@ -82,9 +82,9 @@
 										<tr>
 											<th>ID Nama</th>
 											<th>Nama</th>
-											<th>Ekonomi</th>
 											<th>Pendidikan</th>
 											<th>Kesehatan</th>
+											<th>Ekonomi</th>
 										</tr>
 									</thead>
 								</table>
@@ -122,9 +122,9 @@
 										<tr>
 											<th>ID Nama</th>
 											<th>Nama</th>
-											<th>Ekonomi</th>
 											<th>Pendidikan</th>
 											<th>Kesehatan</th>
+											<th>Ekonomi</th>
 											<th>Jumlah</th>
 										</tr>
 									</thead>
@@ -162,7 +162,6 @@
 								<table class="table table-bordered" width="100%" cellspacing="0">
 									<thead>
 										<tr>
-											<th>No.</th>
 											<th>ID Nama</th>
 											<th>Nama</th>
 											<th>Jumlah Vektor V</th>
@@ -174,7 +173,6 @@
 								<table class="table table-bordered" width="100%" cellspacing="0">
 									<thead>
 										<tr>
-											<th>No.</th>
 											<th>ID Nama</th>
 											<th>Nama</th>
 											<th>Jumlah Vektor V</th>
@@ -222,12 +220,6 @@
 							},
 							{
 								"render": function(data, type, row) {
-									return row.ekonomi.toFixed(2)
-								},
-								className: "text-center"
-							},
-							{
-								"render": function(data, type, row) {
 									return row.pendidikan.toFixed(2)
 								},
 								className: "text-center"
@@ -235,6 +227,12 @@
 							{
 								"render": function(data, type, row) {
 									return row.kesehatan.toFixed(2)
+								},
+								className: "text-center"
+							},
+							{
+								"render": function(data, type, row) {
+									return row.ekonomi.toFixed(2)
 								},
 								className: "text-center"
 							}
@@ -255,12 +253,6 @@
 							},
 							{
 								"render": function(data, type, row) {
-									return row.ekonomi.toFixed(2)
-								},
-								className: "text-center"
-							},
-							{
-								"render": function(data, type, row) {
 									return row.pendidikan.toFixed(2)
 								},
 								className: "text-center"
@@ -268,6 +260,12 @@
 							{
 								"render": function(data, type, row) {
 									return row.kesehatan.toFixed(2)
+								},
+								className: "text-center"
+							},
+							{
+								"render": function(data, type, row) {
+									return row.ekonomi.toFixed(2)
 								},
 								className: "text-center"
 							}
@@ -288,12 +286,6 @@
 							},
 							{
 								"render": function(data, type, row) {
-									return row.ekonomi.toFixed(2)
-								},
-								className: "text-center"
-							},
-							{
-								"render": function(data, type, row) {
 									return row.pendidikan.toFixed(2)
 								},
 								className: "text-center"
@@ -301,6 +293,12 @@
 							{
 								"render": function(data, type, row) {
 									return row.kesehatan.toFixed(2)
+								},
+								className: "text-center"
+							},
+							{
+								"render": function(data, type, row) {
+									return row.ekonomi.toFixed(2)
 								},
 								className: "text-center"
 							},
@@ -315,14 +313,9 @@
 					$('#individu-ranking table').DataTable({
 						data: response.data.vektor_v,
 						order: [
-							[3, "desc"]
+							[2, "desc"]
 						],
 						columns: [{
-								"render": function(data, type, row, meta) {
-									return meta.row + meta.settings._iDisplayStart + 1;
-								},
-								className: "text-center"
-							}, {
 								"render": function(data, type, row, meta) {
 									return row.id
 								},
@@ -440,14 +433,9 @@
 					$('#keluarga-ranking table').DataTable({
 						data: response.data.vektor_v,
 						order: [
-							[3, "desc"]
+							[2, "desc"]
 						],
 						columns: [{
-								"render": function(data, type, row, meta) {
-									return meta.row + meta.settings._iDisplayStart + 1;
-								},
-								className: "text-center"
-							}, {
 								"render": function(data, type, row, meta) {
 									return row.id
 								},

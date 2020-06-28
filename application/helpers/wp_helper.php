@@ -56,7 +56,7 @@ class WP_METHOD
 		$vektor_vi = [];
 		foreach ($vektor_si as  $value) {
 			$vektor_vi[] = [
-				'id' => $value['id'],
+				'id' => (int) $value['id'],
 				'nama' => $value['nama'],
 				'hasil' => self::format($value['s'] / $total)
 			];

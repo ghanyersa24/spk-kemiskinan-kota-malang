@@ -73,7 +73,7 @@ class DB_CUSTOM extends CI_Model
 		$query = $CI->db
 			->select("vote.*,count(*) vote")
 			->from('vote')
-			->group_by('id')
+			->group_by('survey_id')
 			->get()->result();
 		return true($query);
 	}

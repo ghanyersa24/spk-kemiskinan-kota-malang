@@ -346,12 +346,13 @@ class Formulir extends CI_Controller
 			);
 
 			// Data Program
-			$paramKartuPemerintah = post('KartuPemerintah', 'required');
+			$paramKartuPemerintah = $this->input->post('KartuPemerintah');
 			$arrayKartuPemerintah = array(0, 0, 0, 0, 0, 0, 0, 0, 0);
-			for ($i = 0; $i < count($paramKartuPemerintah); $i++) {
-				$valueKartuPemerintah = (int) $paramKartuPemerintah[$i];
-				$arrayKartuPemerintah[$valueKartuPemerintah - 1] = 1;
-			}
+			if (!is_null($paramKartuPemerintah))
+				for ($i = 0; $i < count($paramKartuPemerintah); $i++) {
+					$valueKartuPemerintah = (int) $paramKartuPemerintah[$i];
+					$arrayKartuPemerintah[$valueKartuPemerintah - 1] = 1;
+				}
 			$program = array(
 				'StaKKS' => $arrayKartuPemerintah[0],
 				'StaKIP' => $arrayKartuPemerintah[1],

@@ -29,12 +29,12 @@
 					<div class="col-md-6" style="padding: 0px; color: #555555! important;">
 						<a href="<?php echo site_url('admin/form') ?>" class="btn_a_style"> <button class="btn btn-warning"><i class="fa fa-plus-circle"></i> Tambah Data</button></a>
 					</div>
-					<select class="form-control col-md-2" style="margin-right:10px;">
+					<!-- <select class="form-control col-md-2" style="margin-right:10px;">
 						<option value="">Semua Jenis</option>
 						<option value="">Perorangan</option>
 						<option value="">Keluarga</option>
 					</select>
-					<input type="text" id="view-search" name="search" placeholder="Search" class="form-control col-md-3">
+					<input type="text" id="view-search" name="search" placeholder="Search" class="form-control col-md-3"> -->
 				</div>
 
 				<!-- DataTables -->
@@ -313,6 +313,7 @@
 				else
 					$('.input-group.mb-3 > #view1-' + key).prop('readonly', true)
 			}
+			$('#view1-StaBangunan').val(res.StaBangunan)
 			var data_program = res.program
 			let program = []
 			let m = 0
@@ -330,7 +331,7 @@
 			let assetbergerak = []
 			let n = 0
 			$.each(data_assetbergerak.split(","), function(i, e) {
-				if (i != 0 && i < 10)
+				if (i != 0 && i < 15)
 					if (e == 1)
 						assetbergerak[n++] = i
 			});

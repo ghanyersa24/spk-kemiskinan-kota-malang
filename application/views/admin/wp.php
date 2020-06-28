@@ -41,9 +41,9 @@
 										<tr>
 											<th>ID Nama</th>
 											<th>Nama</th>
-											<th>Ekonomi</th>
 											<th>Pendidikan</th>
 											<th>Kesehatan</th>
+											<th>Ekonomi</th>
 										</tr>
 									</thead>
 								</table>
@@ -82,9 +82,9 @@
 										<tr>
 											<th>ID Nama</th>
 											<th>Nama</th>
-											<th>Ekonomi</th>
 											<th>Pendidikan</th>
 											<th>Kesehatan</th>
+											<th>Ekonomi</th>
 											<th>Nilai S</th>
 										</tr>
 									</thead>
@@ -123,6 +123,7 @@
 									<thead>
 										<tr>
 											<th>V</th>
+											<th>Nama</th>
 											<th>Vector Vi</th>
 										</tr>
 									</thead>
@@ -133,6 +134,7 @@
 									<thead>
 										<tr>
 											<th>V</th>
+											<th>Nama</th>
 											<th>Vector Vi</th>
 										</tr>
 									</thead>
@@ -157,7 +159,6 @@
 								<table class="table table-bordered" width="100%" cellspacing="0">
 									<thead>
 										<tr>
-											<th>#</th>
 											<th>ID Nama</th>
 											<th>Nama</th>
 											<th>Vector Vi</th>
@@ -169,7 +170,6 @@
 								<table class="table table-bordered" width="100%" cellspacing="0">
 									<thead>
 										<tr>
-											<th>#</th>
 											<th>ID Nama</th>
 											<th>Nama</th>
 											<th>Vector Vi</th>
@@ -217,19 +217,19 @@
 							},
 							{
 								"render": function(data, type, row) {
-									return row.ekonomi.toFixed(2)
+									return row.pendidikan.toFixed(5)
 								},
 								className: "text-center"
 							},
 							{
 								"render": function(data, type, row) {
-									return row.pendidikan.toFixed(2)
+									return row.kesehatan.toFixed(5)
 								},
 								className: "text-center"
 							},
 							{
 								"render": function(data, type, row) {
-									return row.kesehatan.toFixed(2)
+									return row.ekonomi.toFixed(5)
 								},
 								className: "text-center"
 							}
@@ -250,24 +250,24 @@
 							},
 							{
 								"render": function(data, type, row) {
-									return row.ekonomi.toFixed(2)
+									return row.pendidikan.toFixed(5)
 								},
 								className: "text-center"
 							},
 							{
 								"render": function(data, type, row) {
-									return row.pendidikan.toFixed(2)
+									return row.kesehatan.toFixed(5)
 								},
 								className: "text-center"
 							},
 							{
 								"render": function(data, type, row) {
-									return row.kesehatan.toFixed(2)
+									return row.ekonomi.toFixed(5)
 								},
 								className: "text-center"
 							}, {
 								"render": function(data, type, row) {
-									return row.s.toFixed(2)
+									return row.s.toFixed(5)
 								},
 								className: "text-center"
 							}
@@ -283,7 +283,12 @@
 							},
 							{
 								"render": function(data, type, row) {
-									return row.hasil.toFixed(2)
+									return row.nama
+								}
+							},
+							{
+								"render": function(data, type, row) {
+									return row.hasil.toFixed(5)
 								},
 								className: "text-center"
 							}
@@ -296,11 +301,6 @@
 						],
 						columns: [{
 								"render": function(data, type, row, meta) {
-									return meta.row + meta.settings._iDisplayStart + 1;
-								},
-								className: "text-center"
-							}, {
-								"render": function(data, type, row, meta) {
 									return row.id
 								},
 								className: "text-center"
@@ -311,7 +311,7 @@
 								}
 							}, {
 								"render": function(data, type, row) {
-									return row.hasil.toFixed(2)
+									return row.hasil.toFixed(5)
 								},
 								className: "text-center"
 							}
@@ -341,13 +341,13 @@
 							},
 							{
 								"render": function(data, type, row) {
-									return row.perumahan.toFixed(2)
+									return row.perumahan.toFixed(5)
 								},
 								className: "text-center"
 							},
 							{
 								"render": function(data, type, row) {
-									return row.asset.toFixed(2)
+									return row.asset.toFixed(5)
 								},
 								className: "text-center"
 							}
@@ -368,18 +368,18 @@
 							},
 							{
 								"render": function(data, type, row) {
-									return row.perumahan.toFixed(2)
+									return row.perumahan.toFixed(5)
 								},
 								className: "text-center"
 							},
 							{
 								"render": function(data, type, row) {
-									return row.asset.toFixed(2)
+									return row.asset.toFixed(5)
 								},
 								className: "text-center"
 							}, {
 								"render": function(data, type, row) {
-									return row.s.toFixed(2)
+									return row.s.toFixed(5)
 								},
 								className: "text-center"
 							}
@@ -395,7 +395,12 @@
 							},
 							{
 								"render": function(data, type, row) {
-									return row.hasil.toFixed(2)
+									return row.nama
+								},
+							},
+							{
+								"render": function(data, type, row) {
+									return row.hasil.toFixed(5)
 								},
 								className: "text-center"
 							}
@@ -408,11 +413,6 @@
 						],
 						columns: [{
 								"render": function(data, type, row, meta) {
-									return meta.row + meta.settings._iDisplayStart + 1;
-								},
-								className: "text-center"
-							}, {
-								"render": function(data, type, row, meta) {
 									return row.id
 								},
 								className: "text-center"
@@ -423,7 +423,7 @@
 								}
 							}, {
 								"render": function(data, type, row) {
-									return row.hasil.toFixed(2)
+									return row.hasil.toFixed(5)
 								},
 								className: "text-center"
 							}

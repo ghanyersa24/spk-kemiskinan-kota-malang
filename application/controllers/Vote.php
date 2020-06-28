@@ -12,8 +12,8 @@ class Vote extends CI_Controller
 	public function create()
 	{
 		$data = array(
-			"id" => post('id', 'required'),
-			"user_id" => 5
+			"survey_id" => post('id', 'required'),
+			"user_id" =>  $this->session->id
 		);
 		$find = DB_MODEL::find($this->table, $data);
 		if (!$find->error) {
@@ -38,19 +38,19 @@ class Vote extends CI_Controller
 		else
 			$get = json_decode(file_get_contents(base_url() . "cs/keluarga"))->data;
 		$vote = DB_CUSTOM::vote();
-		$my_vote = DB_MODEL::where($this->table, ['user_id' => 5]);
+		$my_vote = DB_MODEL::where($this->table, ['user_id' => $this->session->id]);
 		for ($i = 0; $i < count($get->PERANKINGAN); $i++) {
 			$same = false;
 			$sum = false;
 			foreach ($my_vote->data as $value) {
-				$id = explode('.', $get->PERANKINGAN[$i]->id);
-				if ($id[1] == $value->id) {
+				// $id = explode('.', $get->PERANKINGAN[$i]->id);
+				if ($get->PERANKINGAN[$i]->id == $value->survey_id) {
 					$same = true;
 				}
 			}
 			foreach ($vote->data as $value) {
-				$id = explode('.', $get->PERANKINGAN[$i]->id);
-				if ($id[1] == $value->id) {
+				// $id = explode('.', $get->PERANKINGAN[$i]->id);
+				if ($get->PERANKINGAN[$i]->id == $value->survey_id) {
 					$get->PERANKINGAN[$i]->jumlah = (int) $value->vote;
 					$sum = true;
 				}

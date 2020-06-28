@@ -19,8 +19,8 @@ class PROMETHEE extends CI_Controller
 			'preferensi' => $preferensi = PROMETHEE_METHOD::preferensi('individu', $deviasi),
 			'ip' => $ip = PROMETHEE_METHOD::ip('individu', $preferensi, $alternatif['rerata']),
 			'matrix' => $matrix = PROMETHEE_METHOD::matrix($ip),
-			'pr' => $pr = PROMETHEE_METHOD::pr($matrix),
-			'cr' => $cr = PROMETHEE_METHOD::cr($pr),
+			'pr' => $pr = PROMETHEE_METHOD::pr($matrix, $alternatif['nilai']),
+			'cr' => $cr = PROMETHEE_METHOD::cr($pr, $alternatif['nilai']),
 			'pa' => PROMETHEE_METHOD::pa($cr, $alternatif['nilai'])
 		];
 		success("data promethee berhasil diterima", $response);
@@ -36,8 +36,8 @@ class PROMETHEE extends CI_Controller
 			'preferensi' => $preferensi = PROMETHEE_METHOD::preferensi('keluarga', $deviasi),
 			'ip' => $ip = PROMETHEE_METHOD::ip('keluarga', $preferensi, $alternatif['rerata']),
 			'matrix' => $matrix = PROMETHEE_METHOD::matrix($ip),
-			'pr' => $pr = PROMETHEE_METHOD::pr($matrix),
-			'cr' => $cr = PROMETHEE_METHOD::cr($pr),
+			'pr' => $pr = PROMETHEE_METHOD::pr($matrix, $alternatif['nilai']),
+			'cr' => $cr = PROMETHEE_METHOD::cr($pr, $alternatif['nilai']),
 			'pa' => PROMETHEE_METHOD::pa($cr, $alternatif['nilai'])
 		];
 		success("data promethee berhasil diterima", $response);

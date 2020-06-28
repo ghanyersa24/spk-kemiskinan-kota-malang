@@ -67,7 +67,7 @@
 			let response
 
 			function vote(id) {
-				let data = id.split(".")
+				let data = id
 				$.ajax({
 					type: "POST",
 					url: api + 'vote/create',
