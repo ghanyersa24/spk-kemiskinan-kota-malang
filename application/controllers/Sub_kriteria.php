@@ -42,9 +42,9 @@ class Sub_kriteria extends CI_Controller
 	public function update()
 	{
 		$data = array(
-			"sub_kriteria" => post('sub_kriteria', 'required|numberic'),
+			// "sub_kriteria" => post('sub_kriteria', 'required|numberic'),
 			"bobot_sub" => post('bobot_sub', 'required|numberic'),
-			"kriteria_id" => post('kriteria_id', 'required|numberic'),
+			// "kriteria_id" => post('kriteria_id', 'required|numberic'),
 		);
 
 		$where = array(

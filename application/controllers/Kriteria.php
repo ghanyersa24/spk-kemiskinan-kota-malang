@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Indikator extends CI_Controller
+class Kriteria extends CI_Controller
 {
 	protected $table = "kriteria";
 	public function __construct()
@@ -42,9 +42,9 @@ class Indikator extends CI_Controller
 	public function update()
 	{
 		$data = array(
-			"kriteria" => post('kriteria', 'required'),
+			// "kriteria" => post('kriteria', 'required'),
 			"bobot_kriteria" => post('bobot_kriteria', 'required|numberic'),
-			"indikator_id" => post('indikator_id', 'required|numberic'),
+			// "indikator_id" => post('indikator_id', 'required|numberic'),
 		);
 
 		$where = array(

@@ -14,7 +14,7 @@ class Indikator extends CI_Controller
 		$data = array(
 			"indikator" => post('indikator', 'required'),
 			"bobot_indikator" => post('bobot_indikator', 'required|numberic'),
-			"tujuan" => post('tujuan','required|enum:individu&keluarga'),
+			"tujuan" => post('tujuan', 'required|enum:individu&keluarga'),
 		);
 
 		$do = DB_MODEL::insert($this->table, $data);
@@ -42,9 +42,9 @@ class Indikator extends CI_Controller
 	public function update()
 	{
 		$data = array(
-			"indikator" => post('indikator', 'required'),
+			// "indikator" => post('indikator', 'required'),
 			"bobot_indikator" => post('bobot_indikator', 'required|numberic'),
-			"tujuan" => post('tujuan','required|enum:individu&keluarga'),
+			// "tujuan" => post('tujuan','required|enum:individu&keluarga'),
 		);
 
 		$where = array(
